@@ -15,9 +15,6 @@ public class Bateaux {
 	public final static int TORPILLEUR = 2;
 	public final static int CROISEUR = 3;
 	public final static int PORTEAVIONS = 4;
-	public final static int CASETOUCHE = 5;
-	public final static int CASEPLOUF = 6;
-
 
 	public final static int HORIZONTAL = 0;
 	public final static int VERTICAL = 1;
@@ -84,16 +81,10 @@ public class Bateaux {
 			if (count == 5)
 				break;
 		}
-
-		// Pour afficher une images
-		JOptionPane jOptionPane = new JOptionPane();
-		//javax.swing.JOptionPane.showMessageDialog(jOptionPane, mapBateauxListeIcons.get(tabBateaux.get(4)).get("cinq_Horizontal"));
-		javax.swing.JOptionPane.showMessageDialog(jOptionPane, imageBateau(PORTEAVIONS,VERTICAL,PART4,FANTOME));
-		//System.out.println(tabBateaux.get(4).equals(tabBateaux.get(Bateau.PORTEAVION)));
 	}
 
 	public static ImageIcon imageBateau(int idBateau,int position, int partie,int etat){
-		ImageIcon imageBateau=null;
+		ImageIcon imageBateau;
 		String chemin="";
 
 		switch (idBateau){
@@ -159,7 +150,6 @@ public class Bateaux {
 
 		return imageBateau;
 	}
-
 
 	public static void initTabBateaux() {
 

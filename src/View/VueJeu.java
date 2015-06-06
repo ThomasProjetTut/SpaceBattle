@@ -1,5 +1,6 @@
 package View;
 
+import Bateaux.Bateaux;
 import Model.Model;
 
 import javax.imageio.ImageIO;
@@ -79,6 +80,8 @@ public class VueJeu extends JFrame {
 
     // Les initialisations
     public void initAttribut(){
+        Bateaux.initTabBateaux();
+        Bateaux.initImagesBateaux();
 
         barreMenu = new JMenuBar();
         menu = new JMenu("Menu");
@@ -92,11 +95,7 @@ public class VueJeu extends JFrame {
         grilleJeu = new JButton[Model.getTaillePlateau()][Model.getTaillePlateau()];
         pteGrilleJeu = new JButton[Model.getTaillePlateau()][Model.getTaillePlateau()];
 
-        contreTorpilleurs = new JButton();
-        torpilleur = new JButton();
-        croiseur = new JButton();
-        sousMarin = new JButton();
-        porteAvion = new JButton();
+        initBateaux();
 
     }
 
@@ -131,11 +130,20 @@ public class VueJeu extends JFrame {
     }
 
     public void initBateaux(){
-            torpilleur = new JButton();
-            contreTorpilleurs = new JButton();
-            croiseur = new JButton();
-            sousMarin = new JButton();
-            porteAvion = new JButton();
+        contreTorpilleurs = new JButton();
+        contreTorpilleurs.setIcon(Bateaux.imageBateau(Bateaux.CONTRETORPILLEUR, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
+
+        torpilleur = new JButton();
+        torpilleur.setIcon(Bateaux.imageBateau(Bateaux.TORPILLEUR, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
+
+        croiseur = new JButton();
+        croiseur.setIcon(Bateaux.imageBateau(Bateaux.CROISEUR, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
+
+        sousMarin = new JButton();
+        sousMarin.setIcon(Bateaux.imageBateau(Bateaux.SOUSMARIN, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
+
+        porteAvion = new JButton();
+        porteAvion.setIcon(Bateaux.imageBateau(Bateaux.PORTEAVIONS, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
     }
 
     public void initPteGrille(){
@@ -230,17 +238,17 @@ public class VueJeu extends JFrame {
         panJeu.add(fond);
 
         // affichage bateaux sur le cote
-        panTorpilleur.add(torpilleur);
         panContreTorpilleur.add(contreTorpilleurs);
-        panCroiseur.add(croiseur);
+        panTorpilleur.add(torpilleur);
         panSousMarin.add(sousMarin);
+        panCroiseur.add(croiseur);
         panPorteAvion.add(porteAvion);
 
 
         panContreTorpilleur.setLayout(gbl_panel_1);
         panTorpilleur.setLayout(gbl_panel_1);
-        panCroiseur.setLayout(gbl_panel_1);
         panSousMarin.setLayout(gbl_panel_1);
+        panCroiseur.setLayout(gbl_panel_1);
         panPorteAvion.setLayout(gbl_panel_1);
         panPteGrille.setLayout(gbl_panel_1);
 
@@ -254,8 +262,8 @@ public class VueJeu extends JFrame {
             }
         }
 
-        bateauxAffiche.add(panTorpilleur);
         bateauxAffiche.add(panContreTorpilleur);
+        bateauxAffiche.add(panTorpilleur);
         bateauxAffiche.add(panSousMarin);
         bateauxAffiche.add(panCroiseur);
         bateauxAffiche.add(panPorteAvion);
@@ -301,7 +309,7 @@ public class VueJeu extends JFrame {
         panPrincipal.setLayout(new BoxLayout(panPrincipal, BoxLayout.Y_AXIS));
     }
 
-    //TO DO
+    //TODO
     public void aProposBox(){
         JOptionPane.showMessageDialog(this, " Hellow ! ");
     }
