@@ -13,13 +13,12 @@ import java.io.IOException;
 
 public class VueMenu extends JFrame{
 
-
+    private Tools tools;
     private JButton jouerS;
     private JButton jouerM;
     private JButton instruction;
     private JButton score;
     private JButton accueil;
-    private Font font,police,policeTitre;
     private JLabel titre;
 
     private boolean changerFenetre;
@@ -36,42 +35,16 @@ public class VueMenu extends JFrame{
         setIconImage(new ImageIcon("images/Autres/icone.png").getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
-    public static Font loadFont(String string) throws FontFormatException, IOException {
-        File fileFont = new File(string);
-        Font fontLoaded = Font.createFont(Font.TRUETYPE_FONT, fileFont);
-        return fontLoaded;
-    }
-
-//Les initialisations
+    //Les initialisations
     public void initAttribut(){
+        tools = new Tools();
         jouerS = new JButton("Jeu Solo");
         jouerM = new JButton("Jeu Multi");
         instruction = new JButton("Instructions");
         score = new JButton("Score");
         accueil = new JButton ("Menu");
-
-        try {
-            font = loadFont("font/Sailor-Stitch.ttf");
-        } catch (FontFormatException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
     }
-
-    public void changerFontButton(JButton bouton){
-        bouton.setOpaque(false);
-        bouton.setBorderPainted(false);
-        bouton.setContentAreaFilled(false);
-        bouton.setForeground(Color.white);
-        bouton.setFont(police);
-        bouton.setFocusPainted(false);
-    }
-
-// Creer les différents aspects de la fenetre
+    // Creer les diffÃ©rents aspects de la fenetre
     public void creerFenetreMenu(){
 
         JPanel panPrincipal = new JPanel();
@@ -94,10 +67,7 @@ public class VueMenu extends JFrame{
 
         JPanel fond = null;
         titre = new JLabel("Space Battle");
-        police = new Font(font.getName(),Font.TRUETYPE_FONT,14);
-        policeTitre = new Font(font.getName(),Font.TRUETYPE_FONT,30);
-        titre.setFont(policeTitre);
-        titre.setForeground(Color.white);
+        tools.changerFontJLabel(titre,30);
         try {
             fond = new JPanel() {
                 BufferedImage image = ImageIO.read(new File("images/Autres/imageMenu.jpg"));
@@ -120,10 +90,10 @@ public class VueMenu extends JFrame{
         panScore.add(score);
         panScore.setOpaque(false);
 
-        changerFontButton(instruction);
-        changerFontButton(jouerM);
-        changerFontButton(jouerS);
-        changerFontButton(score);
+        tools.changerFontButton(instruction,14);
+        tools.changerFontButton(jouerM,14);
+        tools.changerFontButton(jouerS,14);
+        tools.changerFontButton(score,14);
 
 
         panTitre.add(titre);
@@ -214,7 +184,7 @@ public class VueMenu extends JFrame{
     }
 
 
-// Les controlleurs
+    // Les controlleurs
     public void setMenuControler(ActionListener listener){
         jouerS.addActionListener(listener);
         jouerM.addActionListener(listener);
@@ -226,21 +196,21 @@ public class VueMenu extends JFrame{
     public boolean getChangerFenetre() {
         return changerFenetre;}
 
-	public JButton getJouerS() {
-		return jouerS;
-	}
+    public JButton getJouerS() {
+        return jouerS;
+    }
 
     public JButton getJouerM() {
         return jouerM;
     }
 
-	public JButton getInstruction() {
-		return instruction;
-	}
+    public JButton getInstruction() {
+        return instruction;
+    }
 
-	public JButton getScore() {
-		return score;
-	}
+    public JButton getScore() {
+        return score;
+    }
 
     public JButton getAccueil() {
         return accueil;
