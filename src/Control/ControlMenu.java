@@ -39,11 +39,29 @@ public class ControlMenu implements ActionListener {
 			vueParametre.setVisible(true);
 		}
 
-		if (source == vueMenu.getJouerM()) {
+		else if (source == vueMenu.getJouerM()) {
 			vueMenu.setVisible(false);
 			testconnection.start();
-			
+		}
+		else if (source == vueMenu.getInstruction()){
+			vueParametre.setVisible(false);
+			vueMenu.setVisible(false);
+			vueMenu.creerFenetreInstruction();
+			vueMenu.setVisible(true);
+		}
 
+		else if (source == vueMenu.getScore()){
+			vueParametre.setVisible(false);
+			vueMenu.setVisible(false);
+			vueMenu.creerFenetreScore();
+			vueMenu.setVisible(true);
+		}
+
+		else if (source == vueMenu.getAccueil()){
+			vueMenu.setVisible(false);
+			vueMenu.creerFenetreMenu();
+			vueMenu.setVisible(true);
 		}
 	}
 }
+
