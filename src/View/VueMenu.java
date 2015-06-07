@@ -68,7 +68,7 @@ public class VueMenu extends JFrame{
 
         JPanel fond = null;
         titre = new JLabel("Space Battle");
-        tools.changerFontJLabel(titre,30,Color.white);
+        tools.changerFontJLabel(titre,33,Color.white,tools.getFontMenu());
         try {
             fond = new JPanel() {
                 BufferedImage image = ImageIO.read(new File("images/Autres/imageMenu.jpg"));
@@ -91,10 +91,10 @@ public class VueMenu extends JFrame{
         panScore.add(score);
         panScore.setOpaque(false);
 
-        tools.changerFontButton(instruction,14,Color.white);
-        tools.changerFontButton(jouerM,14,Color.white);
-        tools.changerFontButton(jouerS,14,Color.white);
-        tools.changerFontButton(score,14,Color.white);
+        tools.changerFontButton(instruction,30,Color.white,tools.getFontTexte());
+        tools.changerFontButton(jouerM,30,Color.white,tools.getFontTexte());
+        tools.changerFontButton(jouerS,30,Color.white,tools.getFontTexte());
+        tools.changerFontButton(score,30,Color.white,tools.getFontTexte());
 
 
         panTitre.add(titre);

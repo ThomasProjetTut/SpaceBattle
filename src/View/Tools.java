@@ -12,10 +12,11 @@ import javax.swing.JLabel;
 import javax.swing.JRadioButton;
 
 public class Tools {
-    private Font font,police;
+    private Font fontMenu,police,fontTexte;
     public Tools(){
         try {
-            font = loadFont("font/Sailor-Stitch.ttf");
+            fontMenu = loadFont("font/Sailor-Stitch.ttf");
+            fontTexte = loadFont("font/homespun.ttf");
         } catch (FontFormatException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -30,7 +31,7 @@ public class Tools {
         return fontLoaded;
     }
 
-    public void changerFontButton(JButton bouton, int size, Color color){
+    public void changerFontButton(JButton bouton, int size, Color color ,Font font){
         police = font.deriveFont(Font.TRUETYPE_FONT, size);
         bouton.setOpaque(false);
         bouton.setBorderPainted(false);
@@ -39,13 +40,13 @@ public class Tools {
         bouton.setFont(police);
         bouton.setFocusPainted(false);
     }
-    public void changerFontJLabel(JLabel label,int size, Color color){
+    public void changerFontJLabel(JLabel label,int size, Color color ,Font font){
         police = font.deriveFont(Font.TRUETYPE_FONT, size);
         label.setForeground(color);
         label.setOpaque(false);
         label.setFont(police);
     }
-    public void changerFontJRadioButton(JRadioButton bouton, int size, Color color){
+    public void changerFontJRadioButton(JRadioButton bouton, int size, Color color ,Font font){
         police = font.deriveFont(Font.TRUETYPE_FONT, size);
         bouton.setForeground(color);
         bouton.setOpaque(false);
@@ -53,12 +54,20 @@ public class Tools {
         bouton.setContentAreaFilled(false);
         bouton.setFont(police);
     }
-    public void changerFontJCheckBox(JCheckBox checkbox, int size, Color color){
+    public void changerFontJCheckBox(JCheckBox checkbox, int size, Color color ,Font font){
         police = font.deriveFont(Font.TRUETYPE_FONT, size);
         checkbox.setForeground(color);
         checkbox.setBorderPainted(false);
         checkbox.setContentAreaFilled(false);
         checkbox.setOpaque(false);
         checkbox.setFont(police);
+    }
+
+    public Font getFontMenu() {
+        return fontMenu;
+    }
+
+    public Font getFontTexte() {
+        return fontTexte;
     }
 }
