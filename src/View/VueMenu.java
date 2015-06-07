@@ -3,7 +3,6 @@ package View;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 
-import Joueurs.Joueurs;
 import Model.Model;
 
 import java.awt.*;
@@ -14,7 +13,6 @@ import java.io.IOException;
 
 public class VueMenu extends JFrame{
 
-   private Model model;
 
     private JButton jouerS;
     private JButton jouerM;
@@ -26,8 +24,7 @@ public class VueMenu extends JFrame{
 
     private boolean changerFenetre;
 
-    public VueMenu(Model model){
-        this.model = model;
+    public VueMenu(){
 
         initAttribut();
         creerFenetreMenu();

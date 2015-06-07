@@ -22,8 +22,6 @@ public class Model {
     
     public static final int PAS_DE_BATEAU = 0;
     
-    public static final int NOMBRES_BATEAUX = 5;
-    
 	private static Joueurs joueur1;
     private static Joueurs joueur2;
     

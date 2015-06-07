@@ -1,9 +1,7 @@
 package Bateaux;
 
 import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Hashtable;
 import java.util.Map;
 
 import javax.swing.*;

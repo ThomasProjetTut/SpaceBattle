@@ -1,7 +1,5 @@
 package Joueurs;
 
-import java.util.HashMap;
-
 import Bateaux.Bateaux;
 import Model.Model;
 
@@ -55,10 +53,7 @@ public abstract class Joueurs {
 	// Return true si un bâteau est touché par le tir
 	public boolean estTouche(int x, int y) {
 
-		if (tabJoueur[x][y] > 0)
-			return true;
-		else
-			return false;
+		return tabJoueur[x][y] > 0;
 
 	}
 

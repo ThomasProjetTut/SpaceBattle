@@ -7,15 +7,10 @@ public class BatailleNavale {
 
     public static void main(String[] args) {
     	
-    	EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				Model model = new Model();
-				
-                @SuppressWarnings("unused")
-				ControlGroup controlGroup = new ControlGroup(model);
-                
-                
-			}
-		});
+    	EventQueue.invokeLater(() -> {
+            Model model = new Model();
+            ControlGroup controlGroup = new ControlGroup(model);
+
+        });
     }
 }

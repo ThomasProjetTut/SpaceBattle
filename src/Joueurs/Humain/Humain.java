@@ -15,10 +15,7 @@ public class Humain extends Joueurs {
 	
 	@Override
 	public boolean coupEstDisponible() {
-		if (nombreCoups > 0)
-			return true;
-		else 
-			return false;
+		return nombreCoups > 0;
 	}
 	
 	

@@ -25,10 +25,10 @@ public class IALevel4 extends IA {
         
         if (joueurAdverse.estTouche(point.x, point.y)) {
             joueurAdverse.updateTabJoueurTouche(point.x, point.y);
-            VueJeu.getChatTexte().append("Système IA: Coup réussi\n");
+            VueJeu.getChatTexte().append("SystÃ¨me IA: Coup rÃ©ussi\n");
         } else {
             nombreCoups--;
-            VueJeu.getChatTexte().append("Système IA: Coup raté\n");
+            VueJeu.getChatTexte().append("SystÃ¨me IA: Coup ratÃ©\n");
         }
 
     }

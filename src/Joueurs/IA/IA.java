@@ -12,10 +12,7 @@ public abstract class IA extends Joueurs {
 	
 	@Override
 	public boolean coupEstDisponible() {
-		if (nombreCoups > 0)
-			return true;
-		else 
-			return false;
+		return nombreCoups > 0;
 	}
 	
 	public IA() {
@@ -66,7 +63,7 @@ public abstract class IA extends Joueurs {
     
     public void placementIa(int[][] tabJoueur) {
         
-        int[] cible = new int[4];
+        int[] cible;
 
         for(int i = 1; i <= 5; i++){
 

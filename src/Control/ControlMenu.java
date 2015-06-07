@@ -12,14 +12,9 @@ public class ControlMenu implements ActionListener {
 
     private VueMenu vueMenu;
     private VueParametre vueParametre;
-    private VueJeu vueJeu;
-    private Model model;
-
-    public ControlMenu(Model model, VueJeu vueJeu, VueMenu vueMenu, VueParametre vueParametre){
+    public ControlMenu(VueMenu vueMenu, VueParametre vueParametre){
         this.vueMenu = vueMenu;
         this.vueParametre = vueParametre;
-        this.vueJeu = vueJeu;
-        this.model = model;
         vueMenu.setMenuControler(this);
     }
 

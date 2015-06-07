@@ -12,9 +12,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by Skygi_000 on 05/06/2015.
- */
 public class VueJeu extends JFrame {
 
     private JMenuBar barreMenu;
@@ -39,10 +36,7 @@ public class VueJeu extends JFrame {
 
     private JLabel chatNomJoueurInfo;
 
-    private Model model;
-
-    public VueJeu(Model model){
-        this.model = model;
+    public VueJeu(){
 
         initAttribut();
         creerFenetreJeu();

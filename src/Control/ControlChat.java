@@ -9,11 +9,9 @@ import java.awt.event.KeyListener;
 
 public class ControlChat implements KeyListener {
 
-    private Model model;
     private VueJeu vueJeu;
 
-    public ControlChat(Model model, VueJeu vueJeu) {
-        this.model = model;
+    public ControlChat(VueJeu vueJeu) {
         this.vueJeu = vueJeu;
         vueJeu.setChatControler(this);
     }
