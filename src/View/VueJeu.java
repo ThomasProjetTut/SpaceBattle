@@ -49,8 +49,8 @@ public class VueJeu extends JFrame {
         pack();
         setLocationRelativeTo(null);
         setResizable(false);
-        setTitle("Bataille Navale");
-        setIconImage(new ImageIcon("icone.png").getImage());
+        setTitle("Space Battle");
+        setIconImage(new ImageIcon("images/Autres/icone.png").getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     

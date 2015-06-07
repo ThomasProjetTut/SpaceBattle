@@ -34,9 +34,9 @@ public class VueMenu extends JFrame{
         pack();
         setLocationRelativeTo(null);
         setResizable(false);
-        setTitle("Bataille Navale");
+        setTitle("Space Battle");
         setSize(800, 600);
-        setIconImage(new ImageIcon("icone.png").getImage());
+        setIconImage(new ImageIcon("images/Autres/icone.png").getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setVisible(true);
     }
