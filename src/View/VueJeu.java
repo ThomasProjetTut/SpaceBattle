@@ -39,7 +39,7 @@ public class VueJeu extends JFrame {
     private JLabel chatNomJoueurInfo;
 
     private Model model;
-    String nomJoueur;
+    private String nomJoueur;
 
     public VueJeu(Model model){
 
@@ -378,6 +378,10 @@ public class VueJeu extends JFrame {
     public static JButton getGrilleJeu(int x, int y) {
         return grilleJeu[x][y];
     }
+    
+    public static JButton getPteGrilleJeu(int x, int y) {
+        return pteGrilleJeu[x][y];
+    }
 
     public JTextField getChatNomJoueur() {
         return chatNomJoueur;
@@ -409,5 +413,25 @@ public class VueJeu extends JFrame {
 
 	public static JButton[][] getGrilleJeu() {
 		return grilleJeu;
+	}
+
+	public JButton getContreTorpilleurs() {
+		return contreTorpilleurs;
+	}
+
+	public JButton getTorpilleur() {
+		return torpilleur;
+	}
+
+	public JButton getPorteAvion() {
+		return porteAvion;
+	}
+
+	public JButton getCroiseur() {
+		return croiseur;
+	}
+
+	public JButton getSousMarin() {
+		return sousMarin;
 	}
 }
