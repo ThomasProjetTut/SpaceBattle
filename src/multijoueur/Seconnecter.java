@@ -1,15 +1,15 @@
 package multijoueur;
 
-import java.lang.*;
-import java.util.*;
 import java.io.*;
 import java.awt.*;
 import java.awt.event.*;
-
 import javax.swing.*;
-
 import java.net.*;
 
+/**
+ * @author nicolas
+ *
+ */
 public class Seconnecter implements Runnable {
    // Connect status constants
    public final static int NULL = 0;
@@ -21,7 +21,7 @@ public class Seconnecter implements Runnable {
    // Other constants
    public final static String statusMessages[] = {
       " Error! Could not connect!", " Disconnected",
-      " Disconnecting...", " Connecting...", " Connected"
+      " Disconnecting...", " Connecting...", " Connected"	
    };
    public final static Seconnecter tcpObj = new Seconnecter();
    public final static String END_CHAT_SESSION =
@@ -55,6 +55,10 @@ public class Seconnecter implements Runnable {
    public static Socket socket = null;
    public static BufferedReader in = null;
    public static PrintWriter out = null;
+   
+   public Seconnecter(){
+	   
+   }
    
 
    /////////////////////////////////////////////////////////////////
@@ -187,7 +191,10 @@ public class Seconnecter implements Runnable {
    /////////////////////////////////////////////////////////////////
 
    // Initialize all the GUI components and display the frame
-   public static void initGUI() {
+   /**
+ * 
+ */
+public static void initGUI() {
       // Set up the status bar
       statusField = new JLabel();
       statusField.setText(statusMessages[DISCONNECTED]);
@@ -251,7 +258,7 @@ public class Seconnecter implements Runnable {
 
    // The thread-safe way to change the GUI components while
    // changing state
-   private static void changeStatusTS(int newConnectStatus, boolean noError) {
+   public static void changeStatusTS(int newConnectStatus, boolean noError) {
       // Change state if valid state
       if (newConnectStatus != NULL) {
          connectionStatus = newConnectStatus;
@@ -298,7 +305,7 @@ public class Seconnecter implements Runnable {
    /////////////////////////////////////////////////////////////////
 
    // Thread-safe way to append to the chat box
-   private static void appendToChatBox(String s) {
+   public static void appendToChatBox(String s) {
       synchronized (toAppend) {
          toAppend.append(s);
       }
@@ -307,16 +314,16 @@ public class Seconnecter implements Runnable {
    /////////////////////////////////////////////////////////////////
 
    // Add text to send-buffer
-   private static void sendString(String s) {
+  /* private static void sendString(String s) {
       synchronized (toSend) {
          toSend.append(s + "\n");
       }
    }
-
+*/
    /////////////////////////////////////////////////////////////////
 
    // Cleanup for disconnect
-   private static void cleanUp() {
+   public static void cleanUp() {
       try {
          if (hostServer != null) {
             hostServer.close();
@@ -427,12 +434,12 @@ public class Seconnecter implements Runnable {
    /////////////////////////////////////////////////////////////////
 
    // The main procedure
-   public static void main(String args[]) {
-      String s;
+  public static void main(String args[]) {
+     
 
       initGUI();
 
-      while (true) {
+    /*  while (true) {
          try { // Poll every ~10 ms
             Thread.sleep(10);
          }
@@ -507,7 +514,7 @@ public class Seconnecter implements Runnable {
 
          default: break; // do nothing
          }
-      }
+      }*/
    }
 }
 
