@@ -164,6 +164,14 @@ public class VueJeu extends JFrame {
         }
     }
 
+    public void afficheGrille (){
+
+    }
+
+    public void affichePetiteGrille(){
+        
+    }
+
 
     public void creerFenetreJeu(){
 
