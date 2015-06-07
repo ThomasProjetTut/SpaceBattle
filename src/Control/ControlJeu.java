@@ -34,9 +34,30 @@ public class ControlJeu implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent source) {
 
-		
-		
 		Object sources = source.getSource();
+		
+		if (sources == vueJeu.getSousMarin()) {
+			bateau = vueJeu.getSousMarin();
+			return;
+		}
+		else if (sources == vueJeu.getContreTorpilleurs()) {
+			bateau = vueJeu.getContreTorpilleurs();
+			return;
+		}
+		else if (sources == vueJeu.getPorteAvion()) {
+			bateau = vueJeu.getPorteAvion();
+			return;
+		}
+		else if (sources == vueJeu.getTorpilleur()) {
+			bateau = vueJeu.getTorpilleur();
+			return;
+		}
+		else if (sources == vueJeu.getCroiseur()) {
+			bateau = vueJeu.getCroiseur();
+			return;
+		}
+		
+		
 		
 		for (int i = 0; i < Model.getTaillePlateau(); i++){
             for (int j = 0; j < Model.getTaillePlateau(); j++){
@@ -60,6 +81,16 @@ public class ControlJeu implements ActionListener {
         			}
         			
         	    }
+            	else if (sources == VueJeu.getPteGrilleJeu(i, j)){
+            		
+            		JButton btn = (JButton) source.getSource();
+            		
+            		int[] cible = new int[4];
+            		
+            		cible[0] = Character.getNumericValue(btn.getActionCommand().charAt(0));
+            		cible[1] = Character.getNumericValue(btn.getActionCommand().charAt(1));
+            		
+            	}
             }
         }
 		
