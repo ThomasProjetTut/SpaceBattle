@@ -5,9 +5,6 @@ import Model.Model;
 
 import java.awt.event.ActionListener;
 
-/**
- * Created by Zous on 06/06/2015.
- */
 public class VueParametre extends JFrame {
 
     protected Model model;
