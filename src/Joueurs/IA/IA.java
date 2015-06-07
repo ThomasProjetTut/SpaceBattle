@@ -7,7 +7,9 @@ import Joueurs.Joueurs;
 import Model.Model;
 
 public abstract class IA extends Joueurs {
-	
+
+
+    //BOOOUUUUUH !
 	@Override
 	public boolean coupEstDisponible() {
 		return nombreCoups > 0;
