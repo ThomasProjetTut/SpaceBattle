@@ -33,6 +33,7 @@ public class ControlMenu implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 
+		//test
 		Object source = e.getSource();
 
 		if (source == vueMenu.getJouerS()) {
