@@ -164,12 +164,34 @@ public class VueJeu extends JFrame {
         }
     }
 
-    public void afficheGrille (){
+    public JPanel afficheGrille (JPanel panGrille){
+        for (int i = 0; i < grilleJeu.length; i++){
+            for (int j = 0; j < grilleJeu.length; j++){
 
+                GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
+                gbc_btnNewButton.gridx = i;
+                gbc_btnNewButton.gridy = j;
+                panGrille.add(grilleJeu[i][j], gbc_btnNewButton);
+                grilleJeu[i][j].setOpaque(false);
+            }
+        }
+        panGrille.setOpaque(false);
+
+        return panGrille;
     }
 
-    public void affichePetiteGrille(){
-        
+    public JPanel affichePetiteGrille(JPanel panPteGrille){
+        for (int i = 0; i < pteGrilleJeu.length; i++){
+            for (int j = 0; j < pteGrilleJeu.length; j++){
+
+                GridBagConstraints gbc_btnNewButton2 = new GridBagConstraints();
+                gbc_btnNewButton2.gridx = i;
+                gbc_btnNewButton2.gridy = j;
+                panPteGrille.add(pteGrilleJeu[i][j], gbc_btnNewButton2);
+            }
+        }
+
+        return panPteGrille;
     }
 
 
@@ -236,17 +258,9 @@ public class VueJeu extends JFrame {
             e.printStackTrace();
         }
 
-        for (int i = 0; i < grilleJeu.length; i++){
-            for (int j = 0; j < grilleJeu.length; j++){
+        panGrille = afficheGrille(panGrille);
 
-                GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-                gbc_btnNewButton.gridx = i;
-                gbc_btnNewButton.gridy = j;
-                panGrille.add(grilleJeu[i][j], gbc_btnNewButton);
-                grilleJeu[i][j].setOpaque(false);
-                panGrille.setOpaque(false);
-            }
-        }
+
         fond.add(panGrille);
         panJeu.add(fond);
 
@@ -265,15 +279,7 @@ public class VueJeu extends JFrame {
         panPorteAvion.setLayout(gbl_panel_1);
         panPteGrille.setLayout(gbl_panel_1);
 
-        for (int i = 0; i < pteGrilleJeu.length; i++){
-            for (int j = 0; j < pteGrilleJeu.length; j++){
-
-                GridBagConstraints gbc_btnNewButton2 = new GridBagConstraints();
-                gbc_btnNewButton2.gridx = i;
-                gbc_btnNewButton2.gridy = j;
-                panPteGrille.add(pteGrilleJeu[i][j], gbc_btnNewButton2);
-            }
-        }
+        panPteGrille = affichePetiteGrille(panPteGrille);
 
         bateauxAffiche.add(panContreTorpilleur);
         bateauxAffiche.add(panTorpilleur);
