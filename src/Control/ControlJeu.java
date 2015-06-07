@@ -81,6 +81,9 @@ public class ControlJeu implements ActionListener {
         	    }
             	else if (sources == VueJeu.getPteGrilleJeu(i, j)){
                        		
+            		if (bateau == null)
+            			return;
+            		
             		int[] cible = new int[4];
             		
             		int count = 1;
@@ -102,6 +105,7 @@ public class ControlJeu implements ActionListener {
 	            				Model.getJoueur(1).setValeurTabJoueur(a, j, idBateau);
 	            				count++;
 	            			}
+	            			bateau.setEnabled(false);
             			}
             			else {
             				for (int a = j ; a < j + nbCase ; a++) {
@@ -109,8 +113,13 @@ public class ControlJeu implements ActionListener {
 	            				Model.getJoueur(1).setValeurTabJoueur(i, a, idBateau);
 	            				count++;
 	            			}
+            				bateau.setEnabled(false);
             			}
             		}
+            		
+            		bateau = null;
+            		
+            		return;
             		
             	}
             }

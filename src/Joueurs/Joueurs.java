@@ -115,16 +115,24 @@ public abstract class Joueurs {
 		int direction = cible[3];
 
 		switch (direction) {
-			case 0 :
-				for (int i = x; i < x + taille; i++)
-					if (tabJoueur[i][y] > 0 && x + taille < Model.getTaillePlateau())
+			case Bateaux.HORIZONTAL :
+				for (int i = x; i < x + taille; i++) {
+					if (x + taille > Model.getTaillePlateau())
 						return false;
+					
+					if (tabJoueur[i][y] > 0)
+						return false;
+				}
 				break;
 
-			case 1 :
-				for (int j = y; j < y + taille; j++)
-					if (tabJoueur[x][j] > 0 && y + taille < Model.getTaillePlateau())
+			case Bateaux.VERTICAL :
+				for (int j = y; j < y + taille; j++) {
+					if (y + taille > Model.getTaillePlateau())
 						return false;
+					
+					if (tabJoueur[x][j] > 0)
+						return false;
+				}
 		}
 
 		return true;

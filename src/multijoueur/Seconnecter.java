@@ -251,6 +251,7 @@ public static void initGUI() {
       mainFrame.setContentPane(mainPane);
       mainFrame.setSize(mainFrame.getPreferredSize());
       mainFrame.setLocation(200, 200);
+      mainFrame.setResizable(false);
       mainFrame.pack();
       mainFrame.setVisible(true);
       
