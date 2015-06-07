@@ -45,6 +45,7 @@ public class ControlJeu implements ActionListener {
         				Joueurs verif = model.partieEstFini();
         	    		
         	    		if (verif == null)
+							model.getJoueur1().setNomJoueur(vueJeu.getChatNomJoueur().getText());
         	    			model.jouer(source);
         				
         				vueJeu.initGrilleTexte();

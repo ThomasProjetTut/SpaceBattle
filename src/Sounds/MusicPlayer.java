@@ -1,6 +1,5 @@
 package Sounds;
 
-
 import java.util.Random;
 
 public class MusicPlayer extends Thread{

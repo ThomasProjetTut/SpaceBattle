@@ -4,8 +4,6 @@ import Bateaux.Bateaux;
 import Model.Model;
 
 public abstract class Joueurs {
-
-	protected String nomJoueur;
 	
 	public static final int HUMAIN = 0;
 	public static final int IA_LEVEL_1 = 1;
@@ -13,17 +11,27 @@ public abstract class Joueurs {
 	public static final int IA_LEVEL_3 = 3;
 	public static final int IA_LEVEL_4 = 4;
 
+	//Nom du joueur
+	protected String nomJoueur;
 
 	// Nombres de coups max par joueurs par tours
-	protected int nombreCoups = Model.getNombresCoupsDepart();
+	protected int nombreCoups;
 
 	// Vie total = nombre de cases de tous les bâteaux cumulés
-	protected int vieJoueur = Model.getVieJoueurDepart();
+	protected int vieJoueur;
 
 	//ID du joueur | 0 = humain | 1 = IA
 	protected int typeId;
 
-	protected int tabJoueur[][] = new int[Model.getTaillePlateau()][Model.getTaillePlateau()];
+	protected int[][] tabJoueur;
+
+	public Joueurs(){
+		nombreCoups = Model.getNombresCoupsDepart();
+		vieJoueur = Model.getVieJoueurDepart();
+		tabJoueur= new int[Model.getTaillePlateau()][Model.getTaillePlateau()];
+		nomJoueur = "";
+	}
+
 
 	public abstract void initTableauxZero();
 

@@ -1,6 +1,8 @@
 package View;
 
 import Bateaux.Bateaux;
+import Joueurs.Humain.Humain;
+import Joueurs.Joueurs;
 import Model.Model;
 
 import javax.imageio.ImageIO;
@@ -36,8 +38,12 @@ public class VueJeu extends JFrame {
 
     private JLabel chatNomJoueurInfo;
 
-    public VueJeu(){
+    private Model model;
+    String nomJoueur;
 
+    public VueJeu(Model model){
+
+        this.model = model;
         initAttribut();
         creerFenetreJeu();
         pack();
@@ -94,7 +100,6 @@ public class VueJeu extends JFrame {
     }
 
     public void initChat(){
-
         chatTexte = new JTextArea(10, 20);
         chatTexte.setLineWrap(true);
         chatTexte.setEditable(false);
@@ -106,8 +111,9 @@ public class VueJeu extends JFrame {
         chatNomJoueur = new JTextField();
         chatNomJoueur.setHorizontalAlignment(SwingConstants.CENTER);
         chatNomJoueur.setEnabled(true);
-        chatNomJoueur.setText("Joueur 1");
+        chatNomJoueur.setText("Joueur1");
         chatNomJoueur.setColumns(8);
+
     }
 
     public void initGrille(){

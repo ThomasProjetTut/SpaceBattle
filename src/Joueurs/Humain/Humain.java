@@ -7,7 +7,7 @@ import View.VueJeu;
 public class Humain extends Joueurs {
 	
 	public Humain() {
-		
+		super();
 		nomJoueur = "HUMAIN";
 		typeId = HUMAIN;
 		
@@ -36,10 +36,10 @@ public class Humain extends Joueurs {
 
         if (joueurAdverse.estTouche(x, y)) {
             joueurAdverse.updateTabJoueurTouche(x, y);
-            VueJeu.getChatTexte().append("Système Humain: Coup réussi\n");
+            VueJeu.getChatTexte().append(nomJoueur+" : Coup rÃ©ussi\n");
         } else {
             nombreCoups--;
-            VueJeu.getChatTexte().append("Système Humain: Coup raté\n");
+            VueJeu.getChatTexte().append(nomJoueur+" : Coup ratÃ©\n");
         }
         
     }
@@ -52,6 +52,10 @@ public class Humain extends Joueurs {
  	    		tabJoueur[i][j] = Model.PAS_DE_BATEAU;
  	    	}
     	 }
+	}
+
+	public void setNomJoueur(String nomJoueur) {
+		this.nomJoueur = nomJoueur;
 	}
 
 }

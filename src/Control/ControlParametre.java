@@ -1,6 +1,5 @@
 package Control;
 
-import Sounds.MusicPlayer;
 import View.VueJeu;
 import View.VueParametre;
 import View.VueMenu;
@@ -9,16 +8,13 @@ import Joueurs.Joueurs;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-/**
- * Created by Zous on 06/06/2015.
- */
+
 public class ControlParametre implements ActionListener{
 
     private VueParametre vueParametre;
     private VueJeu vueJeu;
     private VueMenu vueMenu;
     private Model model;
-    private MusicPlayer musicPlayer;
 
     public ControlParametre(Model model, VueJeu vueJeu, VueMenu vueMenu, VueParametre vueParametre){
 
@@ -27,7 +23,6 @@ public class ControlParametre implements ActionListener{
         this.vueJeu = vueJeu;
         this.model = model;
         vueParametre.setControlParametre(this);
-        musicPlayer = new MusicPlayer();
     }
 
     @Override
@@ -43,6 +38,7 @@ public class ControlParametre implements ActionListener{
             vueParametre.setVisible(false);
             model.setIsGameActive(true);
             vueJeu.setVisible(true);
+
         }
         else if (source == vueParametre.getAnnuler()){
             vueParametre.setVisible(false);
@@ -61,9 +57,6 @@ public class ControlParametre implements ActionListener{
         }
         else if (source == vueParametre.getCheckBoxBonus()){
             model.setIsBonusActive(true);
-        }
-        if(vueJeu.isVisible()){
-        	musicPlayer.start();
         }
 
     }

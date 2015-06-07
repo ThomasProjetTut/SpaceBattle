@@ -11,9 +11,9 @@ public class IALevel4 extends IA {
 	private int[][] tabJoueurAdverse;
 	
 	public IALevel4(int[][] tabJoueurAdverse) {
-
+        super();
 		this.tabJoueurAdverse = tabJoueurAdverse;
-		nomJoueur = "IA_Level_4";
+		nomJoueur = "Dieu";
 		typeId = IA_LEVEL_4;
 	}
 	
@@ -26,10 +26,10 @@ public class IALevel4 extends IA {
         
         if (joueurAdverse.estTouche(point.x, point.y)) {
             joueurAdverse.updateTabJoueurTouche(point.x, point.y);
-            VueJeu.getChatTexte().append("Système IA: Coup réussi\n");
+            VueJeu.getChatTexte().append(nomJoueur+" : Coup réussi\n");
         } else {
             nombreCoups--;
-            VueJeu.getChatTexte().append("Système IA: Coup raté\n");
+            VueJeu.getChatTexte().append(nomJoueur+" : Coup raté\n");
         }
 
     }

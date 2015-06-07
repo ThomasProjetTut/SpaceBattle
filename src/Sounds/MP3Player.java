@@ -32,16 +32,6 @@ public class MP3Player {
         }
     }
 
-    public void stop(){
-        if (player != null) {
-            try {
-                player = new Player(null);
-            } catch (JavaLayerException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
     class PlayerThread extends Thread {
         public void run() {
             try {

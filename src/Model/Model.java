@@ -126,7 +126,7 @@ public class Model {
 		int x = Character.getNumericValue(btn.getActionCommand().charAt(0));
 		int y = Character.getNumericValue(btn.getActionCommand().charAt(1));
 
-		System.out.println("Coordonnées : "+x+" | "+y+"\n");
+		System.out.println("CoordonnÃ©es : "+x+" | "+y+"\n");
 		
 		Joueurs verif;
 		
@@ -139,7 +139,7 @@ public class Model {
     			return;
     		else {
     			if (verif != null) {
-    				javax.swing.JOptionPane.showMessageDialog(null,verif.getNomJoueur()+" a gagné la partie !");
+    				javax.swing.JOptionPane.showMessageDialog(null,verif.getNomJoueur()+" a gagnÃ© la partie !");
     				return;
     			}
     		}
@@ -152,7 +152,7 @@ public class Model {
     			verif = partieEstFini();
 	    		
 	    		if (verif != null) {
-	    			javax.swing.JOptionPane.showMessageDialog(null,verif.getNomJoueur()+" a gagné la partie !");
+	    			javax.swing.JOptionPane.showMessageDialog(null,verif.getNomJoueur()+" a gagnÃ© la partie !");
 	    			break;
 	    		}
 	    		
@@ -164,7 +164,7 @@ public class Model {
     		verif = partieEstFini();
     		
     		if (verif != null)
-    			javax.swing.JOptionPane.showMessageDialog(null,verif.getNomJoueur()+" a gagné la partie !");
+    			javax.swing.JOptionPane.showMessageDialog(null,verif.getNomJoueur()+" a gagnÃ© la partie !");
     	}
     		
     	joueur1.reiniNombresCoups();
@@ -212,5 +212,13 @@ public class Model {
 
 	public static int getVieJoueurDepart() {
 		return VIE_JOUEUR_DEPART;
+	}
+
+	public static Joueurs getJoueur1() {
+		return joueur1;
+	}
+
+	public static Joueurs getJoueur2() {
+		return joueur2;
 	}
 }

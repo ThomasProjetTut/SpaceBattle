@@ -1,7 +1,6 @@
 package Control;
 
 import View.VueJeu;
-import Model.Model;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -25,7 +24,6 @@ public class ControlChat implements KeyListener {
             	vueJeu.getChatLigne().setText("");
             }
         }
-
     }
 
     @Override

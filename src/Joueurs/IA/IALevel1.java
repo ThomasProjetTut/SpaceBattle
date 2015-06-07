@@ -10,7 +10,8 @@ import View.VueJeu;
 public class IALevel1 extends IA {
 	
 	public IALevel1() {
-		nomJoueur = "IA_Level_1";
+        super();
+		nomJoueur = "Novice";
 		typeId = IA_LEVEL_1;
 	}
 	
@@ -23,10 +24,10 @@ public class IALevel1 extends IA {
         
         if (joueurAdverse.estTouche(point.x, point.y)) {
             joueurAdverse.updateTabJoueurTouche(point.x, point.y);
-            VueJeu.getChatTexte().append("Système IA: Coup réussi\n");
+            VueJeu.getChatTexte().append(nomJoueur+" : Coup réussi\n");
         } else {
             nombreCoups--;
-            VueJeu.getChatTexte().append("Système IA: Coup raté\n");
+            VueJeu.getChatTexte().append(nomJoueur+" : Coup raté\n");
         }
 
     }
