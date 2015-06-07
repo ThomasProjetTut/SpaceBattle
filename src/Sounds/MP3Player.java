@@ -26,15 +26,6 @@ public class MP3Player {
             player = new Player(is);
             PlayerThread pt = new PlayerThread();
             pt.start();
-            while (!player.isComplete()) {
-                int position = player.getPosition();
-                System.out.println("Position: " + position/1000);
-                try {
-                    Thread.sleep(1000);
-                } catch (Exception ee) {
-                    ee.printStackTrace();
-                }
-            }
         } catch (Exception e) {
             e.printStackTrace();
         }
