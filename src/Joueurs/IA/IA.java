@@ -58,7 +58,6 @@ public abstract class IA extends Joueurs {
         for(int i = 1; i <= 5; i++){
 
             do {
-            	System.out.println("ff");
                 cible = generationCoordonnee(i);
             } while (!validationCoup(cible, tabJoueur));
 
