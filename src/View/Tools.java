@@ -30,30 +30,34 @@ public class Tools {
         return fontLoaded;
     }
 
-    public void changerFontButton(JButton bouton, int size){
+    public void changerFontButton(JButton bouton, int size, Color color){
         police = font.deriveFont(Font.TRUETYPE_FONT, size);
         bouton.setOpaque(false);
         bouton.setBorderPainted(false);
         bouton.setContentAreaFilled(false);
-        bouton.setForeground(Color.white);
+        bouton.setForeground(color);
         bouton.setFont(police);
         bouton.setFocusPainted(false);
     }
-    public void changerFontJLabel(JLabel label,int size){
+    public void changerFontJLabel(JLabel label,int size, Color color){
         police = font.deriveFont(Font.TRUETYPE_FONT, size);
-        label.setForeground(Color.white);
+        label.setForeground(color);
         label.setOpaque(false);
         label.setFont(police);
     }
-    public void changerFontJRadioButton(JRadioButton bouton, int size){
+    public void changerFontJRadioButton(JRadioButton bouton, int size, Color color){
         police = font.deriveFont(Font.TRUETYPE_FONT, size);
-        bouton.setForeground(Color.white);
+        bouton.setForeground(color);
         bouton.setOpaque(false);
+        bouton.setBorderPainted(false);
+        bouton.setContentAreaFilled(false);
         bouton.setFont(police);
     }
-    public void changerFontJCheckBox(JCheckBox checkbox, int size){
+    public void changerFontJCheckBox(JCheckBox checkbox, int size, Color color){
         police = font.deriveFont(Font.TRUETYPE_FONT, size);
-        checkbox.setForeground(Color.white);
+        checkbox.setForeground(color);
+        checkbox.setBorderPainted(false);
+        checkbox.setContentAreaFilled(false);
         checkbox.setOpaque(false);
         checkbox.setFont(police);
     }

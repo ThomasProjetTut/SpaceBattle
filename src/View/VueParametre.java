@@ -5,8 +5,7 @@ import javax.swing.*;
 
 import Model.Model;
 
-import java.awt.BorderLayout;
-import java.awt.Graphics;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -39,8 +38,7 @@ public class VueParametre extends JFrame {
 
         initAttribut();
         affichage();
-        //pack();
-        setSize(400, 300);
+        setSize(600, 400);
 
         setLocationRelativeTo(null);                   // Place la fenetre au milieu de l'ecran
         setResizable(false);
@@ -88,11 +86,11 @@ public class VueParametre extends JFrame {
         // image de fond
         try {
             panGlobal = new JPanel() {
-                BufferedImage image = ImageIO.read(new File("images/Autres/imageMenu.jpg"));
+                BufferedImage image = ImageIO.read(new File("images/Autres/fondText.jpg"));
 
                 public void paintComponent(Graphics g) {
                     super.paintComponent(g);
-                    g.drawImage(image, 0, 0, 400, 300, this);
+                    g.drawImage(image, 0, 0, 600, 400, this);
                 }
             };
         } catch (IOException e) {
@@ -113,15 +111,15 @@ public class VueParametre extends JFrame {
         panButton.setOpaque(false);
 
         //changement de la police
-        tools.changerFontJLabel(titre,15);
-        tools.changerFontJLabel(IA,11);
-        tools.changerFontButton(valider,10);
-        tools.changerFontButton(annuler,10);
-        tools.changerFontJRadioButton(IA1, 10);
-        tools.changerFontJRadioButton(IA2, 10);
-        tools.changerFontJRadioButton(IA3, 10);
-        tools.changerFontJRadioButton(IA4, 10);
-        tools.changerFontJCheckBox(checkBoxBonus, 10);
+        tools.changerFontJLabel(titre,20, Color.white);
+        tools.changerFontJLabel(IA,17, Color.white);
+        tools.changerFontButton(valider,15, Color.white);
+        tools.changerFontButton(annuler,15, Color.white);
+        tools.changerFontJRadioButton(IA1, 15, Color.white);
+        tools.changerFontJRadioButton(IA2, 15, Color.white);
+        tools.changerFontJRadioButton(IA3, 15, Color.white);
+        tools.changerFontJRadioButton(IA4, 15, Color.white);
+        tools.changerFontJCheckBox(checkBoxBonus, 15, Color.white);
 
         panTitre.add(titre);
         panCheck.add(checkBoxBonus);
@@ -141,11 +139,12 @@ public class VueParametre extends JFrame {
         panButton.setLayout(new BoxLayout(panButton, BoxLayout.X_AXIS));
 
         panMenu.add(panGButton);
-        panMenu.add(panButton);
+        //panMenu.add(panButton);
 
         panPrincipal.add(panTitre);
         panPrincipal.add(panIA);
         panPrincipal.add(panMenu);
+        panPrincipal.add(panButton);
         panPrincipal.setLayout(new BoxLayout(panPrincipal, BoxLayout.Y_AXIS));
 
         panGlobal.setLayout(new BoxLayout(panGlobal, BoxLayout.Y_AXIS));
