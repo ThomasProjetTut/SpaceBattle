@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/View/VueParametre.java" line="93" />
-    <bookmark url="file://$PROJECT_DIR$/src/View/VueParametre.java" line="95" />
+    <bookmark url="file://$PROJECT_DIR$/src/View/VueParametre.java" line="96" />
+    <bookmark url="file://$PROJECT_DIR$/src/View/VueParametre.java" line="98" />
     <bookmark url="file://$PROJECT_DIR$/src/View/VueMenu.java" line="39" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58d0859a-f8e0-45a1-af2f-35b98f4c033b" name="Default" comment="Je vous sodomise tous avec vos commites de merde !!!!&#10;">
+    <list default="true" id="58d0859a-f8e0-45a1-af2f-35b98f4c033b" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/ControlMenu.java" afterPath="$PROJECT_DIR$/src/Control/ControlMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BatailleNavale.iws" />
@@ -30,13 +31,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="VueParametre.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VueParametre.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/VueParametre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.04136253">
-              <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="143" column="32" selection-start-line="143" selection-start-column="32" selection-end-line="143" selection-end-column="32" />
               <folding>
                 <element signature="method#setControlParametre#0;class#VueParametre#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ControlMenu.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/Control/ControlMenu.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.23114355">
+              <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+              <folding>
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -142,10 +155,10 @@
         <option value="$PROJECT_DIR$/src/Joueurs/Humain/Humain.java" />
         <option value="$PROJECT_DIR$/src/Joueurs/IA/IALevel4.java" />
         <option value="$PROJECT_DIR$/src/Joueurs/IA/IALevel1.java" />
-        <option value="$PROJECT_DIR$/src/Control/ControlMenu.java" />
         <option value="$PROJECT_DIR$/src/View/Tools.java" />
         <option value="$PROJECT_DIR$/src/View/VueMenu.java" />
         <option value="$PROJECT_DIR$/src/View/VueParametre.java" />
+        <option value="$PROJECT_DIR$/src/Control/ControlMenu.java" />
       </list>
     </option>
   </component>
@@ -733,7 +746,7 @@
       <workItem from="1433692525058" duration="847000" />
       <workItem from="1433693539518" duration="1461000" />
       <workItem from="1433696579129" duration="382000" />
-      <workItem from="1433697055718" duration="259000" />
+      <workItem from="1433697055718" duration="599000" />
     </task>
     <task id="LOCAL-00001" summary="Test sur mon portable">
       <created>1433664291883</created>
@@ -795,15 +808,27 @@
       <option name="project" value="LOCAL" />
       <updated>1433694941251</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Je vous sodomise tous avec vos commites de merde !!!!&#10;">
+      <created>1433697338813</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1433697338813</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Je vous sodomise tous avec vos commites de merde !!!!&#10;">
+      <created>1433697405339</created>
+      <option name="number" value="00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1433697405339</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="15387000" />
+    <option name="totallyTimeSpent" value="15727000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1189,16 +1214,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Control/ControlMenu.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="37" selection-start-line="64" selection-start-column="37" selection-end-line="64" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Control/ControlParametre.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1255,10 +1270,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/VueParametre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.04136253">
-          <caret line="122" column="0" selection-start-line="122" selection-start-column="0" selection-end-line="122" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="143" column="32" selection-start-line="143" selection-start-column="32" selection-end-line="143" selection-end-column="32" />
           <folding>
             <element signature="method#setControlParametre#0;class#VueParametre#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Control/ControlMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.23114355">
+          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

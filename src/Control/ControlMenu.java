@@ -41,7 +41,7 @@ public class ControlMenu implements ActionListener {
 		}
 
 		else if (source == vueMenu.getJouerM()) {
-			vueMenu.setVisible(false);
+
 			vueParametre.setVisible(false);
 			testconnection.start();
 		}
