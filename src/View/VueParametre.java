@@ -44,8 +44,8 @@ public class VueParametre extends JFrame {
 
     public void initAttribut(){
 
-        titre = new JLabel("Paramétrer la partie");
-        IA = new JLabel("Choisir le niveau de difficulté :");
+        titre = new JLabel("ParamÃ¨trer la partie");
+        IA = new JLabel("Choisir le niveau de difficultÃ© :");
         IA1 = new JRadioButton("Ballade de plaisance", true);
         IA2 = new JRadioButton("Survie dans l'espace");
         IA3 = new JRadioButton("Guerre interstellaire");
