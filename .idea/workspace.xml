@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58d0859a-f8e0-45a1-af2f-35b98f4c033b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/Tools.java" afterPath="$PROJECT_DIR$/src/View/Tools.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/VueMenu.java" afterPath="$PROJECT_DIR$/src/View/VueMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/VueParametre.java" afterPath="$PROJECT_DIR$/src/View/VueParametre.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/font/homespun.ttf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BatailleNavale.iws" />
@@ -86,8 +84,8 @@
       <file leaf-file-name="VueMenu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/VueMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.45742092">
-              <caret line="96" column="75" selection-start-line="96" selection-start-column="75" selection-end-line="96" selection-end-column="75" />
+            <state vertical-scroll-proportion="0.2919708">
+              <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -895,7 +893,7 @@
       <workItem from="1433682994074" duration="6572000" />
       <workItem from="1433691646113" duration="636000" />
       <workItem from="1433692525058" duration="847000" />
-      <workItem from="1433693539518" duration="1334000" />
+      <workItem from="1433693539518" duration="1461000" />
     </task>
     <task id="LOCAL-00001" summary="Test sur mon portable">
       <created>1433664291883</created>
@@ -951,11 +949,17 @@
       <option name="project" value="LOCAL" />
       <updated>1433693754206</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="VueParametre 100%&#10;VueMenu 100%">
+      <created>1433694941251</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1433694941251</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="14619000" />
+    <option name="totallyTimeSpent" value="14746000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1027,7 +1031,8 @@
     <MESSAGE value="UTF 8 !!" />
     <MESSAGE value="test" />
     <MESSAGE value="La vue menu et vue parametre change" />
-    <option name="LAST_COMMIT_MESSAGE" value="La vue menu et vue parametre change" />
+    <MESSAGE value="VueParametre 100%&#10;VueMenu 100%" />
+    <option name="LAST_COMMIT_MESSAGE" value="VueParametre 100%&#10;VueMenu 100%" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1424,8 +1429,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/VueMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.45742092">
-          <caret line="96" column="75" selection-start-line="96" selection-start-column="75" selection-end-line="96" selection-end-column="75" />
+        <state vertical-scroll-proportion="0.2919708">
+          <caret line="92" column="0" selection-start-line="92" selection-start-column="0" selection-end-line="92" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
