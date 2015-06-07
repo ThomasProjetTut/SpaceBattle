@@ -38,7 +38,6 @@ public class VueMenu extends JFrame{
         setSize(800, 600);
         setIconImage(new ImageIcon("images/Autres/icone.png").getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setVisible(true);
     }
 
     public static Font loadFont(String string) throws FontFormatException, IOException {

@@ -35,8 +35,6 @@ public class ControlGroup {
 		controlChat = new ControlChat(model, vueJeu);
 		controlParametre  = new ControlParametre(model, vueJeu, vueMenu, vueParametre);
 		
-		vueJeu.setVisible(false);
-		vueParametre.setVisible(false);
 		vueMenu.setVisible(true);
 	}
 }

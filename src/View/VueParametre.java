@@ -39,9 +39,7 @@ public class VueParametre extends JFrame {
 
         setIconImage(new ImageIcon("images/Autres/icone.png").getImage());//Icone de la fenetre
         setTitle("Space Battle");              // Titre de la fenetre
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);// Gestion de la fermeture
-
-        setVisible(true);
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
     }
 
     public void initAttribut(){
