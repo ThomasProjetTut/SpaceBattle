@@ -1,5 +1,6 @@
 package Control;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -39,7 +40,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 		
 		JButton btn = (JButton) event.getSource();
 		
-		int x = Character.getNumericValue(btn.getActionCommand().charAt(0));;
+		int x = Character.getNumericValue(btn.getActionCommand().charAt(0));
 		int y = Character.getNumericValue(btn.getActionCommand().charAt(1));
 		
 		int idBateau = Model.getJoueur(1).getTabJoueur()[x][y];
@@ -62,9 +63,49 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	}
 	
 	@Override
+	public void mouseEntered(MouseEvent event){
+		
+		if (bateau == null)
+			return;
+		
+		vueJeu.repaintFantomeBateau();
+
+		JButton btn = (JButton) event.getSource();
+		
+		int x = Character.getNumericValue(btn.getActionCommand().charAt(0));;
+		int y = Character.getNumericValue(btn.getActionCommand().charAt(1));
+		
+		int nbCase = Character.getNumericValue(bateau.getActionCommand().charAt(0));
+		int idBateau = Character.getNumericValue(bateau.getActionCommand().charAt(1));
+		
+		int count = 1;
+		
+		if (sensBateau == Bateaux.HORIZONTAL) {
+			
+			for (int a = x ; a < x + nbCase ; a++) {
+				if (a < Model.getTaillePlateau())
+					if (Model.getJoueur(1).getTabJoueur()[a][y] == 0)
+						VueJeu.getPteGrilleJeu(a, y).setIcon(Bateaux.imageBateau(idBateau, Bateaux.HORIZONTAL, count, Bateaux.FANTOME));
+				count++;
+			}
+		}
+		else {
+			for (int a = y ; a < y + nbCase ; a++) {
+				if (a < Model.getTaillePlateau())
+					if (Model.getJoueur(1).getTabJoueur()[x][a] == 0)
+						VueJeu.getPteGrilleJeu(x, a).setIcon(Bateaux.imageBateau(idBateau, Bateaux.VERTICAL, count, Bateaux.FANTOME));
+				count++;
+			}
+		}
+		
+    }
+	
+	@Override
 	public void actionPerformed(ActionEvent source) {
 
 		Object sources = source.getSource();
+		
+		vueJeu.repaintFantomeBateau();
 		
 		if (sources == vueJeu.getSousMarin()) {
 			bateau = vueJeu.getSousMarin();
@@ -100,7 +141,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
         				Joueurs verif = model.partieEstFini();
         	    		
         	    		if (verif == null)
-							model.getJoueur1().setNomJoueur(vueJeu.getChatNomJoueur().getText());
+							Model.getJoueur1().setNomJoueur(vueJeu.getChatNomJoueur().getText());
         	    			model.jouer(source);
         				
         				vueJeu.initGrilleTexte();
@@ -118,7 +159,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
             		
             		int count = 1;
             		
-            		int idBateau = Character.getNumericValue(bateau.getActionCommand().charAt(1));;
+            		int idBateau = Character.getNumericValue(bateau.getActionCommand().charAt(1));
             		int nbCase = Character.getNumericValue(bateau.getActionCommand().charAt(0));
             		
             		cible[0] = i;

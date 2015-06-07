@@ -46,7 +46,6 @@ public class Model {
         System.out.println("Type joueur 1 : "+joueur1.getTypeIdJoueurs());
 
         joueur1.initTableauxZero();
-        joueur1.mettreLesBateaux();
         
         initJoueur2();
         
@@ -168,11 +167,7 @@ public class Model {
     		
     	joueur1.reiniNombresCoups();
     	joueur2.reiniNombresCoups();
-    	
-		
-    	
-    	
-		
+	
 	}
 	
 	/*###############################################################
