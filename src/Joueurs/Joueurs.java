@@ -76,7 +76,7 @@ public abstract class Joueurs {
 	}
 
 	// Obtient la valeur d'une case de tableau du joueur
-	public int getValeurTabJoueur1(int x, int y) {
+	public int getValeurTabJoueur(int x, int y) {
 		return tabJoueur[x][y];
 	}
 

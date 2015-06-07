@@ -99,12 +99,14 @@ public class ControlJeu implements ActionListener {
             			
 	            			for (int a = i ; a < i + nbCase ; a++) {
 	            				VueJeu.getPteGrilleJeu(a, j).setIcon(Bateaux.imageBateau(idBateau, Bateaux.HORIZONTAL, count, Bateaux.SANSETAT));
+	            				Model.getJoueur(1).setValeurTabJoueur(a, j, idBateau);
 	            				count++;
 	            			}
             			}
             			else {
             				for (int a = j ; a < j + nbCase ; a++) {
 	            				VueJeu.getPteGrilleJeu(i, a).setIcon(Bateaux.imageBateau(idBateau, Bateaux.VERTICAL, count, Bateaux.SANSETAT));
+	            				Model.getJoueur(1).setValeurTabJoueur(i, a, idBateau);
 	            				count++;
 	            			}
             			}

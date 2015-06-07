@@ -68,14 +68,14 @@ public class VueJeu extends JFrame {
 		
 		for (int i = 0 ; i < Model.getTaillePlateau() ; i++)
  	    	for (int j = 0 ; j < Model.getTaillePlateau() ; j++)
- 	    		pteGrilleJeu[i][j].setText(""+Model.getJoueur(1).getValeurTabJoueur1(i, j));
+ 	    		pteGrilleJeu[i][j].setText(""+Model.getJoueur(1).getValeurTabJoueur(i, j));
 	}
     
     public void updateTextCellsJoueur2() {
 		
 		for (int i = 0 ; i < Model.getTaillePlateau() ; i++)
  	    	for (int j = 0 ; j < Model.getTaillePlateau() ; j++)
- 	    		grilleJeu[i][j].setText(""+Model.getJoueur(2).getValeurTabJoueur1(i, j));
+ 	    		grilleJeu[i][j].setText(""+Model.getJoueur(2).getValeurTabJoueur(i, j));
 	}
 
     // Les initialisations
@@ -132,23 +132,23 @@ public class VueJeu extends JFrame {
     public void initBateaux(){
         contreTorpilleurs = new JButton();
         contreTorpilleurs.setIcon(Bateaux.imageBateau(Bateaux.CONTRETORPILLEUR, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
-        contreTorpilleurs.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.CONTRETORPILLEUR).getNombreCases()+Bateaux.CONTRETORPILLEUR));
+        contreTorpilleurs.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.CONTRETORPILLEUR).getNombreCases())+Bateaux.CONTRETORPILLEUR);
 
         torpilleur = new JButton();
         torpilleur.setIcon(Bateaux.imageBateau(Bateaux.TORPILLEUR, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
-        torpilleur.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.TORPILLEUR).getNombreCases()+Bateaux.TORPILLEUR));
+        torpilleur.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.TORPILLEUR).getNombreCases())+Bateaux.TORPILLEUR);
 
         croiseur = new JButton();
         croiseur.setIcon(Bateaux.imageBateau(Bateaux.CROISEUR, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
-        croiseur.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.CROISEUR).getNombreCases()+Bateaux.CROISEUR));
+        croiseur.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.CROISEUR).getNombreCases())+Bateaux.CROISEUR);
 
         sousMarin = new JButton();
         sousMarin.setIcon(Bateaux.imageBateau(Bateaux.SOUSMARIN, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
-        sousMarin.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.SOUSMARIN).getNombreCases()+Bateaux.SOUSMARIN));
+        sousMarin.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.SOUSMARIN).getNombreCases())+Bateaux.SOUSMARIN);
 
         porteAvion = new JButton();
         porteAvion.setIcon(Bateaux.imageBateau(Bateaux.PORTEAVIONS, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
-        porteAvion.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.PORTEAVIONS).getNombreCases()+Bateaux.PORTEAVIONS));
+        porteAvion.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.PORTEAVIONS).getNombreCases())+Bateaux.PORTEAVIONS);
     }
 
     public void initPteGrille(){
