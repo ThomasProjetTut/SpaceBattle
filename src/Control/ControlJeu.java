@@ -2,6 +2,9 @@ package Control;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 
@@ -12,7 +15,7 @@ import View.VueMenu;
 import View.VueParametre;
 import Bateaux.Bateaux;
 
-public class ControlJeu implements ActionListener {
+public class ControlJeu extends MouseAdapter implements ActionListener {
 
 	private Model model;
 	private VueJeu vueJeu;
@@ -27,8 +30,35 @@ public class ControlJeu implements ActionListener {
 		this.vueJeu = vueJeu;
 		this.vueMenu = vueMenu;
 		this.vueParametre = vueParametre;
-		vueJeu.setButtonControler(this);
+		vueJeu.setButtonControler(this, this);
 		vueJeu.setMenuControler(this);
+	}
+	
+	@Override
+	public void mouseReleased (MouseEvent event) {
+		
+		JButton btn = (JButton) event.getSource();
+		
+		int x = Character.getNumericValue(btn.getActionCommand().charAt(0));;
+		int y = Character.getNumericValue(btn.getActionCommand().charAt(1));
+		
+		int idBateau = Model.getJoueur(1).getTabJoueur()[x][y];
+		
+		if(event.isPopupTrigger()){
+            if (idBateau != 0) {
+            	for (int i = 0; i < Model.getTaillePlateau(); i++){
+                    for (int j = 0; j < Model.getTaillePlateau(); j++){
+                    	if (Model.getJoueur(1).getTabJoueur()[i][j] == idBateau){
+                    		Model.getJoueur(1).getTabJoueur()[i][j] = 0;
+                    		VueJeu.getPteGrilleJeu(i, j).setIcon(null);
+                    	}
+                    }
+            	}
+            	
+            	vueJeu.getBtnBateau(idBateau).setEnabled(true);
+            	
+            }
+        }
 	}
 	
 	@Override

@@ -7,9 +7,11 @@ import Model.Model;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseListener;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
@@ -127,6 +129,26 @@ public class VueJeu extends JFrame {
                 grilleJeu[i][j].setBorder(null);
             }
         }
+    }
+    
+    public JButton getBtnBateau(int idBateau) {
+    	
+    	switch (idBateau)
+    	{
+    		case Bateaux.CONTRETORPILLEUR:
+    			return contreTorpilleurs;
+    		case Bateaux.TORPILLEUR:
+    			return torpilleur;
+    		case Bateaux.CROISEUR:
+    			return croiseur;
+    		case Bateaux.SOUSMARIN:
+    			return sousMarin;
+    		case Bateaux.PORTEAVIONS:
+    			return porteAvion;
+    	}
+    	
+    	return null;
+    	
     }
 
     public void initBateaux(){
@@ -341,12 +363,13 @@ public class VueJeu extends JFrame {
         getaPropos().addActionListener(listener);
     }
 
-    public void setButtonControler(ActionListener listener){
+    public void setButtonControler(ActionListener listener, MouseListener listener2){
 
         for	(int i = 0 ; i < Model.getTaillePlateau() ; i++) {
             for	(int j = 0 ; j < Model.getTaillePlateau() ; j++) {
                 grilleJeu[i][j].addActionListener(listener);
                 pteGrilleJeu[i][j].addActionListener(listener);
+                pteGrilleJeu[i][j].addMouseListener(listener2);
             }
         }
             torpilleur.addActionListener(listener);

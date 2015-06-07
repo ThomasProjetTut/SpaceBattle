@@ -21,12 +21,6 @@ public class Humain extends Joueurs {
 	
 	@Override
     public void mettreLesBateaux() {
-		
-		tabJoueur[0][0] = 5;
-		tabJoueur[0][1] = 5;
-		tabJoueur[0][2] = 5;
-		tabJoueur[0][3] = 5;
-		
     }
 
     @Override
