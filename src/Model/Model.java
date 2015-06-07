@@ -50,8 +50,6 @@ public class Model {
         
         initJoueur2();
         
-        System.out.println(levelAI);
-        
         joueur2.initTableauxZero();
 
         joueur2.mettreLesBateaux();
