@@ -10,6 +10,7 @@ import Model.Model;
 import View.VueJeu;
 import View.VueMenu;
 import View.VueParametre;
+import Bateaux.Bateaux;
 
 public class ControlJeu implements ActionListener {
 
@@ -17,6 +18,9 @@ public class ControlJeu implements ActionListener {
 	private VueJeu vueJeu;
 	private VueMenu vueMenu;
 	private VueParametre vueParametre;
+	
+	private JButton bateau = null;
+	private int sensBateau = Bateaux.HORIZONTAL;
 
 	public ControlJeu(Model model, VueJeu vueJeu, VueMenu vueMenu, VueParametre vueParametre) {
 		this.model = model;
@@ -30,6 +34,8 @@ public class ControlJeu implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent source) {
 
+		
+		
 		Object sources = source.getSource();
 		
 		for (int i = 0; i < Model.getTaillePlateau(); i++){

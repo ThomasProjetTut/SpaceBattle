@@ -117,13 +117,13 @@ public abstract class Joueurs {
 		switch (direction) {
 			case 0 :
 				for (int i = x; i < x + taille; i++)
-					if (tabJoueur[i][y] > 0)
+					if (tabJoueur[i][y] > 0 || x + taille < Model.getTaillePlateau())
 						return false;
 				break;
 
 			case 1 :
 				for (int j = y; j < y + taille; j++)
-					if (tabJoueur[x][j] > 0)
+					if (tabJoueur[x][j] > 0 || y + taille < Model.getTaillePlateau())
 						return false;
 		}
 
