@@ -7,6 +7,7 @@ import javax.swing.JButton;
 import Bateaux.Bateaux;
 import Joueurs.Joueurs;
 import Joueurs.Humain.Humain;
+import Joueurs.IA.IALevel1;
 import Joueurs.IA.IALevel4;
 
 public class Model {
@@ -28,12 +29,17 @@ public class Model {
     private boolean isGameActive;
 	private boolean isBonusActive;
 	
+	// 0 = joueur / 1= level 1 / 2 = level 2 etc
+	private int levelAI = 1;
+	
+	public Model() {
+		Bateaux.initTabBateaux();
+		Bateaux.initImagesBateaux();
+	}
+	
 	public void initJeu() {
 		
 		isGameActive = true;
-		
-		Bateaux.initTabBateaux();
-		Bateaux.initImagesBateaux();
 		
 		joueur1 = new Humain();
         
@@ -42,14 +48,42 @@ public class Model {
         joueur1.initTableauxZero();
         joueur1.mettreLesBateaux();
         
+        initJoueur2();
         
-        joueur2 = new IALevel4(joueur1.getTabJoueur());
+        System.out.println(levelAI);
         
         joueur2.initTableauxZero();
         joueur2.mettreLesBateaux();
         
         System.out.println("Type joueur 2 : "+joueur2.getTypeIdJoueurs());
       
+	}
+	
+	public void initJoueur2() {
+		
+		switch(levelAI)
+		{
+			case Joueurs.HUMAIN:
+				joueur2 = new Humain();
+				break;
+			case Joueurs.IA_LEVEL_1:
+				joueur2 = new IALevel1();
+				break;
+			/*case Joueurs.IA_LEVEL_2:
+				joueur2 = new IALevel2();
+				break;
+			case Joueurs.IA_LEVEL_3:
+				joueur2 = new IALevel3();
+				break;*/
+			case Joueurs.IA_LEVEL_4:
+				joueur2 = new IALevel4(joueur1.getTabJoueur());
+				break;
+				
+		}
+	}
+	
+	public void setAILevel(int level) {
+		levelAI = level;
 	}
 	
 	public boolean verifGrillesJoueursEstFini(Joueurs joueurs) {
@@ -111,7 +145,7 @@ public class Model {
     		}
     	}
 
-    	if (joueur2.getTypeIdJoueurs() == 1 && joueur2.getLevelIA() != 4) {
+    	if (joueur2.getTypeIdJoueurs() != 4) {
     		while (joueur2.coupEstDisponible()) {
     			joueur2.jouerCoup(joueur1, x, y);
     			

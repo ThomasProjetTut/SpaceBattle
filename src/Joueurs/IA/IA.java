@@ -8,22 +8,9 @@ import Model.Model;
 
 public abstract class IA extends Joueurs {
 	
-	protected int levelIA;
-	
 	@Override
 	public boolean coupEstDisponible() {
 		return nombreCoups > 0;
-	}
-	
-	public IA() {
-		
-		typeId = 1;
-		nomJoueur = "IA";
-	}
-	
-	@Override
-	public int getLevelIA() {
-		return levelIA;
 	}
 	
 	public abstract Point aquisitionCoordonnees();

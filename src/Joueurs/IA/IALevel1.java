@@ -10,8 +10,8 @@ import View.VueJeu;
 public class IALevel1 extends IA {
 	
 	public IALevel1() {
-		super();
-		levelIA = 1;
+		nomJoueur = "IA_Level_1";
+		typeId = IA_LEVEL_1;
 	}
 	
     @Override

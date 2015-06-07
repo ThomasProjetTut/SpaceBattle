@@ -11,9 +11,10 @@ public class IALevel4 extends IA {
 	private int[][] tabJoueurAdverse;
 	
 	public IALevel4(int[][] tabJoueurAdverse) {
-		super();
+
 		this.tabJoueurAdverse = tabJoueurAdverse;
-		levelIA = 4;
+		nomJoueur = "IA_Level_4";
+		typeId = IA_LEVEL_4;
 	}
 	
     @Override

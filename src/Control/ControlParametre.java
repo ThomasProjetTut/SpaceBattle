@@ -5,6 +5,7 @@ import View.VueJeu;
 import View.VueParametre;
 import View.VueMenu;
 import Model.Model;
+import Joueurs.Joueurs;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -40,22 +41,23 @@ public class ControlParametre implements ActionListener{
             vueJeu.resetTextChat();
             vueMenu.setVisible(false);
             vueParametre.setVisible(false);
+            model.setIsGameActive(true);
             vueJeu.setVisible(true);
         }
         else if (source == vueParametre.getAnnuler()){
             vueParametre.setVisible(false);
         }
         else if (source == vueParametre.getIA1()){
-
+        	model.setAILevel(Joueurs.IA_LEVEL_1);
         }
         else if (source == vueParametre.getIA2()){
-
+        	model.setAILevel(Joueurs.IA_LEVEL_2);
         }
         else if (source == vueParametre.getIA3()){
-
+        	model.setAILevel(Joueurs.IA_LEVEL_3);
         }
         else if (source == vueParametre.getIA4()){
-
+        	model.setAILevel(Joueurs.IA_LEVEL_4);
         }
         else if (source == vueParametre.getCheckBoxBonus()){
             model.setIsBonusActive(true);

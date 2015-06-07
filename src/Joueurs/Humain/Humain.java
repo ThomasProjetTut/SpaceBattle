@@ -9,7 +9,7 @@ public class Humain extends Joueurs {
 	public Humain() {
 		
 		nomJoueur = "HUMAIN";
-		typeId = 0;
+		typeId = HUMAIN;
 		
 	}
 	
@@ -54,9 +54,4 @@ public class Humain extends Joueurs {
     	 }
 	}
 
-	@Override
-	public int getLevelIA() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 }

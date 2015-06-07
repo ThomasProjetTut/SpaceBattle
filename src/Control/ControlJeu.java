@@ -59,10 +59,6 @@ public class ControlJeu implements ActionListener {
 		if (sources == vueJeu.getNouvellePartie()) {
 				vueParametre.setVisible(true);
 				model.setIsGameActive(false);
-				model.initJeu();
-				vueJeu.initGrilleTexte();
-				vueJeu.resetTextChat();
-				model.setIsGameActive(true);
 	    }
 	    else if (sources == vueJeu.getAide()){
 	    	System.out.println("aide");

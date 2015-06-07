@@ -6,6 +6,13 @@ import Model.Model;
 public abstract class Joueurs {
 
 	protected String nomJoueur;
+	
+	public static final int HUMAIN = 0;
+	public static final int IA_LEVEL_1 = 1;
+	public static final int IA_LEVEL_2 = 2;
+	public static final int IA_LEVEL_3 = 3;
+	public static final int IA_LEVEL_4 = 4;
+
 
 	// Nombres de coups max par joueurs par tours
 	protected int nombreCoups = Model.getNombresCoupsDepart();
@@ -17,8 +24,6 @@ public abstract class Joueurs {
 	protected int typeId;
 
 	protected int tabJoueur[][] = new int[Model.getTaillePlateau()][Model.getTaillePlateau()];
-
-	public abstract int getLevelIA();
 
 	public abstract void initTableauxZero();
 
