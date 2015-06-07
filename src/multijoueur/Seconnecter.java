@@ -3,7 +3,9 @@ package multijoueur;
 import java.io.*;
 import java.awt.*;
 import java.awt.event.*;
+
 import javax.swing.*;
+
 import java.net.*;
 
 /**
@@ -245,14 +247,17 @@ public static void initGUI() {
 
       // Set up the main frame
       mainFrame = new JFrame("Simple TCP Chat");
-      mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+      mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
       mainFrame.setContentPane(mainPane);
       mainFrame.setSize(mainFrame.getPreferredSize());
       mainFrame.setLocation(200, 200);
       mainFrame.pack();
       mainFrame.setVisible(true);
       
+      
+      
    }
+
 
    /////////////////////////////////////////////////////////////////
 
