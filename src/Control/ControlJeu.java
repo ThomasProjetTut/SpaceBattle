@@ -56,9 +56,7 @@ public class ControlJeu implements ActionListener {
 			bateau = vueJeu.getCroiseur();
 			return;
 		}
-		
-		
-		
+				
 		for (int i = 0; i < Model.getTaillePlateau(); i++){
             for (int j = 0; j < Model.getTaillePlateau(); j++){
             	
@@ -82,13 +80,35 @@ public class ControlJeu implements ActionListener {
         			
         	    }
             	else if (sources == VueJeu.getPteGrilleJeu(i, j)){
-            		
-            		JButton btn = (JButton) source.getSource();
-            		
+                       		
             		int[] cible = new int[4];
             		
-            		cible[0] = Character.getNumericValue(btn.getActionCommand().charAt(0));
-            		cible[1] = Character.getNumericValue(btn.getActionCommand().charAt(1));
+            		int count = 1;
+            		
+            		int idBateau = Character.getNumericValue(bateau.getActionCommand().charAt(1));;
+            		int nbCase = Character.getNumericValue(bateau.getActionCommand().charAt(0));
+            		
+            		cible[0] = i;
+            		cible[1] = j;
+            		cible[2] = nbCase;
+            		cible[3] = sensBateau;
+            		
+            		if (Joueurs.validationCoup(cible, Model.getJoueur(1).getTabJoueur())) {
+            			
+            			if (sensBateau == Bateaux.HORIZONTAL) {
+            			
+	            			for (int a = i ; a < i + nbCase ; a++) {
+	            				VueJeu.getPteGrilleJeu(a, j).setIcon(Bateaux.imageBateau(idBateau, Bateaux.HORIZONTAL, count, Bateaux.SANSETAT));
+	            				count++;
+	            			}
+            			}
+            			else {
+            				for (int a = j ; a < j + nbCase ; a++) {
+	            				VueJeu.getPteGrilleJeu(i, a).setIcon(Bateaux.imageBateau(idBateau, Bateaux.VERTICAL, count, Bateaux.SANSETAT));
+	            				count++;
+	            			}
+            			}
+            		}
             		
             	}
             }

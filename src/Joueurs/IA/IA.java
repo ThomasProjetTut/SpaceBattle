@@ -24,12 +24,13 @@ public abstract class IA extends Joueurs {
     
     @Override
 	public void initTableauxZero() {
-		
+
 		for (int i = 0 ; i < Model.getTaillePlateau() ; i++) {
  	    	for (int j = 0 ; j < Model.getTaillePlateau() ; j++) {
  	    		tabJoueur[i][j] = Model.PAS_DE_BATEAU;
  	    	}
     	 }
+    
 	}
     
     public void placementBateaux(int[] cible, int[][] tabJoueur) {
@@ -57,13 +58,14 @@ public abstract class IA extends Joueurs {
         for(int i = 1; i <= 5; i++){
 
             do {
+            	System.out.println("ff");
                 cible = generationCoordonnee(i);
             } while (!validationCoup(cible, tabJoueur));
 
             placementBateaux(cible, tabJoueur);
 
         }
-
+    	
     }
 	
 	public int[] generationCoordonnee(int idBateau){

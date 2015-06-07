@@ -434,4 +434,8 @@ public class VueJeu extends JFrame {
 	public JButton getSousMarin() {
 		return sousMarin;
 	}
+
+	public static JButton[][] getPteGrilleJeu() {
+		return pteGrilleJeu;
+	}
 }

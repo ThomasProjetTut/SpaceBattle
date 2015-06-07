@@ -87,7 +87,7 @@ public abstract class Joueurs {
 		return tabJoueur;
 	}
 
-	public int getTaille(int idBateau){
+	public static int getTaille(int idBateau){
 
 		switch (idBateau) {
 
@@ -107,7 +107,7 @@ public abstract class Joueurs {
 
 	}
 
-	public boolean validationCoup(int[] cible, int[][] tabJoueur){
+	public static boolean validationCoup(int[] cible, int[][] tabJoueur){
 
 		int x = cible[0];
 		int y = cible[1];
@@ -117,13 +117,13 @@ public abstract class Joueurs {
 		switch (direction) {
 			case 0 :
 				for (int i = x; i < x + taille; i++)
-					if (tabJoueur[i][y] > 0 || x + taille < Model.getTaillePlateau())
+					if (tabJoueur[i][y] > 0 && x + taille < Model.getTaillePlateau())
 						return false;
 				break;
 
 			case 1 :
 				for (int j = y; j < y + taille; j++)
-					if (tabJoueur[x][j] > 0 || y + taille < Model.getTaillePlateau())
+					if (tabJoueur[x][j] > 0 && y + taille < Model.getTaillePlateau())
 						return false;
 		}
 
