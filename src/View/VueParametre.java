@@ -30,8 +30,7 @@ public class VueParametre extends JFrame {
 
     private ButtonGroup buttonGroup;
 
-    private JButton valider;
-    private JButton annuler;
+    private JButton valider,annuler,vide;
 
     public VueParametre(Model model){
         this.model = model;
@@ -111,16 +110,20 @@ public class VueParametre extends JFrame {
         panButton.setOpaque(false);
 
         //changement de la police
-        tools.changerFontJLabel(titre,50, Color.white,tools.getFontTexte());
-        tools.changerFontJLabel(IA,25, Color.white,tools.getFontTexte());
-        tools.changerFontButton(valider,25, Color.white,tools.getFontTexte());
-        tools.changerFontButton(annuler,25, Color.white,tools.getFontTexte());
-        tools.changerFontJRadioButton(IA1, 25, Color.white,tools.getFontTexte());
-        tools.changerFontJRadioButton(IA2, 25, Color.white,tools.getFontTexte());
-        tools.changerFontJRadioButton(IA3, 25, Color.white,tools.getFontTexte());
-        tools.changerFontJRadioButton(IA4, 25, Color.white,tools.getFontTexte());
-        tools.changerFontJCheckBox(checkBoxBonus, 25, Color.white,tools.getFontTexte());
+        tools.changerFontJLabel(titre, 50, Color.white, tools.getFontTexte());
+        tools.changerFontJLabel(IA, 25, Color.white, tools.getFontTexte());
+        tools.changerFontButton(valider, 25, Color.white, tools.getFontTexte());
+        tools.changerFontButton(annuler, 25, Color.white, tools.getFontTexte());
+        tools.changerFontJRadioButton(IA1, 25, Color.white, tools.getFontTexte());
+        tools.changerFontJRadioButton(IA2, 25, Color.white, tools.getFontTexte());
+        tools.changerFontJRadioButton(IA3, 25, Color.white, tools.getFontTexte());
+        tools.changerFontJRadioButton(IA4, 25, Color.white, tools.getFontTexte());
+        tools.changerFontJCheckBox(checkBoxBonus, 25, Color.white, tools.getFontTexte());
 
+        valider.setBorder(BorderFactory.createLineBorder(Color.white));
+        valider.setBorderPainted(true);
+        annuler.setBorder(BorderFactory.createLineBorder(Color.white));
+        annuler.setBorderPainted(true);
         panTitre.add(titre);
         panCheck.add(checkBoxBonus);
         panIA.add(IA);
@@ -136,10 +139,9 @@ public class VueParametre extends JFrame {
         panGButton.setLayout(new BoxLayout(panGButton, BoxLayout.Y_AXIS));
         panButton.add(valider);
         panButton.add(annuler);
-        panButton.setLayout(new BoxLayout(panButton, BoxLayout.X_AXIS));
+        panButton.setLayout(new GridLayout(1,2));
 
         panMenu.add(panGButton);
-        //panMenu.add(panButton);
 
         panPrincipal.add(panTitre);
         panPrincipal.add(panIA);
