@@ -1,11 +1,9 @@
 package Control;
 
-import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
 
@@ -59,6 +57,12 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
             	vueJeu.getBtnBateau(idBateau).setEnabled(true);
             	
             }
+            else {
+            	if (sensBateau == Bateaux.HORIZONTAL)
+            		sensBateau = Bateaux.VERTICAL;
+            	else
+            		sensBateau = Bateaux.HORIZONTAL;
+            }
         }
 	}
 	
@@ -97,7 +101,6 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 				count++;
 			}
 		}
-		
     }
 	
 	@Override
@@ -164,11 +167,11 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
             		
             		cible[0] = i;
             		cible[1] = j;
-            		cible[2] = nbCase;
+            		cible[2] = idBateau;
             		cible[3] = sensBateau;
             		
             		if (Joueurs.validationCoup(cible, Model.getJoueur(1).getTabJoueur())) {
-            			
+
             			if (sensBateau == Bateaux.HORIZONTAL) {
             			
 	            			for (int a = i ; a < i + nbCase ; a++) {

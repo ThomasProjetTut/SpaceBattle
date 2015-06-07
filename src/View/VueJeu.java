@@ -1,8 +1,6 @@
 package View;
 
 import Bateaux.Bateaux;
-import Joueurs.Humain.Humain;
-import Joueurs.Joueurs;
 import Model.Model;
 
 import javax.imageio.ImageIO;

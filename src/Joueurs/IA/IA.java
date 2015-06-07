@@ -3,6 +3,7 @@ package Joueurs.IA;
 import java.awt.Point;
 import java.util.Random;
 
+import Bateaux.Bateaux;
 import Joueurs.Joueurs;
 import Model.Model;
 
@@ -36,14 +37,14 @@ public abstract class IA extends Joueurs {
     public void placementBateaux(int[] cible, int[][] tabJoueur) {
     	
 		switch (cible[3]) {
-	        case 0 :
+	        case Bateaux.HORIZONTAL :
 	            for(int i = cible[0]; i < cible[0] + getTaille(cible[2]); i++){
 	            	tabJoueur[i][cible[1]] = cible[2];
 	
 	            }
 	            break;
 	
-	        case 1 :
+	        case Bateaux.VERTICAL :
 	            for(int j = cible[1]; j < cible[1] + getTaille(cible[2]); j++){
 	            	tabJoueur[cible[0]][j] = cible[2];
 	            }
@@ -55,7 +56,7 @@ public abstract class IA extends Joueurs {
         
         int[] cible;
 
-        for(int i = 1; i <= 5; i++){
+        for(int i = Bateaux.CONTRETORPILLEUR ; i <= Bateaux.PORTEAVIONS; i++){
 
             do {
                 cible = generationCoordonnee(i);
@@ -82,11 +83,11 @@ public abstract class IA extends Joueurs {
         //0 = bas; 1 = droite
 
         switch (direction){
-            case 0 :
+            case Bateaux.HORIZONTAL :
                 x = random.nextInt(Model.getTaillePlateau() - taille);
                 y = random.nextInt(Model.getTaillePlateau());
                 break;
-            case 1 :
+            case Bateaux.VERTICAL :
                 x = random.nextInt(Model.getTaillePlateau());
                 y = random.nextInt(Model.getTaillePlateau() - taille);
                 break;

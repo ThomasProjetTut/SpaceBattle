@@ -91,15 +91,15 @@ public abstract class Joueurs {
 
 		switch (idBateau) {
 
-			case 1:
+			case Bateaux.CONTRETORPILLEUR:
 				return Bateaux.getTabBateaux().get(Bateaux.CONTRETORPILLEUR).getNombreCases();
-			case 2:
+			case Bateaux.SOUSMARIN:
 				return Bateaux.getTabBateaux().get(Bateaux.SOUSMARIN).getNombreCases();
-			case 3:
+			case Bateaux.TORPILLEUR:
 				return Bateaux.getTabBateaux().get(Bateaux.TORPILLEUR).getNombreCases();
-			case 4:
+			case Bateaux.CROISEUR:
 				return Bateaux.getTabBateaux().get(Bateaux.CROISEUR).getNombreCases();
-			case 5:
+			case Bateaux.PORTEAVIONS:
 				return Bateaux.getTabBateaux().get(Bateaux.PORTEAVIONS).getNombreCases();
 		}
 

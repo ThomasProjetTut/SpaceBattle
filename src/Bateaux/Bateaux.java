@@ -8,11 +8,11 @@ import javax.swing.*;
 
 public class Bateaux {
 
-	public final static int CONTRETORPILLEUR = 0;
-	public final static int SOUSMARIN = 1;
-	public final static int TORPILLEUR = 2;
-	public final static int CROISEUR = 3;
-	public final static int PORTEAVIONS = 4;
+	public final static int CONTRETORPILLEUR = 1;
+	public final static int SOUSMARIN = 2;
+	public final static int TORPILLEUR = 3;
+	public final static int CROISEUR = 4;
+	public final static int PORTEAVIONS = 5;
 
 	public final static int HORIZONTAL = 0;
 	public final static int VERTICAL = 1;
@@ -70,7 +70,7 @@ public class Bateaux {
 						new ImageIcon(CHEMIN_IMAGES+"/"+fichier.getName()+"/"+fichier2.getName()));
 			}
 
-			mapBateauxListeIcons.put(tabBateaux.get(count), mapStringIcon);
+			mapBateauxListeIcons.put(tabBateaux.get(count+1), mapStringIcon);
 
 
 
