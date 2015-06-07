@@ -2,7 +2,6 @@ package Sounds;
 
 import javazoom.jl.player.*;
 import java.io.*;
-import java.util.Random;
 
 public class MP3Player {
 
@@ -26,6 +25,7 @@ public class MP3Player {
             player = new Player(is);
             PlayerThread pt = new PlayerThread();
             pt.start();
+            while (!player.isComplete()) {}
         } catch (Exception e) {
             e.printStackTrace();
         }
