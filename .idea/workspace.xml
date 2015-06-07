@@ -3,10 +3,12 @@
   <component name="BookmarkManager">
     <bookmark url="file://$PROJECT_DIR$/src/View/VueParametre.java" line="93" />
     <bookmark url="file://$PROJECT_DIR$/src/View/VueParametre.java" line="95" />
-    <bookmark url="file://$PROJECT_DIR$/src/View/VueMenu.java" line="38" />
+    <bookmark url="file://$PROJECT_DIR$/src/View/VueMenu.java" line="39" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58d0859a-f8e0-45a1-af2f-35b98f4c033b" name="Default" comment="La vue menu et vue parametre change">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/images/Autres/fondText.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/VueMenu.java" afterPath="$PROJECT_DIR$/src/View/VueMenu.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BatailleNavale.iws" />
@@ -113,8 +115,8 @@
       <file leaf-file-name="VueMenu.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/VueMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.43037975">
-              <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.77468354">
+              <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -172,10 +174,10 @@
         <option value="$PROJECT_DIR$/src/Joueurs/Humain/Humain.java" />
         <option value="$PROJECT_DIR$/src/Joueurs/IA/IALevel4.java" />
         <option value="$PROJECT_DIR$/src/Joueurs/IA/IALevel1.java" />
-        <option value="$PROJECT_DIR$/src/View/VueMenu.java" />
         <option value="$PROJECT_DIR$/src/View/Tools.java" />
         <option value="$PROJECT_DIR$/src/View/VueParametre.java" />
         <option value="$PROJECT_DIR$/src/Control/ControlMenu.java" />
+        <option value="$PROJECT_DIR$/src/View/VueMenu.java" />
       </list>
     </option>
   </component>
@@ -444,6 +446,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpaceBattle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="SpaceBattle" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="images" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Autres" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -872,6 +892,12 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Run Launcher">
+      <method />
+    </configuration>
+    <configuration default="true" type="osgi.bnd.run" factoryName="Test Launcher (JUnit)">
+      <method />
+    </configuration>
     <list size="2">
       <item index="0" class="java.lang.String" itemvalue="Application.Application" />
       <item index="1" class="java.lang.String" itemvalue="Application.BatailleNavale" />
@@ -900,7 +926,7 @@
       <workItem from="1433682366950" duration="123000" />
       <workItem from="1433682994074" duration="6572000" />
       <workItem from="1433691646113" duration="636000" />
-      <workItem from="1433692525058" duration="267000" />
+      <workItem from="1433692525058" duration="847000" />
     </task>
     <task id="LOCAL-00001" summary="Test sur mon portable">
       <created>1433664291883</created>
@@ -944,11 +970,17 @@
       <option name="project" value="LOCAL" />
       <updated>1433691684146</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="La vue menu et vue parametre change">
+      <created>1433692802634</created>
+      <option name="number" value="00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1433692802634</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12705000" />
+    <option name="totallyTimeSpent" value="13285000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1418,8 +1450,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/VueMenu.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43037975">
-          <caret line="33" column="26" selection-start-line="33" selection-start-column="26" selection-end-line="33" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.77468354">
+          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
