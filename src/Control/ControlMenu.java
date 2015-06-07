@@ -8,6 +8,8 @@ import View.VueParametre;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import multijoueur.Seconnecter;
+
 public class ControlMenu implements ActionListener {
 
     private VueMenu vueMenu;
@@ -28,7 +30,8 @@ public class ControlMenu implements ActionListener {
         }
 
         if (source == vueMenu.getJouerM()){
-            vueParametre.setVisible(true);
+            Seconnecter.initGUI();
+            vueMenu.setVisible(false);
         }
         else if (source == vueMenu.getInstruction()){
             vueMenu.setVisible(false);

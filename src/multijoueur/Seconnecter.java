@@ -17,7 +17,7 @@ public class Seconnecter implements Runnable {
    public final static int DISCONNECTING = 2;
    public final static int BEGIN_CONNECT = 3;
    public final static int CONNECTED = 4;
-
+   public static JCheckBox checkBoxBonus;
    // Other constants
    public final static String statusMessages[] = {
       " Error! Could not connect!", " Disconnected",
@@ -146,10 +146,12 @@ public class Seconnecter implements Runnable {
       guestOption.addActionListener(buttonListener);
       bg.add(hostOption);
       bg.add(guestOption);
-      pane = new JPanel(new GridLayout(1, 2));
+      pane = new JPanel(new GridLayout(2, 2));
       pane.add(hostOption);
       pane.add(guestOption);
       optionsPane.add(pane);
+      checkBoxBonus = new JCheckBox("Activer les bonus");
+      pane.add(checkBoxBonus);
 
       // Connect/disconnect buttons
       JPanel buttonPane = new JPanel(new GridLayout(1, 2));
@@ -185,7 +187,7 @@ public class Seconnecter implements Runnable {
    /////////////////////////////////////////////////////////////////
 
    // Initialize all the GUI components and display the frame
-   private static void initGUI() {
+   public static void initGUI() {
       // Set up the status bar
       statusField = new JLabel();
       statusField.setText(statusMessages[DISCONNECTED]);
@@ -360,6 +362,8 @@ public class Seconnecter implements Runnable {
          guestOption.setEnabled(true);
          //chatLine.setText(""); chatLine.setEnabled(false);
          statusColor.setBackground(Color.red);
+         System.out.println("je passe ici DISCONNECTING red");
+
          break;
 
       case DISCONNECTING:
@@ -369,8 +373,10 @@ public class Seconnecter implements Runnable {
          portField.setEnabled(false);
          hostOption.setEnabled(false);
          guestOption.setEnabled(false);
-         chatLine.setEnabled(false);
+         //chatLine.setEnabled(false);
          statusColor.setBackground(Color.orange);
+         System.out.println("je passe ici DISCONNECTING");
+
          break;
 
       case CONNECTED:
@@ -384,7 +390,7 @@ public class Seconnecter implements Runnable {
          statusColor.setBackground(Color.green);
         // initOptionsPane().setVisible(false);
         // mainFrame.setVisible(false);
-         
+         System.out.println("je passe ici CONNECTED");
          
          
          
@@ -400,6 +406,8 @@ public class Seconnecter implements Runnable {
          //chatLine.setEnabled(false);
          //chatLine.grabFocus();
          statusColor.setBackground(Color.orange);
+         System.out.println("je passe ici ENTRAIN DE SE CO");
+
          break;
       }
 
