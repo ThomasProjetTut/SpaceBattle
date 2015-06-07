@@ -2,24 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58d0859a-f8e0-45a1-af2f-35b98f4c033b" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\Users\Alemior\IdeaProjects\SpaceBattle\out\production\BatailleNavale\BatailleNavale$1.class" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BatailleNavale/BatailleNavale.class" afterPath="$PROJECT_DIR$/out/production/BatailleNavale/BatailleNavale.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/BatailleNavale/View/VueParametre.class" afterPath="$PROJECT_DIR$/out/production/BatailleNavale/View/VueParametre.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/BatailleNavale.java" afterPath="$PROJECT_DIR$/src/BatailleNavale.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bateaux/Bateaux.java" afterPath="$PROJECT_DIR$/src/Bateaux/Bateaux.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bateaux/ContreTorpilleurs.java" afterPath="$PROJECT_DIR$/src/Bateaux/ContreTorpilleurs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/ControlChat.java" afterPath="$PROJECT_DIR$/src/Control/ControlChat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/ControlGroup.java" afterPath="$PROJECT_DIR$/src/Control/ControlGroup.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/ControlMenu.java" afterPath="$PROJECT_DIR$/src/Control/ControlMenu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Joueurs/Humain/Humain.java" afterPath="$PROJECT_DIR$/src/Joueurs/Humain/Humain.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Joueurs/IA/IA.java" afterPath="$PROJECT_DIR$/src/Joueurs/IA/IA.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Joueurs/IA/IALevel1.java" afterPath="$PROJECT_DIR$/src/Joueurs/IA/IALevel1.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Joueurs/IA/IALevel4.java" afterPath="$PROJECT_DIR$/src/Joueurs/IA/IALevel4.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Joueurs/Joueurs.java" afterPath="$PROJECT_DIR$/src/Joueurs/Joueurs.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Model/Model.java" afterPath="$PROJECT_DIR$/src/Model/Model.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Bateaux/Torpilleur.java" afterPath="$PROJECT_DIR$/src/Bateaux/Torpilleur.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/VueJeu.java" afterPath="$PROJECT_DIR$/src/View/VueJeu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/VueMenu.java" afterPath="$PROJECT_DIR$/src/View/VueMenu.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Sounds/MP3Player.java" afterPath="$PROJECT_DIR$/src/Sounds/MP3Player.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BatailleNavale.iws" />
@@ -71,10 +54,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="VueParametre.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="VueParametre.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/View/VueParametre.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.34114584">
+            <state vertical-scroll-proportion="0.0">
               <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
               <folding>
                 <element signature="method#setControlParametre#0;class#VueParametre#0" expanded="false" />
@@ -103,11 +86,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MP3Player.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MP3Player.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Sounds/MP3Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.734375">
+              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -207,7 +190,6 @@
         <option value="$PROJECT_DIR$/src/Control/ControlJeu.java" />
         <option value="$PROJECT_DIR$/.idea/.name" />
         <option value="$PROJECT_DIR$/src/View/VueParametre.java" />
-        <option value="$PROJECT_DIR$/src/Sounds/MP3Player.java" />
         <option value="$PROJECT_DIR$/src/BatailleNavale.java" />
         <option value="$PROJECT_DIR$/src/Bateaux/Bateaux.java" />
         <option value="$PROJECT_DIR$/src/Bateaux/ContreTorpilleurs.java" />
@@ -223,6 +205,7 @@
         <option value="$PROJECT_DIR$/src/View/VueJeu.java" />
         <option value="$PROJECT_DIR$/src/View/VueMenu.java" />
         <option value="$PROJECT_DIR$/src/Control/ControlGroup.java" />
+        <option value="$PROJECT_DIR$/src/Sounds/MP3Player.java" />
       </list>
     </option>
   </component>
@@ -924,7 +907,7 @@
       <updated>1433627949578</updated>
       <workItem from="1433627939018" duration="896000" />
       <workItem from="1433663946080" duration="436000" />
-      <workItem from="1433674239926" duration="2446000" />
+      <workItem from="1433674239926" duration="3600000" />
     </task>
     <task id="LOCAL-00001" summary="Test sur mon portable">
       <created>1433664291883</created>
@@ -944,11 +927,17 @@
       <option name="project" value="LOCAL" />
       <updated>1433675847535</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Tri du code">
+      <created>1433676760180</created>
+      <option name="number" value="00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1433676760180</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3778000" />
+    <option name="totallyTimeSpent" value="4932000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1015,7 +1004,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Test sur mon portable" />
     <MESSAGE value="Changement MP3 + imageGrille" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changement MP3 + imageGrille" />
+    <MESSAGE value="Tri du code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tri du code" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1443,24 +1433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Sounds/MP3Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Sounds/MusicPlayer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/View/VueJeu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1505,10 +1477,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/VueParametre.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.34114584">
+        <state vertical-scroll-proportion="0.0">
           <caret line="39" column="33" selection-start-line="39" selection-start-column="33" selection-end-line="39" selection-end-column="33" />
           <folding>
             <element signature="method#setControlParametre#0;class#VueParametre#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sounds/MusicPlayer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Sounds/MP3Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.734375">
+          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

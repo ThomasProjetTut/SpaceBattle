@@ -1,5 +1,6 @@
 package Sounds;
 
+import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.*;
 import java.io.*;
 
@@ -28,6 +29,16 @@ public class MP3Player {
             while (!player.isComplete()) {}
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    public void stop(){
+        if (player != null) {
+            try {
+                player = new Player(null);
+            } catch (JavaLayerException e) {
+                e.printStackTrace();
+            }
         }
     }
 
