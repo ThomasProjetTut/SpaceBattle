@@ -9,6 +9,7 @@ import Joueurs.Joueurs;
 import Joueurs.Humain.Humain;
 import Joueurs.IA.IALevel1;
 import Joueurs.IA.IALevel2;
+import Joueurs.IA.IALevel3;
 import Joueurs.IA.IALevel4;
 
 public class Model {
@@ -75,9 +76,9 @@ public class Model {
 			case Joueurs.IA_LEVEL_2:
 				joueur2 = new IALevel2();
 				break;
-			/*case Joueurs.IA_LEVEL_3:
+			case Joueurs.IA_LEVEL_3:
 				joueur2 = new IALevel3();
-				break;*/
+				break;
 			case Joueurs.IA_LEVEL_4:
 				joueur2 = new IALevel4();
 				break;
