@@ -21,7 +21,6 @@ import javax.swing.JTextField;
 import Model.Model;
 import View.VueJeu;
 import View.VueMenu;
-import View.VueParametre;
 
 public class VueConnexion extends JFrame {
 
