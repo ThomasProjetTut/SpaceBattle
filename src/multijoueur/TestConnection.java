@@ -25,7 +25,7 @@ public class TestConnection extends Thread{
 	     this.vueParametre = vueParametre;
 	     this.vueJeu = vueJeu;
 	     this.model = model;
-	     connexion = new Seconnecter();
+	     connexion = new Seconnecter(model, vueJeu, vueMenu, vueParametre);
 	 }
 	 
 	 public void displayTCP(boolean valeur) {

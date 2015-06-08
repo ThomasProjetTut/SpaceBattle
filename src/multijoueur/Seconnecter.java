@@ -6,6 +6,11 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
+import Model.Model;
+import View.VueJeu;
+import View.VueMenu;
+import View.VueParametre;
+
 import java.net.*;
 
 /**
@@ -25,7 +30,7 @@ public class Seconnecter extends JFrame implements Runnable {
       " Error! Could not connect!", " Disconnected",
       " Disconnecting...", " Connecting...", " Connected"	
    };
-   public final static Seconnecter tcpObj = new Seconnecter();
+   
    public final static String END_CHAT_SESSION =
       new Character((char)0).toString(); // Indicates the end of a session
 
@@ -57,8 +62,18 @@ public class Seconnecter extends JFrame implements Runnable {
    public static BufferedReader in = null;
    public static PrintWriter out = null;
    
-   public Seconnecter(){
-	   
+   private static VueParametre vueParametre;
+   private static VueJeu vueJeu;
+   private static VueMenu vueMenu;
+   private static Model model;
+   
+   public final static Seconnecter tcpObj = new Seconnecter(model, vueJeu, vueMenu, vueParametre);
+   
+   public Seconnecter(Model model, VueJeu vueJeu, VueMenu vueMenu, VueParametre vueParametre){
+	   this.vueMenu = vueMenu;
+       this.vueParametre = vueParametre;
+       this.vueJeu = vueJeu;
+       this.model = model;
    }
    
 
@@ -254,9 +269,6 @@ public void initGUI() {
       setResizable(false);
       pack();
       setVisible(false);
-      
-      
-      
    }
 
 
@@ -393,6 +405,19 @@ public void initGUI() {
          break;
 
       case CONNECTED:
+    	  model.initJeu();
+          vueJeu.repaintFantomeBateau();
+          vueJeu.reiniBtnBateaux();
+          model.setPlacementBateauEstLock(false);
+          vueJeu.initGrilleTexte();
+          vueJeu.resetTextChat();
+          vueMenu.setVisible(false);
+          vueParametre.setVisible(false);
+          model.setIsGameActive(true);
+          vueJeu.setVisible(true);
+          
+          
+    	  
          connectButton.setEnabled(false);
          disconnectButton.setEnabled(true);
          ipField.setEnabled(false);
