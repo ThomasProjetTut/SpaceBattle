@@ -32,9 +32,13 @@ public class Model {
 	// 0 = joueur / 1= level 1 / 2 = level 2 etc
 	private int levelAI = 1;
 	
+	private boolean placementBateauEstLock;
+	
 	public Model() {
 		Bateaux.initTabBateaux();
 		Bateaux.initImagesBateaux();
+		
+		placementBateauEstLock = false;
 	}
 	
 	public void initJeu() {
@@ -118,6 +122,8 @@ public class Model {
     }
 	
 	public void jouer(ActionEvent source) {
+		
+		placementBateauEstLock = true;
 		
 		JButton btn = (JButton) source.getSource();
 		
@@ -228,5 +234,13 @@ public class Model {
 
 	public static Joueurs getJoueur2() {
 		return joueur2;
+	}
+
+	public boolean placementBateauisLock() {
+		return placementBateauEstLock;
+	}
+
+	public void setPlacementBateauEstLock(boolean placementBateauEstLock) {
+		this.placementBateauEstLock = placementBateauEstLock;
 	}
 }

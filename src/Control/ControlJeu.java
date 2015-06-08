@@ -36,6 +36,9 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	@Override
 	public void mouseReleased (MouseEvent event) {
 		
+		if (model.placementBateauisLock())
+			return;
+		
 		vueJeu.repaintFantomeBateau();
 		
 		JButton btn = (JButton) event.getSource();
@@ -120,6 +123,9 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	@Override
 	public void mouseEntered(MouseEvent event){
 		
+		if (model.placementBateauisLock())
+			return;
+		
 		if (bateau == null)
 			return;
 		
@@ -187,6 +193,11 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
             	
             	// Regarde si le JButton est un bouton de la grille adverse
             	if (sources == VueJeu.getGrilleJeu(i, j)){
+            		
+            		if (!vueJeu.tousLesBateauxSontPlace()) {
+            			VueJeu.getChatTexte().append("Vous devez placer tous vos bateaux avant de pouvoir jouer !\n");
+            			return;
+            		}
             		
     				Joueurs verif = model.partieEstFini();
     	    		

@@ -32,6 +32,9 @@ public class ControlParametre implements ActionListener{
 
         if (source == vueParametre.getValider()){
             model.initJeu();
+            vueJeu.repaintFantomeBateau();
+            vueJeu.reiniBtnBateaux();
+            model.setPlacementBateauEstLock(false);
             vueJeu.initGrilleTexte();
             vueJeu.resetTextChat();
             vueMenu.setVisible(false);

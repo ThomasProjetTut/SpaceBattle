@@ -149,6 +149,28 @@ public class VueJeu extends JFrame {
     	
     }
     
+    public boolean tousLesBateauxSontPlace() {
+		
+    	if (!contreTorpilleurs.isEnabled() &&
+    			!torpilleur.isEnabled() &&
+    			!croiseur.isEnabled() &&
+    			!sousMarin.isEnabled() &&
+    			!porteAvion.isEnabled())
+    		return true;
+    	else
+    		return false;
+    	
+    }
+    
+    public void reiniBtnBateaux() {
+    	
+    	contreTorpilleurs.setEnabled(true);
+		torpilleur.setEnabled(true);
+		croiseur.setEnabled(true);
+		sousMarin.setEnabled(true);
+		porteAvion.setEnabled(true);
+    }
+    
     // ne pas réutiliser
     public void repaintFantomeBateau() {
     	for (int i = 0; i < Model.getTaillePlateau(); i++){
