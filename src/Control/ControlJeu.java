@@ -45,7 +45,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 		
 		int idBateau = Model.getJoueur(1).getTabJoueur()[x][y];
 		
-		// Clique droit pour enlever les bateaux && modifier le sens 
+		// Clique droit pour enlever les bateaux
 		if(event.isPopupTrigger()){
             if (idBateau != 0) {
             	for (int i = 0; i < Model.getTaillePlateau(); i++){
@@ -60,7 +60,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
             	vueJeu.getBtnBateau(idBateau).setEnabled(true);
             	
             }
-            else {
+            else { // Changer sens bateau
             	if (sensBateau == Bateaux.HORIZONTAL)
             		sensBateau = Bateaux.VERTICAL;
             	else
@@ -181,24 +181,19 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 		for (int i = 0; i < Model.getTaillePlateau(); i++){
             for (int j = 0; j < Model.getTaillePlateau(); j++){
             	
+            	// Regarde si le JButton est un bouton de la grille adverse
             	if (sources == VueJeu.getGrilleJeu(i, j)){
             		
-        			JButton btn = (JButton) source.getSource();
-        			
-        			if (btn.getActionCommand().length() <= 2) {
-        				
-        			
-        				Joueurs verif = model.partieEstFini();
-        	    		
-        	    		if (verif == null)
-							Model.getJoueur1().setNomJoueur(vueJeu.getChatNomJoueur().getText());
-        	    			model.jouer(source);
-        				
-        				vueJeu.initGrilleTexte();
-        				
-        				return;
-        			}
-        			
+    				Joueurs verif = model.partieEstFini();
+    	    		
+    	    		if (verif == null) {
+    	    			Model.getJoueur1().setNomJoueur(vueJeu.getChatNomJoueur().getText());
+    	    			model.jouer(source); 
+    	    		}
+    				
+    				vueJeu.initGrilleTexte();
+    				
+    				return;
         	    }
             }
         }

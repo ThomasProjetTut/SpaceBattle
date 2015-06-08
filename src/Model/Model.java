@@ -51,8 +51,6 @@ public class Model {
         
         joueur2.initTableauxZero();
 
-        joueur2.mettreLesBateaux();
-
         System.out.println("Type joueur 2 : "+joueur2.getTypeIdJoueurs());
       
 	}

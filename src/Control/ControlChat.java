@@ -1,5 +1,6 @@
 package Control;
 
+import Model.Model;
 import View.VueJeu;
 
 import java.awt.event.KeyEvent;
@@ -20,7 +21,8 @@ public class ControlChat implements KeyListener {
 
         if (e.getKeyCode() == 10) {
             if (!vueJeu.getChatLigne().getText().isEmpty() && e.getSource() == vueJeu.getChatLigne()) {
-            	VueJeu.getChatTexte().append(vueJeu.getChatNomJoueur().getText() + " : " + vueJeu.getChatLigne().getText() + "\n");
+            	Model.getJoueur1().setNomJoueur(vueJeu.getChatNomJoueur().getText());
+            	VueJeu.getChatTexte().append(Model.getJoueur1().getNomJoueur() + " : " + vueJeu.getChatLigne().getText() + "\n");
             	vueJeu.getChatLigne().setText("");
             }
         }
