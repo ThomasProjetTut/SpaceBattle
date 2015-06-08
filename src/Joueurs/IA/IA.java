@@ -16,8 +16,6 @@ public abstract class IA extends Joueurs {
 		return nombreCoups > 0;
 	}
 	
-	public abstract Point aquisitionCoordonnees();
-	
 	@Override
     public void mettreLesBateaux() {
 		placementIa(tabJoueur);

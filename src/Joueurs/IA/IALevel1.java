@@ -51,7 +51,6 @@ public class IALevel1 extends IA {
 
     }
 
-    @Override
     public Point aquisitionCoordonnees(){
         Random random = new Random();
 

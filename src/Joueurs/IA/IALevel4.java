@@ -10,11 +10,11 @@ public class IALevel4 extends IA {
 	
 	private int[][] tabJoueurAdverse;
 	
-	public IALevel4(int[][] tabJoueurAdverse) {
+	public IALevel4() {
         super();
-		this.tabJoueurAdverse = tabJoueurAdverse;
 		nomJoueur = "Dieu";
 		typeId = IA_LEVEL_4;
+		tabJoueurAdverse = Model.getJoueur(1).getTabJoueur();
 	}
 	
     @Override
@@ -35,7 +35,6 @@ public class IALevel4 extends IA {
 
     }
  
-    @Override
     public Point aquisitionCoordonnees(){
  
         Point retour = new Point(0, 0);
