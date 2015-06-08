@@ -30,6 +30,7 @@ public class VueJeu extends JFrame {
     private JButton porteAvion;
     private JButton croiseur;
     private JButton sousMarin;
+    private JButton valider,tourner;
 
     private static JTextArea chatTexte;
     private JTextField chatLigne;
@@ -40,6 +41,11 @@ public class VueJeu extends JFrame {
 
     private Model model;
     private String nomJoueur;
+
+    private JPanel panPrincipal,panJeu,panOption,panPteGrille,bateauxAffiche
+            ,panCroiseur,panTorpilleur,panContreTorpilleur
+            ,panSousMarin,panPorteAvion,chatPanel,panGrille,nomPanel,fond,panBouton;
+    private GridBagLayout gbl_panel_1;
 
     public VueJeu(Model model){
 
@@ -97,6 +103,9 @@ public class VueJeu extends JFrame {
 
         initBateaux();
 
+        valider = new JButton("Valider");
+        tourner = new JButton("Tourner");
+
     }
 
     public void initChat(){
@@ -116,13 +125,13 @@ public class VueJeu extends JFrame {
 
     }
 
-    public void initGrille(){
+    public void initGrille(JButton[][] grilleJeu, int size){
 
         for (int i = 0; i < grilleJeu.length; i++){
             for (int j = 0; j < grilleJeu.length; j++){
                 grilleJeu[i][j] = new JButton("0");
                 grilleJeu[i][j].setBackground(Color.lightGray);
-                grilleJeu[i][j].setPreferredSize(new Dimension(50, 50));
+                grilleJeu[i][j].setPreferredSize(new Dimension(size, size));
                 grilleJeu[i][j].setActionCommand("" + i + "" + j);
                 grilleJeu[i][j].setBorder(null);
             }
@@ -203,7 +212,7 @@ public class VueJeu extends JFrame {
         porteAvion.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.PORTEAVIONS).getNombreCases())+Bateaux.PORTEAVIONS);
     }
 
-    public void initPteGrille(){
+    /*public void initPteGrille(){
 
         for (int i = 0; i < pteGrilleJeu.length; i++){
             for (int j = 0; j < pteGrilleJeu.length; j++){
@@ -214,65 +223,65 @@ public class VueJeu extends JFrame {
                 pteGrilleJeu[i][j].setBorder(null);
             }
         }
-    }
+    }*/
+    /* Version 1 = Grande grille du milieu
+    *  Version 2 = Petite grille du bas droit
+    */
+    public JPanel afficheGrille (JPanel panel, int version, JButton[][] grille) {
+        switch (version) {
+            case 1:
+                for (int i = 0; i < grille.length; i++) {
+                    for (int j = 0; j < grille.length; j++) {
 
-    public JPanel afficheGrille (JPanel panGrille){
-        for (int i = 0; i < grilleJeu.length; i++){
-            for (int j = 0; j < grilleJeu.length; j++){
+                        GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
+                        gbc_btnNewButton.gridx = i;
+                        gbc_btnNewButton.gridy = j;
+                        panel.add(grille[i][j], gbc_btnNewButton);
+                        grille[i][j].setOpaque(false);
+                    }
+                }
+                panel.setOpaque(false);
 
-                GridBagConstraints gbc_btnNewButton = new GridBagConstraints();
-                gbc_btnNewButton.gridx = i;
-                gbc_btnNewButton.gridy = j;
-                panGrille.add(grilleJeu[i][j], gbc_btnNewButton);
-                grilleJeu[i][j].setOpaque(false);
-            }
+                return panel;
+            case 2:
+                for (int i = 0; i < grille.length; i++) {
+                    for (int j = 0; j < grille.length; j++) {
+
+                        GridBagConstraints gbc_btnNewButton2 = new GridBagConstraints();
+                        gbc_btnNewButton2.gridx = i;
+                        gbc_btnNewButton2.gridy = j;
+                        panel.add(grille[i][j], gbc_btnNewButton2);
+                    }
+                }
+
+                return panel;
         }
-        panGrille.setOpaque(false);
-
-        return panGrille;
+        return panel;
     }
 
-    public JPanel affichePetiteGrille(JPanel panPteGrille){
+    /*public JPanel affichePetiteGrille(JPanel panel){
         for (int i = 0; i < pteGrilleJeu.length; i++){
             for (int j = 0; j < pteGrilleJeu.length; j++){
 
                 GridBagConstraints gbc_btnNewButton2 = new GridBagConstraints();
                 gbc_btnNewButton2.gridx = i;
                 gbc_btnNewButton2.gridy = j;
-                panPteGrille.add(pteGrilleJeu[i][j], gbc_btnNewButton2);
+                panel.add(pteGrilleJeu[i][j], gbc_btnNewButton2);
             }
         }
 
-        return panPteGrille;
-    }
+        return panel;
+    }*/
+    public void creerPanelGauche(){
 
-
-    public void creerFenetreJeu(){
-
-        barreMenu.setVisible(true);
-        initChat();
-        initGrille();
-        initPteGrille();
-
-        JPanel panPrincipal = new JPanel();
-        JPanel panJeu = new JPanel();
-        JPanel panOption = new JPanel();
-        JPanel panPteGrille = new JPanel();
-
-        JPanel bateauxAffiche = new JPanel();
-        JPanel panCroiseur = new JPanel();
-        JPanel panTorpilleur = new JPanel();
-        JPanel panContreTorpilleur = new JPanel();
-        JPanel panSousMarin = new JPanel();
-        JPanel panPorteAvion = new JPanel();
-
-        JPanel nomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        JPanel chatPanel = new JPanel(new BorderLayout());
+        //COTE GAUCHE DE LA FENETRE
+        nomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+        chatPanel = new JPanel(new BorderLayout());
         JScrollPane chatTextPane = new JScrollPane(chatTexte,
                 JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
                 JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
-        GridBagLayout gbl_panel_1 = new GridBagLayout();
+
 
         chatPanel.add(chatLigne, BorderLayout.SOUTH);
         chatPanel.add(chatTextPane, BorderLayout.CENTER);
@@ -281,21 +290,67 @@ public class VueJeu extends JFrame {
         nomPanel.add(chatNomJoueurInfo);
         nomPanel.add(chatNomJoueur);
         chatPanel.add(nomPanel, BorderLayout.NORTH);
+
+
+    }
+    public void creerPanelDroite(){
+        panContreTorpilleur.add(contreTorpilleurs);
+        panTorpilleur.add(torpilleur);
+        panSousMarin.add(sousMarin);
+        panCroiseur.add(croiseur);
+        panPorteAvion.add(porteAvion);
+
+
+        bateauxAffiche.add(panContreTorpilleur);
+        bateauxAffiche.add(panTorpilleur);
+        bateauxAffiche.add(panSousMarin);
+        bateauxAffiche.add(panCroiseur);
+        bateauxAffiche.add(panPorteAvion);
+        bateauxAffiche.setLayout(new BoxLayout(bateauxAffiche, BoxLayout.Y_AXIS));
+
+        panOption.add(bateauxAffiche);
+        // PANEL DE LA GRILLE A AFFICHER AU MILIEU
+        panOption.add(panGrille);
+        panOption.setLayout(new BoxLayout(panOption, BoxLayout.Y_AXIS));
+
+        panPrincipal.add(panOption, BorderLayout.EAST);
+
+    }
+    public void creerFenetreJeu(){
+
+        barreMenu.setVisible(true);
+        initChat();
+        //La grille de placement de plateau est situé au milieu
+        initGrille(pteGrilleJeu, 50);
+        //La grille de jeu pdt la game est placé en bas à droite
+        initGrille(grilleJeu,20);
+
+        panPrincipal = new JPanel();
+        panJeu = new JPanel();
+        panOption = new JPanel();
+        panPteGrille = new JPanel();
+        panGrille = new JPanel();
+        panBouton = new JPanel();
+
+        bateauxAffiche = new JPanel();
+        panCroiseur = new JPanel();
+        panTorpilleur = new JPanel();
+        panContreTorpilleur = new JPanel();
+        panSousMarin = new JPanel();
+        panPorteAvion = new JPanel();
+        gbl_panel_1 = new GridBagLayout();
+
+        creerPanelGauche();
+
         panPrincipal.setLayout(new BorderLayout(0, 0));
         panPrincipal.add(chatPanel, BorderLayout.WEST);
 
+        //TABLEAU DE JEU CENTRE DU PANEL
 
-        panPrincipal.add(panJeu, BorderLayout.CENTER);
-
-        gbl_panel_1.columnWidths = new int[]{0};
-        gbl_panel_1.rowHeights = new int[]{0};
-        gbl_panel_1.columnWeights = new double[]{0.0};
-        gbl_panel_1.rowWeights = new double[]{0.0};
-
-        JPanel fond = null;
-        JPanel panGrille = new JPanel();
-        panGrille.setLayout(gbl_panel_1);
-        panGrille.setOpaque(false);
+        fond = null;
+        panPteGrille = new JPanel();
+        panPteGrille.setLayout(gbl_panel_1);
+        panPteGrille.setOpaque(false);
 
         try {
             fond = new JPanel() {
@@ -309,39 +364,25 @@ public class VueJeu extends JFrame {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        panGrille = afficheGrille(panGrille);
-
-
-        fond.add(panGrille);
+        //panGrille = afficheGrille(panGrille);
+        panPteGrille = afficheGrille(panPteGrille, 1, pteGrilleJeu);
+        fond.add(panPteGrille);
         panJeu.add(fond);
+        panPrincipal.add(panJeu, BorderLayout.CENTER);
 
-        // affichage bateaux sur le cote
-        panContreTorpilleur.add(contreTorpilleurs);
-        panTorpilleur.add(torpilleur);
-        panSousMarin.add(sousMarin);
-        panCroiseur.add(croiseur);
-        panPorteAvion.add(porteAvion);
-
+        // affichage bateaux sur le cote et du terrain (COTE DROITE)
+        creerPanelDroite();
 
         panContreTorpilleur.setLayout(gbl_panel_1);
         panTorpilleur.setLayout(gbl_panel_1);
         panSousMarin.setLayout(gbl_panel_1);
         panCroiseur.setLayout(gbl_panel_1);
         panPorteAvion.setLayout(gbl_panel_1);
-        panPteGrille.setLayout(gbl_panel_1);
-
-        panPteGrille = affichePetiteGrille(panPteGrille);
-
-        bateauxAffiche.add(panContreTorpilleur);
-        bateauxAffiche.add(panTorpilleur);
-        bateauxAffiche.add(panSousMarin);
-        bateauxAffiche.add(panCroiseur);
-        bateauxAffiche.add(panPorteAvion);
-        bateauxAffiche.setLayout(new BoxLayout(bateauxAffiche, BoxLayout.Y_AXIS));
+        panGrille.setLayout(gbl_panel_1);
+        panGrille = afficheGrille(panGrille,2,grilleJeu);
 
         panOption.add(bateauxAffiche);
-        panOption.add(panPteGrille);
+        panOption.add(panGrille);
         panOption.setLayout(new BoxLayout(panOption, BoxLayout.Y_AXIS));
 
         panPrincipal.add(panOption, BorderLayout.EAST);
