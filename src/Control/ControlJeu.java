@@ -36,6 +36,8 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	@Override
 	public void mouseReleased (MouseEvent event) {
 		
+		vueJeu.repaintFantomeBateau();
+		
 		JButton btn = (JButton) event.getSource();
 		
 		int x = Character.getNumericValue(btn.getActionCommand().charAt(0));
@@ -43,6 +45,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 		
 		int idBateau = Model.getJoueur(1).getTabJoueur()[x][y];
 		
+		// Clique droit pour enlever les bateaux && modifier le sens 
 		if(event.isPopupTrigger()){
             if (idBateau != 0) {
             	for (int i = 0; i < Model.getTaillePlateau(); i++){
@@ -64,8 +67,52 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
             		sensBateau = Bateaux.HORIZONTAL;
             }
         }
+		else { // Clic gauche pour mettre les bateaux
+           		
+    		if (bateau == null)
+    			return;
+    		
+    		int[] cible = new int[4];
+    		
+    		int count = 1;
+    		
+    		idBateau = Character.getNumericValue(bateau.getActionCommand().charAt(1));
+    		int nbCase = Character.getNumericValue(bateau.getActionCommand().charAt(0));
+    		
+    		cible[0] = x;
+    		cible[1] = y;
+    		cible[2] = idBateau;
+    		cible[3] = sensBateau;
+    		
+    		if (Joueurs.validationCoup(cible, Model.getJoueur(1).getTabJoueur())) {
+
+    			if (sensBateau == Bateaux.HORIZONTAL) {
+    			
+        			for (int a = x ; a < x + nbCase ; a++) {
+        				VueJeu.getPteGrilleJeu(a, y).setIcon(Bateaux.imageBateau(idBateau, Bateaux.HORIZONTAL, count, Bateaux.SANSETAT));
+        				Model.getJoueur(1).setValeurTabJoueur(a, y, idBateau);
+        				count++;
+        			}
+        			bateau.setEnabled(false);
+    			}
+    			else {
+    				for (int a = y ; a < y + nbCase ; a++) {
+        				VueJeu.getPteGrilleJeu(x, a).setIcon(Bateaux.imageBateau(idBateau, Bateaux.VERTICAL, count, Bateaux.SANSETAT));
+        				Model.getJoueur(1).setValeurTabJoueur(x, a, idBateau);
+        				count++;
+        			}
+    				bateau.setEnabled(false);
+    			}
+    		}
+    		
+    		bateau = null;
+    		
+    		return;
+    		
+    	}
 	}
 	
+	// Placement fantome bateaux
 	@Override
 	public void mouseEntered(MouseEvent event){
 		
@@ -108,8 +155,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 
 		Object sources = source.getSource();
 		
-		vueJeu.repaintFantomeBateau();
-		
+		// Initialise le bateau cliqué
 		if (sources == vueJeu.getSousMarin()) {
 			bateau = vueJeu.getSousMarin();
 			return;
@@ -130,7 +176,8 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 			bateau = vueJeu.getCroiseur();
 			return;
 		}
-				
+		
+		// Fonction pour jouer quand n clique sur la grille adverse
 		for (int i = 0; i < Model.getTaillePlateau(); i++){
             for (int j = 0; j < Model.getTaillePlateau(); j++){
             	
@@ -153,52 +200,11 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
         			}
         			
         	    }
-            	else if (sources == VueJeu.getPteGrilleJeu(i, j)){
-                       		
-            		if (bateau == null)
-            			return;
-            		
-            		int[] cible = new int[4];
-            		
-            		int count = 1;
-            		
-            		int idBateau = Character.getNumericValue(bateau.getActionCommand().charAt(1));
-            		int nbCase = Character.getNumericValue(bateau.getActionCommand().charAt(0));
-            		
-            		cible[0] = i;
-            		cible[1] = j;
-            		cible[2] = idBateau;
-            		cible[3] = sensBateau;
-            		
-            		if (Joueurs.validationCoup(cible, Model.getJoueur(1).getTabJoueur())) {
-
-            			if (sensBateau == Bateaux.HORIZONTAL) {
-            			
-	            			for (int a = i ; a < i + nbCase ; a++) {
-	            				VueJeu.getPteGrilleJeu(a, j).setIcon(Bateaux.imageBateau(idBateau, Bateaux.HORIZONTAL, count, Bateaux.SANSETAT));
-	            				Model.getJoueur(1).setValeurTabJoueur(a, j, idBateau);
-	            				count++;
-	            			}
-	            			bateau.setEnabled(false);
-            			}
-            			else {
-            				for (int a = j ; a < j + nbCase ; a++) {
-	            				VueJeu.getPteGrilleJeu(i, a).setIcon(Bateaux.imageBateau(idBateau, Bateaux.VERTICAL, count, Bateaux.SANSETAT));
-	            				Model.getJoueur(1).setValeurTabJoueur(i, a, idBateau);
-	            				count++;
-	            			}
-            				bateau.setEnabled(false);
-            			}
-            		}
-            		
-            		bateau = null;
-            		
-            		return;
-            		
-            	}
             }
         }
 		
+		
+		// Menu
 		if (sources == vueJeu.getNouvellePartie()) {
 				vueParametre.setVisible(true);
 				model.setIsGameActive(false);

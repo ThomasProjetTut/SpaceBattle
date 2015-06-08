@@ -376,7 +376,7 @@ public class VueJeu extends JFrame {
         for	(int i = 0 ; i < Model.getTaillePlateau() ; i++) {
             for	(int j = 0 ; j < Model.getTaillePlateau() ; j++) {
                 grilleJeu[i][j].addActionListener(listener);
-                pteGrilleJeu[i][j].addActionListener(listener);
+                //pteGrilleJeu[i][j].addActionListener(listener);
                 pteGrilleJeu[i][j].addMouseListener(listener2);
             }
         }
