@@ -127,8 +127,6 @@ public class Model {
 		
 		placementBateauEstLock = true;
 		
-		System.out.println("La partie vient de commencer !");
-		
 		JButton btn = (JButton) source.getSource();
 		
 		int x = Character.getNumericValue(btn.getActionCommand().charAt(0));
