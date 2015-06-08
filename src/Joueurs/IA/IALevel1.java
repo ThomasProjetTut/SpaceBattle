@@ -14,6 +14,24 @@ public class IALevel1 extends IA {
 		nomJoueur = "Novice";
 		typeId = IA_LEVEL_1;
 	}
+
+	int[][] tabCaseDejaTouche = new int[Model.getTaillePlateau()][Model.getTaillePlateau()];
+	
+	public void initTableauxZero() {
+
+		for (int i = 0 ; i < Model.getTaillePlateau() ; i++) {
+ 	    	for (int j = 0 ; j < Model.getTaillePlateau() ; j++) {
+ 	    		tabJoueur[i][j] = Model.PAS_DE_BATEAU;
+ 	    	}
+    	 }
+		
+		for (int i = 0 ; i < Model.getTaillePlateau() ; i++) {
+ 	    	for (int j = 0 ; j < Model.getTaillePlateau() ; j++) {
+ 	    		tabCaseDejaTouche[i][j] = Model.PAS_DE_BATEAU;
+ 	    	}
+    	 }
+    
+	}
 	
     @Override
     public void jouerCoup(Joueurs joueurAdverse, int x, int y) {
@@ -36,12 +54,19 @@ public class IALevel1 extends IA {
     @Override
     public Point aquisitionCoordonnees(){
         Random random = new Random();
- 
-        Point retour = new Point();
 
+        Point retour = new Point();
+        
         retour.x = random.nextInt(Model.getTaillePlateau());
         retour.y = random.nextInt(Model.getTaillePlateau());
+        
+        while (tabCaseDejaTouche[retour.x][retour.y] != 0) {
+        	retour.x = random.nextInt(Model.getTaillePlateau());
+            retour.y = random.nextInt(Model.getTaillePlateau());
+        }
  
+        tabCaseDejaTouche[retour.x][retour.y] = 1;
+        
         return retour;
     }
 }
