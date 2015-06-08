@@ -16,14 +16,6 @@ import View.VueJeu;
 import View.VueMenu;
 import View.VueParametre;
  
-/**
- * Classe correspondant � un client TCP.
- * Le client envoie la chaine 'Bonjour' et lit une reponse de la part du serveur.
- * Le client envoie ensuite la chaine 'Au revoir' et lit une reponse.
- * Le numero de port du serveur est specifie dans la classe ServeurTCP.
- * @author Cyril Rabat
- * @version 07/10/2013
- */
 public class ClientTCP extends Thread {
  
 	private static Socket socket;
@@ -57,10 +49,8 @@ public class ClientTCP extends Thread {
 			    socket = new Socket("localhost", ServeurTCP.portEcoute);
 			} catch(UnknownHostException e) {
 			    System.err.println("Erreur sur l'h�te : " + e);
-			    //System.exit(-1);
 			} catch(IOException e) {
 			    System.err.println("Creation de la socket impossible : " + e);
-			    //System.exit(-1);
 			}
 		}
 		
@@ -83,7 +73,6 @@ public class ClientTCP extends Thread {
 		    output = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
 		} catch(IOException e) {
 		    System.err.println("Association des flux impossible : " + e);
-		    System.exit(-1);
 		}
 	 
 		while (true)
@@ -108,7 +97,6 @@ public class ClientTCP extends Thread {
 			    
 			} catch(IOException e) {
 			    System.err.println("Erreur lors de la lecture : " + e);
-			    System.exit(-1);
 			}
 			System.out.println("Lu: " + message);
 	    }
@@ -122,7 +110,6 @@ public class ClientTCP extends Thread {
 		    socket.close();
 		} catch(IOException e) {
 		    System.err.println("Erreur lors de la fermeture des flux et de la socket : " + e);
-		    System.exit(-1);
 		}
     }
  

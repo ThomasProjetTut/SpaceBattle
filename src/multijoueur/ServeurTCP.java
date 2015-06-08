@@ -16,14 +16,6 @@ import View.VueJeu;
 import View.VueMenu;
 import View.VueParametre;
  
-/**
- * Classe correspondant � un serveur TCP.
- * Le client envoie la chaine 'Bonjour' et lit une reponse de la part du serveur.
- * Le client envoie ensuite la chaine 'Au revoir' et lit une reponse.
- * Le numero de port du serveur est specifie dans la classe ServeurTCP.
- * @author Cyril Rabat
- * @version 07/10/2013
- */
 public class ServeurTCP extends Thread {
  
 	private static BufferedReader input;
@@ -57,7 +49,6 @@ public class ServeurTCP extends Thread {
 		    socketServeur = new ServerSocket(portEcoute);
 		} catch(IOException e) {
 		    System.err.println("Creation de la socket impossible : " + e);
-		    System.exit(-1);
 		}
 	 
 		// Attente d'une connexion d'un client
@@ -66,7 +57,6 @@ public class ServeurTCP extends Thread {
 		    socketClient = socketServeur.accept();
 		} catch(IOException e) {
 		    System.err.println("Erreur lors de l'attente d'une connexion : " + e);
-		    System.exit(-1);
 		}
 	 
 		model.initJeu();
@@ -88,7 +78,6 @@ public class ServeurTCP extends Thread {
 		    output = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socketClient.getOutputStream())), true);
 		} catch(IOException e) {
 		    System.err.println("Association des flux impossible : " + e);
-		    System.exit(-1);
 		}
 	 
 		while (true) 
@@ -113,7 +102,6 @@ public class ServeurTCP extends Thread {
 			    
 			} catch(IOException e) {
 			    System.err.println("Erreur lors de la lecture : " + e);
-			    System.exit(-1);
 			}
 			System.out.println("Lu: " + message);
 		}
@@ -128,7 +116,6 @@ public class ServeurTCP extends Thread {
  		    socketServeur.close();
  		} catch(IOException e) {
  		    System.err.println("Erreur lors de la fermeture des flux et des sockets : " + e);
- 		    System.exit(-1);
  		}
     }
  
