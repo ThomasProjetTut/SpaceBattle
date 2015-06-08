@@ -46,7 +46,7 @@ public class ClientTCP extends Thread {
 		while (socket == null)
 		{
 			try {
-			    socket = new Socket("localhost", ServeurTCP.portEcoute);
+			    socket = new Socket(vueConnexion.getHostIP(), ServeurTCP.portEcoute);
 			} catch(UnknownHostException e) {
 			    System.err.println("Erreur sur l'h�te : " + e);
 			} catch(IOException e) {
@@ -83,6 +83,9 @@ public class ClientTCP extends Thread {
 			try {
 			    message = input.readLine();
 			    
+			    if (message.isEmpty())
+			    	continue;
+			    
 			    // 'C' = Chat | 'I' = Index coordonnées | 'T' = TabBateau
 			    if (message.charAt(0) == 'C') {
 			    	message = message.substring(1,  message.length());
@@ -98,16 +101,18 @@ public class ClientTCP extends Thread {
 			} catch(IOException e) {
 			    System.err.println("Erreur lors de la lecture : " + e);
 			}
-			System.out.println("Lu: " + message);
 	    }
     }
     
     public void deconnexion() {
     	// Fermeture des flux et de la socket
 		try {
-		    input.close();
-		    output.close();
-		    socket.close();
+			if (input != null)
+ 				input.close();
+ 			if (output != null)
+ 				output.close();
+ 			if (socket != null)
+ 				socket.close();
 		} catch(IOException e) {
 		    System.err.println("Erreur lors de la fermeture des flux et de la socket : " + e);
 		}

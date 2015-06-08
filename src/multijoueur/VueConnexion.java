@@ -40,6 +40,7 @@ public class VueConnexion extends JFrame {
    private VueJeu vueJeu;
    private VueMenu vueMenu;
    private Model model;
+   private VueConnexion vueConnexion;
    
    private ServeurTCP serveur;
    private ClientTCP client;
@@ -48,6 +49,7 @@ public class VueConnexion extends JFrame {
 	   this.vueMenu = vueMenu;
        this.vueJeu = vueJeu;
        this.model = model;
+       this.vueConnexion = this;
 	   
 	   serveur = new ServeurTCP(model, vueJeu, vueMenu, this);
 	   client = new ClientTCP(model, vueJeu, vueMenu, this);
@@ -154,15 +156,31 @@ public class VueConnexion extends JFrame {
             public void actionPerformed(ActionEvent e) {
             	
             	if (isHost) {
-            		serveur.start();
+            		if (!serveur.isAlive()) {
+	            		connectButton.setText("En attente..");
+	            		serveur = new ServeurTCP(model, vueJeu, vueMenu, vueConnexion);
+	            		serveur.start();
+            		}
+            		else {
+            			connectButton.setText("Connexion");
+            			serveur.deconnexion();
+            		}
             	}
             	else {
-            		client.start();
+            		if (!client.isAlive()) {
+                		connectButton.setText("En attente..");
+                		client = new ClientTCP(model, vueJeu, vueMenu, vueConnexion);
+                		client.start();
+                	}
+                	else {
+                		connectButton.setText("Connexion");
+                		client.deconnexion();
+                	}
             	}
             }
          };
          
-      connectButton = new JButton("Connect");
+      connectButton = new JButton("Connexion");
       connectButton.setMnemonic(KeyEvent.VK_C);
       connectButton.setActionCommand("connect");
       connectButton.addActionListener(buttonListener);
@@ -185,6 +203,10 @@ public class VueConnexion extends JFrame {
 
 	class ActionAdapter implements ActionListener {
 	   public void actionPerformed(ActionEvent e) {}
+	}
+
+	public String getHostIP() {
+		return hostIP;
 	}
 
 }

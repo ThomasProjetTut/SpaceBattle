@@ -58,6 +58,9 @@ public class ServeurTCP extends Thread {
 		} catch(IOException e) {
 		    System.err.println("Erreur lors de l'attente d'une connexion : " + e);
 		}
+		
+		if (socketClient == null)
+			return;
 	 
 		model.initJeu();
         vueJeu.repaintFantomeBateau();
@@ -88,6 +91,9 @@ public class ServeurTCP extends Thread {
 			try {
 			    message = input.readLine();
 			    
+			    if (message.isEmpty())
+			    	continue;
+			    
 			    // 'C' = Chat | 'I' = Index coordonnées | 'T' = TabBateau
 			    if (message.charAt(0) == 'C') {
 			    	message = message.substring(1,  message.length());
@@ -103,17 +109,20 @@ public class ServeurTCP extends Thread {
 			} catch(IOException e) {
 			    System.err.println("Erreur lors de la lecture : " + e);
 			}
-			System.out.println("Lu: " + message);
 		}
     }
     
     public void deconnexion() {
     	// Fermeture des flux et des sockets
  		try {
- 		    input.close();
- 		    output.close();
- 		    socketClient.close();
- 		    socketServeur.close();
+ 			if (input != null)
+ 				input.close();
+ 			if (output != null)
+ 				output.close();
+ 			if (socketClient != null)
+ 				socketClient.close();
+ 			if (socketServeur != null)
+ 				socketServeur.close();
  		} catch(IOException e) {
  		    System.err.println("Erreur lors de la fermeture des flux et des sockets : " + e);
  		}
