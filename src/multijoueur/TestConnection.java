@@ -28,6 +28,12 @@ public class TestConnection extends Thread{
 	     connexion = new Seconnecter(model, vueJeu, vueMenu, vueParametre);
 	 }
 	 
+	 public void envoiLigne() {
+		 Seconnecter.toSend.append("LOL");
+		 Seconnecter.out.print(Seconnecter.toSend);
+  	   	 Seconnecter.out.flush();
+	 }
+	 
 	 public void displayTCP(boolean valeur) {
 			 connexion.setVisible(valeur);
 	 }
@@ -74,17 +80,6 @@ public class TestConnection extends Thread{
 
 	         case Seconnecter.CONNECTED:
 	            try {
-	            	
-	            	/*model.initJeu();
-	                vueJeu.repaintFantomeBateau();
-	                vueJeu.reiniBtnBateaux();
-	                model.setPlacementBateauEstLock(false);
-	                vueJeu.initGrilleTexte();
-	                vueJeu.resetTextChat();
-	                vueMenu.setVisible(false);
-	                vueParametre.setVisible(false);
-	                model.setIsGameActive(true);
-	                vueJeu.setVisible(true);*/
 	                
 	               // Send data
 	               if (Seconnecter.toSend.length() != 0) {
