@@ -50,6 +50,8 @@ public class Model {
         initJoueur2();
         
         joueur2.initTableauxZero();
+        
+        joueur2.mettreLesBateaux();
 
         System.out.println("Type joueur 2 : "+joueur2.getTypeIdJoueurs());
       
@@ -126,13 +128,16 @@ public class Model {
 		
 		Joueurs verif;
 		
+		// Vérifie si le joueur un peut jouer
     	if (joueur1.coupEstDisponible()) {
+    		
     		joueur1.jouerCoup(joueur2, x, y);
     		
     		verif = partieEstFini();
     		
+    		// Vérifie si le joueur a encore des coups à jouer et si la partie est finis
     		if (joueur1.coupEstDisponible() && verif == null)
-    			return;
+    			return; 
     		else {
     			if (verif != null) {
     				javax.swing.JOptionPane.showMessageDialog(null,verif.getNomJoueur()+" a gagné la partie !");
@@ -141,8 +146,19 @@ public class Model {
     		}
     	}
 
-    	if (joueur2.getTypeIdJoueurs() != 4) {
+    	// si le joueur 2 est humain
+    	if (joueur2.getTypeIdJoueurs() == 0) {
+    		
+    		// Mettre la fonction multijoueurs d'attente de coups
+    		
+    		
+    		
+    	}
+    	// Si le bot est level 4, il ne faut pas qu'il est plusieurs coups à jouer
+    	else if (joueur2.getTypeIdJoueurs() != 4) {
+    		
     		while (joueur2.coupEstDisponible()) {
+    			
     			joueur2.jouerCoup(joueur1, x, y);
     			
     			verif = partieEstFini();

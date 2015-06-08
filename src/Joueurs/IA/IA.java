@@ -36,6 +36,7 @@ public abstract class IA extends Joueurs {
     
     public void placementBateaux(int[] cible, int[][] tabJoueur) {
     	
+    	
 		switch (cible[3]) {
 	        case Bateaux.HORIZONTAL :
 	            for(int i = cible[0]; i < cible[0] + getTaille(cible[2]); i++){

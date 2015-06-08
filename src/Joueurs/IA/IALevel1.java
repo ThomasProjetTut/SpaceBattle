@@ -24,6 +24,7 @@ public class IALevel1 extends IA {
         
         if (joueurAdverse.estTouche(point.x, point.y)) {
             joueurAdverse.updateTabJoueurTouche(point.x, point.y);
+            updateIconGrilleJoueurTouche(point.x, point.y, joueurAdverse);
             VueJeu.getChatTexte().append(nomJoueur+" : Coup réussi\n");
         } else {
             nombreCoups--;

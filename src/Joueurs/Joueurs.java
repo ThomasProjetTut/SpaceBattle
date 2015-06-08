@@ -1,7 +1,10 @@
 package Joueurs;
 
+import javax.swing.JButton;
+
 import Bateaux.Bateaux;
 import Model.Model;
+import View.VueJeu;
 
 public abstract class Joueurs {
 	
@@ -61,6 +64,22 @@ public abstract class Joueurs {
 	public void updateTabJoueurTouche(int x, int y) {
 		this.setVieJoueur(this.getVieJoueur() - 1);
 		this.setValeurTabJoueur(x, y, -tabJoueur[x][y]);
+	}
+	
+	// Met à jour les icons si le joueur est touché
+	public void updateIconGrilleJoueurTouche(int x, int y, Joueurs joueurAdverse) {
+		
+		if (joueurAdverse.typeId != HUMAIN)
+			return;
+		
+		JButton btn = VueJeu.getPteGrilleJeu(x, y);
+		
+		int idBateau = -joueurAdverse.getValeurTabJoueur(x, y);
+		int partie = Character.getNumericValue(btn.getActionCommand().charAt(2));
+		int sens = Character.getNumericValue(btn.getActionCommand().charAt(3));
+		
+		btn.setIcon(Bateaux.imageBateau(idBateau, sens, partie, Bateaux.TOUCHE));
+		
 	}
 
 	// Return true si un bâteau est touché par le tir

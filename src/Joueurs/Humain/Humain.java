@@ -30,6 +30,7 @@ public class Humain extends Joueurs {
 
         if (joueurAdverse.estTouche(x, y)) {
             joueurAdverse.updateTabJoueurTouche(x, y);
+            updateIconGrilleJoueurTouche(x, y, joueurAdverse);
             VueJeu.getChatTexte().append(nomJoueur+" : Coup réussi\n");
         } else {
             nombreCoups--;
