@@ -72,7 +72,7 @@ public class VueJeu extends JFrame {
     
     public static void appendToChatBox(String msg)
     {
-    	chatTexte.append(msg);
+    	chatTexte.append(msg+"\n");
     }
     
     public void updateTextCellsJoueur1() {

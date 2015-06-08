@@ -35,6 +35,7 @@ public class ControlChat extends KeyAdapter {
             		ClientTCP.getOutPut().println("C"+Model.getJoueur1().getNomJoueur() + " : " + vueJeu.getChatLigne().getText() + "\n");
             	
             	VueJeu.getChatTexte().append(Model.getJoueur1().getNomJoueur() + " : " + vueJeu.getChatLigne().getText() + "\n");
+            	
             	vueJeu.getChatLigne().setText("");
             }
         }

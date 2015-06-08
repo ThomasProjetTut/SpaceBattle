@@ -96,6 +96,7 @@ public class ClientTCP extends Thread {
 			    
 			    // 'C' = Chat | 'I' = Index coordonnées | 'T' = TabBateau
 			    if (message.charAt(0) == 'C') {
+			    	message = message.substring(1,  message.length());
 			    	VueJeu.appendToChatBox(message);
 			    }
 			    else if (message.charAt(0) == 'I') {
