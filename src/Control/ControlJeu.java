@@ -36,7 +36,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	@Override
 	public void mouseReleased (MouseEvent event) {
 		
-		if (model.placementBateauisLock())
+		if (model.placementBateauIsLock())
 			return;
 		
 		vueJeu.repaintFantomeBateau();
@@ -123,7 +123,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	@Override
 	public void mouseEntered(MouseEvent event){
 		
-		if (model.placementBateauisLock())
+		if (model.placementBateauIsLock())
 			return;
 		
 		if (bateau == null)
@@ -200,7 +200,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
             		}
             		
     				Joueurs verif = model.partieEstFini();
-    	    		
+    				
     	    		if (verif == null) {
     	    			Model.getJoueur1().setNomJoueur(vueJeu.getChatNomJoueur().getText());
     	    			model.jouer(source); 

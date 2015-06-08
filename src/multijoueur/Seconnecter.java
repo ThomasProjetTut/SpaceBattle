@@ -405,6 +405,7 @@ public void initGUI() {
          break;
 
       case CONNECTED:
+    	  model.setAILevel(Joueurs.Joueurs.HUMAIN);
     	  model.initJeu();
           vueJeu.repaintFantomeBateau();
           vueJeu.reiniBtnBateaux();
