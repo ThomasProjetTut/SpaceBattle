@@ -12,7 +12,7 @@ import java.net.*;
  * @author nicolas
  *
  */
-public class Seconnecter implements Runnable {
+public class Seconnecter extends JFrame implements Runnable {
    // Connect status constants
    public final static int NULL = 0;
    public final static int DISCONNECTED = 1;
@@ -39,7 +39,6 @@ public class Seconnecter implements Runnable {
    public static StringBuffer toSend = new StringBuffer("");
    
    // Various GUI components and info
-   public static JFrame mainFrame = null;
    public static JTextArea chatText = null;
    public static JTextField chatLine = null;
    public static JPanel statusBar = null;
@@ -65,7 +64,7 @@ public class Seconnecter implements Runnable {
 
    /////////////////////////////////////////////////////////////////
 
-   private static JPanel initOptionsPane() {
+   private JPanel initOptionsPane() {
       JPanel pane = null;
       ActionAdapter buttonListener = null;
 
@@ -111,7 +110,7 @@ public class Seconnecter implements Runnable {
                   }
                   catch (NumberFormatException nfe) {
                      portField.setText((new Integer(port)).toString());
-                     mainFrame.repaint();
+                     repaint();
                   }
                }
             }
@@ -196,7 +195,7 @@ public class Seconnecter implements Runnable {
    /**
  * 
  */
-public static void initGUI() {
+public void initGUI() {
       // Set up the status bar
       statusField = new JLabel();
       statusField.setText(statusMessages[DISCONNECTED]);
@@ -246,14 +245,15 @@ public static void initGUI() {
       mainPane.add(optionsPane, BorderLayout.WEST);
 
       // Set up the main frame
-      mainFrame = new JFrame("Simple TCP Chat");
-      mainFrame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-      mainFrame.setContentPane(mainPane);
-      mainFrame.setSize(mainFrame.getPreferredSize());
-      mainFrame.setLocation(200, 200);
-      mainFrame.setResizable(false);
-      mainFrame.pack();
-      mainFrame.setVisible(true);
+      
+      setTitle("TCP");
+      setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+      setContentPane(mainPane);
+      setSize(getPreferredSize());
+      setLocation(200, 200);
+      setResizable(false);
+      pack();
+      setVisible(false);
       
       
       
@@ -434,16 +434,16 @@ public static void initGUI() {
       //chatText.append(toAppend.toString());
       toAppend.setLength(0);
 
-      mainFrame.repaint();
+      repaint();
    }
 
    /////////////////////////////////////////////////////////////////
 
    // The main procedure
-  public static void main(String args[]) {
+  //public void main(String args[]) {
      
 
-      initGUI();
+     // initGUI();
 
     /*  while (true) {
          try { // Poll every ~10 ms
@@ -521,7 +521,7 @@ public static void initGUI() {
          default: break; // do nothing
          }
       }*/
-   }
+  // }
 }
 
 ////////////////////////////////////////////////////////////////////

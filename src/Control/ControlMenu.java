@@ -22,12 +22,13 @@ public class ControlMenu implements ActionListener {
 
 	private VueMenu vueMenu;
 	private VueParametre vueParametre;
-	private TestConnection testconnection;
-	public ControlMenu(VueMenu vueMenu, VueParametre vueParametre) {
+	private TestConnection testconnexion;
+	
+	public ControlMenu(VueMenu vueMenu, VueParametre vueParametre, TestConnection testconnexion) {
 		this.vueMenu = vueMenu;
 		this.vueParametre = vueParametre;
 		vueMenu.setMenuControler(this);
-		testconnection = new TestConnection();
+		this.testconnexion = testconnexion;
 	}
 
 	@Override
@@ -43,7 +44,7 @@ public class ControlMenu implements ActionListener {
 		else if (source == vueMenu.getJouerM()) {
 
 			vueParametre.setVisible(false);
-			testconnection.start();
+			testconnexion.displayTCP(true);
 		}
 		else if (source == vueMenu.getInstruction()){
 			vueParametre.setVisible(false);

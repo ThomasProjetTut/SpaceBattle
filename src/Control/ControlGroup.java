@@ -1,5 +1,6 @@
 package Control;
 
+import multijoueur.TestConnection;
 import Model.Model;
 import Sounds.MusicPlayer;
 import View.VueJeu;
@@ -13,6 +14,7 @@ public class ControlGroup {
     private VueMenu vueMenu;
 	private VueParametre vueParametre;
 	private MusicPlayer musicPlayer;
+	private TestConnection testconnection;
 
 	public ControlGroup(Model model) {
 
@@ -22,12 +24,15 @@ public class ControlGroup {
 
 		musicPlayer = new MusicPlayer();
 
+		testconnection = new TestConnection(model, vueJeu, vueMenu, vueParametre);
+		
 		new ControlJeu(model, vueJeu, vueMenu, vueParametre);
-		new ControlMenu(vueMenu, vueParametre);
+		new ControlMenu(vueMenu, vueParametre, testconnection);
 		new ControlChat(vueJeu);
 		new ControlParametre(model, vueJeu, vueMenu, vueParametre);
 		
 		vueMenu.setVisible(true);
 		musicPlayer.start();
+		testconnection.start();
 	}
 }

@@ -7,17 +7,39 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
+import Model.Model;
+import View.VueJeu;
+import View.VueMenu;
+import View.VueParametre;
+
 public class TestConnection extends Thread{
 
-	 public TestConnection(){
-		 
+	private VueParametre vueParametre;
+    private VueJeu vueJeu;
+    private VueMenu vueMenu;
+    private Model model;
+    private Seconnecter connexion;
+	
+	 public TestConnection(Model model, VueJeu vueJeu, VueMenu vueMenu, VueParametre vueParametre){
+		 this.vueMenu = vueMenu;
+	     this.vueParametre = vueParametre;
+	     this.vueJeu = vueJeu;
+	     this.model = model;
+	     connexion = new Seconnecter();
 	 }
+	 
+	 public void displayTCP(boolean valeur) {
+			 connexion.setVisible(valeur);
+	 }
+	 
 	 public void run(){
 	
 	      String s;
 
-	      Seconnecter.initGUI();
+	      //Seconnecter.initGUI();
 
+	      connexion.initGUI();
+	      
 	      while (true) {
 	         try { // Poll every ~10 ms
 	            Thread.sleep(10);
@@ -52,9 +74,22 @@ public class TestConnection extends Thread{
 
 	         case Seconnecter.CONNECTED:
 	            try {
+	            	
+	            	/*model.initJeu();
+	                vueJeu.repaintFantomeBateau();
+	                vueJeu.reiniBtnBateaux();
+	                model.setPlacementBateauEstLock(false);
+	                vueJeu.initGrilleTexte();
+	                vueJeu.resetTextChat();
+	                vueMenu.setVisible(false);
+	                vueParametre.setVisible(false);
+	                model.setIsGameActive(true);
+	                vueJeu.setVisible(true);*/
+	                
 	               // Send data
 	               if (Seconnecter.toSend.length() != 0) {
-	            	   Seconnecter.out.print(Seconnecter.toSend); Seconnecter.out.flush();
+	            	   Seconnecter.out.print(Seconnecter.toSend);
+	            	   Seconnecter.out.flush();
 	            	   Seconnecter.toSend.setLength(0);
 	            	   Seconnecter.changeStatusTS(Seconnecter.NULL, true);
 	               }
