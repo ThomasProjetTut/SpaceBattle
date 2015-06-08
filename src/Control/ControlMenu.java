@@ -1,7 +1,6 @@
 package Control;
 
-import multijoueur.Seconnecter;
-import multijoueur.TestConnection;
+import multijoueur.VueConnexion;
 import View.VueJeu;
 import View.VueMenu;
 import Model.Model;
@@ -16,19 +15,17 @@ import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import multijoueur.Seconnecter;
-
 public class ControlMenu implements ActionListener {
 
 	private VueMenu vueMenu;
 	private VueParametre vueParametre;
-	private TestConnection testconnexion;
+	private VueConnexion vueConnexion;
 	
-	public ControlMenu(VueMenu vueMenu, VueParametre vueParametre, TestConnection testconnexion) {
+	public ControlMenu(VueMenu vueMenu, VueParametre vueParametre, VueConnexion vueConnexion) {
 		this.vueMenu = vueMenu;
 		this.vueParametre = vueParametre;
 		vueMenu.setMenuControler(this);
-		this.testconnexion = testconnexion;
+		this.vueConnexion = vueConnexion;
 	}
 
 	@Override
@@ -44,7 +41,7 @@ public class ControlMenu implements ActionListener {
 		else if (source == vueMenu.getJouerM()) {
 
 			vueParametre.setVisible(false);
-			testconnexion.displayTCP(true);
+			vueConnexion.setVisible(true);
 		}
 		else if (source == vueMenu.getInstruction()){
 			vueParametre.setVisible(false);

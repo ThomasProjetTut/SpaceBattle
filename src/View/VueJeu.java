@@ -70,6 +70,11 @@ public class VueJeu extends JFrame {
 		chatTexte.setText("");
 	}
     
+    public static void appendToChatBox(String msg)
+    {
+    	chatTexte.append(msg);
+    }
+    
     public void updateTextCellsJoueur1() {
 		
 		for (int i = 0 ; i < Model.getTaillePlateau() ; i++)
