@@ -34,12 +34,11 @@ public class VueJeu extends JFrame {
     private static JTextArea chatTexte;
     private JTextField chatLigne;
     private JTextField chatNomJoueur;
-    private JTable tableJoueur1;
 
     private JLabel chatNomJoueurInfo;
+    private JLabel tour;
 
     private Model model;
-    private String nomJoueur;
 
     private JPanel panPrincipal,panJeu,panOption,panPteGrille,bateauxAffiche
             ,panCroiseur,panTorpilleur,panContreTorpilleur, fond1, panFond, panFond1
@@ -97,6 +96,7 @@ public class VueJeu extends JFrame {
 
         barreMenu = new JMenuBar();
         menu = new JMenu("Menu");
+        tour = new JLabel("");
         setNouvellePartie(new JMenuItem("Nouvelle Partie"));
         setQuitter(new JMenuItem("Quitter"));
         setAPropos(new JMenuItem("A propos"));
@@ -111,6 +111,7 @@ public class VueJeu extends JFrame {
         initGrille(pteGrilleJeu,50);
 
         valider = new JButton("Valider");
+        valider.setContentAreaFilled(false);
 
     }
 
@@ -155,15 +156,12 @@ public class VueJeu extends JFrame {
     }
     
     public boolean tousLesBateauxSontPlace() {
-		
-    	if (!contreTorpilleurs.isEnabled() &&
-    			!torpilleur.isEnabled() &&
-    			!croiseur.isEnabled() &&
-    			!sousMarin.isEnabled() &&
-    			!porteAvion.isEnabled())
-    		return true;
-    	else
-    		return false;
+
+        return !contreTorpilleurs.isEnabled() &&
+                !torpilleur.isEnabled() &&
+                !croiseur.isEnabled() &&
+                !sousMarin.isEnabled() &&
+                !porteAvion.isEnabled();
     	
     }
     
@@ -196,22 +194,27 @@ public class VueJeu extends JFrame {
         contreTorpilleurs = new JButton();
         contreTorpilleurs.setIcon(Bateaux.imageBateau(Bateaux.CONTRETORPILLEUR, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
         contreTorpilleurs.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.CONTRETORPILLEUR).getNombreCases())+Bateaux.CONTRETORPILLEUR);
+        contreTorpilleurs.setContentAreaFilled(false);
 
         torpilleur = new JButton();
         torpilleur.setIcon(Bateaux.imageBateau(Bateaux.TORPILLEUR, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
         torpilleur.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.TORPILLEUR).getNombreCases())+Bateaux.TORPILLEUR);
+        torpilleur.setContentAreaFilled(false);
 
         croiseur = new JButton();
         croiseur.setIcon(Bateaux.imageBateau(Bateaux.CROISEUR, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
         croiseur.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.CROISEUR).getNombreCases())+Bateaux.CROISEUR);
+        croiseur.setContentAreaFilled(false);
 
         sousMarin = new JButton();
         sousMarin.setIcon(Bateaux.imageBateau(Bateaux.SOUSMARIN, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
         sousMarin.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.SOUSMARIN).getNombreCases())+Bateaux.SOUSMARIN);
+        sousMarin.setContentAreaFilled(false);
 
         porteAvion = new JButton();
         porteAvion.setIcon(Bateaux.imageBateau(Bateaux.PORTEAVIONS, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
         porteAvion.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.PORTEAVIONS).getNombreCases())+Bateaux.PORTEAVIONS);
+        porteAvion.setContentAreaFilled(false);
     }
 
     public JPanel afficheGrille (JPanel panel, int version, JButton[][] grille) {
@@ -366,10 +369,6 @@ public class VueJeu extends JFrame {
 
         barreMenu.setVisible(true);
         initChat();
-        //La grille de placement de plateau est situé au milieu
-        //initGrille(pteGrilleJeu, 50);
-        //La grille de jeu pdt la game est placé en bas à droite
-        //initGrille(grilleJeu, 20);
 
         panValider = new JPanel();
         panPrincipal = new JPanel();
@@ -428,9 +427,7 @@ public class VueJeu extends JFrame {
         panOption.add(bateauxAffiche);
         //panOption.add(panGrille);
         panValider.add(valider);
-        if (!model.placementBateauIsLock()){
-            panOption.add(panValider);
-        }
+        panOption.add(panValider);
         panOption.setLayout(new BoxLayout(panOption, BoxLayout.Y_AXIS));
 
         panPrincipal.add(panOption, BorderLayout.EAST);
@@ -448,6 +445,7 @@ public class VueJeu extends JFrame {
         menu.add(getQuitter());
 
         barreMenu.add(menu);
+        barreMenu.add(tour);
 
         setJMenuBar(barreMenu);
 
@@ -507,14 +505,6 @@ public class VueJeu extends JFrame {
 
 
     // Les set
-
-    public void setChatLigne(JTextField chatLigne) {
-        this.chatLigne = chatLigne;
-    }
-
-    public void setChatNomJoueur(JTextField chatNomJoueur) {
-        this.chatNomJoueur = chatNomJoueur;
-    }
 
     public void setNouvellePartie(JMenuItem nouvellePartie) {
         this.nouvellePartie = nouvellePartie;
@@ -586,10 +576,6 @@ public class VueJeu extends JFrame {
         return valider;
     }
 
-	public static JButton[][] getGrilleJeu() {
-		return grilleJeu;
-	}
-
 	public JButton getContreTorpilleurs() {
 		return contreTorpilleurs;
 	}
@@ -608,9 +594,5 @@ public class VueJeu extends JFrame {
 
 	public JButton getSousMarin() {
 		return sousMarin;
-	}
-
-	public static JButton[][] getPteGrilleJeu() {
-		return pteGrilleJeu;
 	}
 }

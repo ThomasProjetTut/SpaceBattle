@@ -103,6 +103,8 @@ public class ServeurTCP extends Thread {
 			    
 			    // 'C' = Chat | 'I' = Index coordonnées | 'T' = TabBateau
 			    if (message.charAt(0) == 'P') {
+
+			    	message.substring(1,  message.length());
 			    	
 			    	vueJeu.creerFenetreJeu();
 					vueJeu.pack();

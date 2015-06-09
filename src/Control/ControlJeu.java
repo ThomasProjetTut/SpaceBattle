@@ -116,10 +116,8 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
     		}
     		
     		bateau = null;
-    		
-    		return;
-    		
-    	}
+
+		}
 	}
 	
 	// Placement fantome bateaux
@@ -136,7 +134,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 
 		JButton btn = (JButton) event.getSource();
 		
-		int x = Character.getNumericValue(btn.getActionCommand().charAt(0));;
+		int x = Character.getNumericValue(btn.getActionCommand().charAt(0));
 		int y = Character.getNumericValue(btn.getActionCommand().charAt(1));
 		
 		int nbCase = Character.getNumericValue(bateau.getActionCommand().charAt(0));
@@ -196,7 +194,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 			}
 			else {
 				
-				if (model.getJoueur(2).getTypeIdJoueurs() == Joueurs.HUMAIN) {
+				if (Model.getJoueur(2).getTypeIdJoueurs() == Joueurs.HUMAIN) {
 					if (VueConnexion.isHost())
 	            		ServeurTCP.getOutPut().println("T"+model.convertTabToString());
 	            	else
@@ -209,7 +207,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 			}
 		}
 		
-		// Fonction pour jouer quand n clique sur la grille adverse
+		// Fonction pour jouer quand on clique sur la grille adverse
 		for (int i = 0; i < Model.getTaillePlateau(); i++){
             for (int j = 0; j < Model.getTaillePlateau(); j++){
             	
@@ -267,7 +265,6 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 		        vueJeu.repaintGrilleAdverseBateau();
 		        vueJeu.resetTextChat();
 		        vueMenu.setVisible(false);
-		        model.setIsGameActive(true);
 		        vueJeu.setVisible(true);
 		        
 		        if (VueConnexion.isHost()) {
@@ -280,7 +277,6 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 			}
 			else {
 				vueParametre.setVisible(true);
-				model.setIsGameActive(false);
 			}
 				
 				

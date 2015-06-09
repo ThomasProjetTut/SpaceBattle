@@ -14,18 +14,13 @@ public class Tools {
         try {
             fontMenu = loadFont("font/Sailor-Stitch.ttf");
             fontTexte = loadFont("font/homespun.ttf");
-        } catch (FontFormatException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
+        } catch (FontFormatException | IOException e) {
             e.printStackTrace();
         }
     }
     public static Font loadFont(String string) throws FontFormatException, IOException {
         File fileFont = new File(string);
-        Font fontLoaded = Font.createFont(Font.TRUETYPE_FONT, fileFont);
-        return fontLoaded;
+        return Font.createFont(Font.TRUETYPE_FONT, fileFont);
     }
 
     public void changerFontButton(JButton bouton, int size, Color color ,Font font){

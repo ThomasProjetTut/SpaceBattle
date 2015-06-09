@@ -1,7 +1,5 @@
 package Control;
 
-import multijoueur.ClientTCP;
-import multijoueur.ServeurTCP;
 import Model.Model;
 import Sounds.MusicPlayer;
 import View.VueConnexion;

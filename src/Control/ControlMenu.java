@@ -52,6 +52,8 @@ public class ControlMenu implements ActionListener {
 			vueMenu.setVisible(false);
 			vueMenu.creerFenetreMenu();
 			vueMenu.setVisible(true);
+
+			VueConnexion.deconnexion();
 		}
 	}
 }

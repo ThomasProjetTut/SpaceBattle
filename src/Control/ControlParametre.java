@@ -48,7 +48,6 @@ public class ControlParametre implements ActionListener{
             vueParametre.setVisible(false);
             vueJeu.creerFenetreJeu();
             vueJeu.pack();
-            model.setIsGameActive(true);
             vueJeu.setVisible(true);
             VueJeu.getChatTexte().append("Placez vos bateaux dans la grille \n");
 
@@ -68,10 +67,6 @@ public class ControlParametre implements ActionListener{
         else if (source == vueParametre.getIA4()){
         	model.setAILevel(Joueurs.IA_LEVEL_4);
         }
-        else if (source == vueParametre.getCheckBoxBonus()){
-            model.setIsBonusActive(true);
-        }
-
     }
 
 }

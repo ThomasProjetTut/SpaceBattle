@@ -12,7 +12,7 @@ public class IALevel4 extends IA {
 	
 	public IALevel4() {
         super();
-		nomJoueur = "Dieu";
+		nomJoueur = "Armée spatiale";
 		typeId = IA_LEVEL_4;
 		tabJoueurAdverse = Model.getJoueur(1).getTabJoueur();
 	}
