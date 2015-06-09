@@ -31,10 +31,7 @@ public class Model {
     
 	private static Joueurs joueur1;
     private static Joueurs joueur2;
-    
-    private boolean isGameActive;
-	private boolean isBonusActive;
-	
+
 	private boolean tourJoueurEstFini;
 	
 	private boolean placementMultiEstFini;
@@ -57,9 +54,7 @@ public class Model {
 	}
 	
 	public void initJeu() {
-		
-		isGameActive = true;
-		
+
 		joueur1 = new Humain();
         
         System.out.println("Type joueur 1 : "+joueur1.getTypeIdJoueurs());
@@ -155,14 +150,6 @@ public class Model {
 		
 		return null;
 	}
-	
-	public boolean IsGameActive(){
-        return isGameActive;
-    }
-	
-	public void setIsGameActive(boolean state){
-        this.isGameActive = state;
-    }
 
 	public void updateTabToucheMulti(int x, int y, int valeur) {
 		
@@ -178,7 +165,6 @@ public class Model {
 
 			if (verif != null) {
 				javax.swing.JOptionPane.showMessageDialog(null, verif.getNomJoueur()+" a gagné la partie !");
-				return;
 			}
         
 		}
@@ -281,14 +267,6 @@ public class Model {
 
 		return joueur2;
 	}
-
-	public void setIsBonusActive(boolean state){
-		this.isBonusActive = state;
-	}
-
-	public boolean getIsBonusActive(){
-		return isBonusActive;
-	}
 	
 	public static int getTaillePlateau() {
 		return taillePlateau;
@@ -304,10 +282,6 @@ public class Model {
 
 	public static Joueurs getJoueur1() {
 		return joueur1;
-	}
-
-	public static Joueurs getJoueur2() {
-		return joueur2;
 	}
 
 	public boolean placementBateauIsLock() {
@@ -339,6 +313,6 @@ public class Model {
 	}
 
 	public void setJeuEstEnMulti(boolean jeuEstEnMulti) {
-		this.jeuEstEnMulti = jeuEstEnMulti;
+		Model.jeuEstEnMulti = jeuEstEnMulti;
 	}
 }

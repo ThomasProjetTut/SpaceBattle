@@ -1,6 +1,5 @@
 package Control;
 
-import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -115,10 +114,8 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
     		}
     		
     		bateau = null;
-    		
-    		return;
-    		
-    	}
+
+		}
 	}
 	
 	// Placement fantome bateaux
@@ -135,7 +132,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 
 		JButton btn = (JButton) event.getSource();
 		
-		int x = Character.getNumericValue(btn.getActionCommand().charAt(0));;
+		int x = Character.getNumericValue(btn.getActionCommand().charAt(0));
 		int y = Character.getNumericValue(btn.getActionCommand().charAt(1));
 		
 		int nbCase = Character.getNumericValue(bateau.getActionCommand().charAt(0));
@@ -195,7 +192,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 			}
 			else {
 				
-				if (model.getJoueur(2).getTypeIdJoueurs() == Joueurs.HUMAIN) {
+				if (Model.getJoueur(2).getTypeIdJoueurs() == Joueurs.HUMAIN) {
 					if (VueConnexion.isHost())
 	            		ServeurTCP.getOutPut().println("T"+model.convertTabToString());
 	            	else

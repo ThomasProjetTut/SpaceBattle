@@ -78,8 +78,8 @@ public class VueConnexion extends JFrame {
    
    public JPanel initOptionsPane() {
       Tools tools = new Tools();
-      JPanel paneNom = null;
-      ActionAdapter buttonListener = null;
+      JPanel paneNom;
+      ActionAdapter buttonListener;
       JPanel fond = null;
       try {
          fond = new JPanel() {

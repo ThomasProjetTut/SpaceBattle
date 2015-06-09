@@ -11,15 +11,15 @@ public class IALevel2 extends IA {
 
 	private int[][] tabJoueurAdverse;
 	
-	private static ArrayList<int[] > listeCiblesPotentielles = new ArrayList<int[] >();
-	private static ArrayList<int[] > listePositionCible = new ArrayList<int[] >();
-	private static ArrayList<int[] > listeCiblesFutures = new ArrayList<int[] >();
+	private static ArrayList<int[] > listeCiblesPotentielles = new ArrayList<>();
+	private static ArrayList<int[] > listePositionCible = new ArrayList<>();
+	private static ArrayList<int[] > listeCiblesFutures = new ArrayList<>();
 	
 	private int idBateauCible;
 	
 	public IALevel2() {
         super();
-		nomJoueur = "Novice2";
+		nomJoueur = "Pirate";
 		typeId = IA_LEVEL_2;
 		tabJoueurAdverse = Model.getJoueur(1).getTabJoueur();
 	}
@@ -29,7 +29,7 @@ public class IALevel2 extends IA {
 
         nombreCoups = Model.getNombresCoupsDepart();
 
-        int[] cible = new int[2];
+        int[] cible;
 
         cible = aquisitionCoordonnees();
 
@@ -46,7 +46,7 @@ public class IALevel2 extends IA {
     }
     
     public int[] aquisitionCoordonneesPotentielles(){
-        int[] cible = new int[2];
+        int[] cible;
 
         cible = listeCiblesPotentielles.get(0);
         listeCiblesPotentielles.remove(0);
@@ -236,7 +236,7 @@ public class IALevel2 extends IA {
     }
 
     public int[] aquisitionProchaineCibles(){
-        int[] prochaineCible = new int[2];
+        int[] prochaineCible;
 
         prochaineCible = listeCiblesFutures.get(0);
 
@@ -276,8 +276,7 @@ public class IALevel2 extends IA {
 
     public int[] aquisitionCible(){
 
-        int[] cible = new int[2];
-
+        int[] cible;
         cible = listePositionCible.get(0);
 
         int x = cible[0];

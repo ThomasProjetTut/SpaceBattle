@@ -25,7 +25,7 @@ public class VueParametre extends JFrame {
 
     private ButtonGroup buttonGroup;
 
-    private JButton valider,annuler,vide;
+    private JButton valider,annuler;
 
     public VueParametre(Model model){
         this.model = model;

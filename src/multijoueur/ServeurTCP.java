@@ -77,7 +77,6 @@ public class ServeurTCP extends Thread {
         vueJeu.repaintGrilleAdverseBateau();
         vueJeu.resetTextChat();
         vueMenu.setVisible(false);
-        model.setIsGameActive(true);
         vueJeu.setVisible(true);
 		vueConnexion.setVisible(false);
 		
@@ -94,7 +93,7 @@ public class ServeurTCP extends Thread {
 		while (true) 
 		{
 			// Lecture 
-			String message = "";
+			String message;
 			
 			try {
 			    message = input.readLine();
@@ -104,7 +103,7 @@ public class ServeurTCP extends Thread {
 			    
 			    // 'C' = Chat | 'I' = Index coordonnées | 'T' = TabBateau
 			    if (message.charAt(0) == 'P') {
-			    	message = message.substring(1,  message.length());
+			    	message.substring(1,  message.length());
 			    	
 			    	vueJeu.creerFenetreJeu();
 					vueJeu.pack();
@@ -118,7 +117,6 @@ public class ServeurTCP extends Thread {
 			        vueJeu.repaintGrilleAdverseBateau();
 			        vueJeu.resetTextChat();
 			        vueMenu.setVisible(false);
-			        model.setIsGameActive(true);
 			        vueJeu.setVisible(true);
 			    }
 			    else if (message.charAt(0) == 'N') {

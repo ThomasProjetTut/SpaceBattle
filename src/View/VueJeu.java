@@ -34,13 +34,11 @@ public class VueJeu extends JFrame {
     private static JTextArea chatTexte;
     private JTextField chatLigne;
     private JTextField chatNomJoueur;
-    private JTable tableJoueur1;
 
     private JLabel chatNomJoueurInfo;
     private JLabel tour;
 
     private Model model;
-    private String nomJoueur;
 
     private JPanel panPrincipal,panJeu,panOption,panPteGrille,bateauxAffiche
             ,panCroiseur,panTorpilleur,panContreTorpilleur, fond1, panFond, panFond1
@@ -158,15 +156,12 @@ public class VueJeu extends JFrame {
     }
     
     public boolean tousLesBateauxSontPlace() {
-		
-    	if (!contreTorpilleurs.isEnabled() &&
-    			!torpilleur.isEnabled() &&
-    			!croiseur.isEnabled() &&
-    			!sousMarin.isEnabled() &&
-    			!porteAvion.isEnabled())
-    		return true;
-    	else
-    		return false;
+
+        return !contreTorpilleurs.isEnabled() &&
+                !torpilleur.isEnabled() &&
+                !croiseur.isEnabled() &&
+                !sousMarin.isEnabled() &&
+                !porteAvion.isEnabled();
     	
     }
     
@@ -511,14 +506,6 @@ public class VueJeu extends JFrame {
 
     // Les set
 
-    public void setChatLigne(JTextField chatLigne) {
-        this.chatLigne = chatLigne;
-    }
-
-    public void setChatNomJoueur(JTextField chatNomJoueur) {
-        this.chatNomJoueur = chatNomJoueur;
-    }
-
     public void setNouvellePartie(JMenuItem nouvellePartie) {
         this.nouvellePartie = nouvellePartie;
     }
@@ -589,10 +576,6 @@ public class VueJeu extends JFrame {
         return valider;
     }
 
-	public static JButton[][] getGrilleJeu() {
-		return grilleJeu;
-	}
-
 	public JButton getContreTorpilleurs() {
 		return contreTorpilleurs;
 	}
@@ -611,9 +594,5 @@ public class VueJeu extends JFrame {
 
 	public JButton getSousMarin() {
 		return sousMarin;
-	}
-
-	public static JButton[][] getPteGrilleJeu() {
-		return pteGrilleJeu;
 	}
 }
