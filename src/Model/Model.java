@@ -11,6 +11,7 @@ import Joueurs.IA.IALevel1;
 import Joueurs.IA.IALevel2;
 import Joueurs.IA.IALevel3;
 import Joueurs.IA.IALevel4;
+import View.VueJeu;
 
 public class Model {
 	

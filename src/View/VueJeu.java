@@ -129,6 +129,14 @@ public class VueJeu extends JFrame {
         chatNomJoueur.setColumns(8);
 
     }
+    
+    public void reiniPteGrille() {
+    	for (int i = 0; i < pteGrilleJeu.length; i++){
+            for (int j = 0; j < pteGrilleJeu.length; j++){
+            	pteGrilleJeu[i][j].setActionCommand("" + i + "" + j);
+            }
+        }
+    }
 
     public void initGrille(JButton[][] grilleJeu, int size){
 

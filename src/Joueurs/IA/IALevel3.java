@@ -23,7 +23,7 @@ public class IALevel3 extends IA {
         super();
 		nomJoueur = "Novice3";
 		typeId = IA_LEVEL_3;
-		tabJoueurAdverse = Model.getJoueur(1).getTabJoueur();
+		tabJoueurAdverse = modificationTab(Model.getJoueur(1).getTabJoueur());
 	}
 	
     @Override
@@ -316,6 +316,42 @@ public class IALevel3 extends IA {
 
 
         return retour;
+    }
+
+    public int[][] modificationTab(int[][] tab){
+
+        for(int i = 0; i < 10; i++){
+            for(int j = 0; j < 10; j++){
+                if(tab[i][j] == 0){
+                    tab[i][j] = -10;
+                }
+            }
+        }
+
+        //affichageTab(tab);
+
+        for(int i = 0; i < 10; i++){
+            for(int j = 0; j < 10; j++){
+                if(tab[i][j] > 0) {
+
+                    for (int k = i - 1; k <= i + 1; k++) {
+                        for (int l = j - 1; l <= j + 1; l++) {
+                            if (k < 10 && k >= 0 && l < 10 && l >= 0) {
+                                if (tab[k][l] == -10) {
+                                    tab[k][l] = 0;
+                                }
+                            }
+
+                        }
+                    }
+
+                }
+
+            }
+        }
+
+
+        return tab;
     }
 
 }
