@@ -212,6 +212,7 @@ public class VueConnexion extends JFrame {
          };
          
       connectButton = new JButton("Connexion");
+      tools.changerFontButton(connectButton,30,Color.white,tools.getFontTexte());
       connectButton.setMnemonic(KeyEvent.VK_C);
       connectButton.setActionCommand("connect");
       connectButton.addActionListener(buttonListener);
