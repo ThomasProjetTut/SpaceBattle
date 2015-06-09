@@ -258,6 +258,8 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 		// Menu
 		if (sources == vueJeu.getNouvellePartie()) {
 			if (Model.jeuIsEnMulti()) {
+				vueJeu.creerFenetreJeu();
+				vueJeu.pack();
 				model.setJeuEstEnMulti(true);
 				model.setAILevel(0);
 				model.initJeu();
