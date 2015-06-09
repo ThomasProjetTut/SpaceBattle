@@ -24,7 +24,6 @@ public class VueAPropos extends JFrame {
         initAttribut();
         affichage();
 
-        setLocationRelativeTo(null);                   // Place la fenetre au milieu de l'ecran
         setResizable(false);
         pack();
         setIconImage(new ImageIcon("images/Autres/icone.png").getImage());//Icone de la fenetre

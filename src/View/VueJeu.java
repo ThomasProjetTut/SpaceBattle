@@ -57,7 +57,7 @@ public class VueJeu extends JFrame {
         setIconImage(new ImageIcon("images/Autres/icone.png").getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-    
+
     public void initGrilleTexte() {
     	//updateTextCellsJoueur1();
     	//updateTextCellsJoueur2();
@@ -106,7 +106,7 @@ public class VueJeu extends JFrame {
 
         barreMenu = new JMenuBar();
         menu = new JMenu("Menu");
-        tour = new JLabel("");
+        tour = new JLabel("Tour du joueur");
         setNouvellePartie(new JMenuItem("Nouvelle Partie"));
         setQuitter(new JMenuItem("Quitter"));
         setAPropos(new JMenuItem("A propos"));
@@ -455,8 +455,8 @@ public class VueJeu extends JFrame {
         menu.add(getQuitter());
 
         barreMenu.add(menu);
+        barreMenu.add(Box.createRigidArea(new Dimension(400,10)));
         barreMenu.add(tour);
-
         setJMenuBar(barreMenu);
 
     }
