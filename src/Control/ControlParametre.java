@@ -37,6 +37,7 @@ public class ControlParametre implements ActionListener{
             vueJeu.reiniBtnBateaux();
             model.setPlacementBateauEstLock(false);
             vueJeu.initGrilleTexte();
+            vueJeu.repaintGrilleAdverseBateau();
             vueJeu.resetTextChat();
             vueMenu.setVisible(false);
             vueParametre.setVisible(false);

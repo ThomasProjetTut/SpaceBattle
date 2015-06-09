@@ -197,6 +197,11 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
             			return;
             		}
             		
+            		if (Model.getJoueur(2).getValeurTabJoueur(i, j) < 0) {
+            			VueJeu.getChatTexte().append("Vous ne pouvez pas cliquer deux fois sur la même case !\n");
+            			return;
+            		}
+            		
     				Joueurs verif = model.partieEstFini();
     				
     	    		if (verif == null) {

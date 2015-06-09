@@ -204,6 +204,12 @@ public class VueJeu extends JFrame {
             }
         }
     }
+    
+    public void repaintGrilleAdverseBateau() {
+    	for (int i = 0; i < Model.getTaillePlateau(); i++)
+            for (int j = 0; j < Model.getTaillePlateau(); j++)
+            		VueJeu.getGrilleJeu(i, j).setIcon(null);
+    }
 
     public void initBateaux(){
         contreTorpilleurs = new JButton();
