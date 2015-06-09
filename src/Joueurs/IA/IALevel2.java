@@ -15,8 +15,6 @@ public class IALevel2 extends IA {
 	private static ArrayList<int[] > listePositionCible = new ArrayList<int[] >();
 	private static ArrayList<int[] > listeCiblesFutures = new ArrayList<int[] >();
 	
-	int[][] tabCaseDejaTouche = new int[Model.getTaillePlateau()][Model.getTaillePlateau()];
-	
 	private int idBateauCible;
 	
 	public IALevel2() {
@@ -227,9 +225,8 @@ public class IALevel2 extends IA {
             cibleX = random.nextInt(Model.getTaillePlateau());
             cibleY = random.nextInt(Model.getTaillePlateau());
 
-        }while (tabCaseDejaTouche[cibleX][cibleY] != 0);
+        }while (tabJoueurAdverse[cibleX][cibleY] < 0);
 
-        tabCaseDejaTouche[cibleX][cibleY] = 1;
         
         retour[0] = cibleX;
         retour[1] = cibleY;
