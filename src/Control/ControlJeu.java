@@ -160,7 +160,8 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 			}
 		}
     }
-	
+
+
 	@Override
 	public void actionPerformed(ActionEvent source) {
 
@@ -202,6 +203,13 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 				
 				model.setPlacementBateauEstLock(true);
 				VueJeu.getChatTexte().append("Cliquez sur la grille pour commencer à jouer !\n");
+				/*vueJeu.echangerGrille(vueJeu.getGrilleJeu(), vueJeu.getPteGrilleJeu());
+				vueJeu.setPanGrille(vueJeu.afficheGrille(vueJeu.getPanGrille(), 1, vueJeu.getGrilleJeu()));
+				vueJeu.getFond().add(vueJeu.getPanGrille());
+				vueJeu.getPanJeu().add(vueJeu.getFond());
+				vueJeu.setPanPteGrille(vueJeu.afficheGrille(vueJeu.getPanPteGrille(), 2, vueJeu.getPteGrilleJeu()));
+				vueJeu.getPanOption().add(vueJeu.getPanPteGrille());*/
+				vueJeu.changerPanelGrille();
 			}
 		}
 		
