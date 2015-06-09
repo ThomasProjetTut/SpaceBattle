@@ -54,6 +54,13 @@ public class ClientTCP extends Thread {
 			}
 		}
 		
+		if (VueConnexion.isHost())
+    		model.setTourJoueurEstFini(true);
+    	else
+    		model.setTourJoueurEstFini(false);
+		
+		model.setJeuEstEnMulti(true);
+		model.setAILevel(0);
 		model.initJeu();
         vueJeu.repaintFantomeBateau();
         vueJeu.reiniBtnBateaux();
@@ -87,17 +94,48 @@ public class ClientTCP extends Thread {
 			    if (message.isEmpty())
 			    	continue;
 			    
-			    // 'C' = Chat | 'I' = Index coordonnées | 'T' = TabBateau
+			    // 'C' = Chat | 'I' = Index coordonnées | 'T' = TabBateau | 'S' = Tour suivant
 			    if (message.charAt(0) == 'C') {
 			    	message = message.substring(1,  message.length());
 			    	VueJeu.appendToChatBox(message);
 			    }
 			    else if (message.charAt(0) == 'I') {
-			    	
+			    	message = message.substring(1,  message.length());
+			    	model.updateTabToucheMulti(Character.getNumericValue(message.charAt(0)), Character.getNumericValue(message.charAt(1)), Character.getNumericValue(message.charAt(2)));
+			    }
+			    else if (message.charAt(0) == 'S') {
+			    	model.setTourJoueurEstFini(false);
 			    }
 			    else if (message.charAt(0) == 'T') {
+			    	message = message.substring(1,  message.length());
+			    	Model.getJoueur(2).setTabJoueur(model.convertStringToTab(message));
+			    	vueJeu.initGrilleTexte();
+			    	
+			    	if (model.placementBateauIsLock()) {
+			    		
+			    		output.println("V");
+			    		
+			    		VueJeu.appendToChatBox("V - Client Lock");
+			    		
+			    		model.setPlacementMultiEstFini(true);
+			    		
+			    		System.out.println("Client - Valider jeu");
+			    	}
+			    	else
+			    		VueJeu.appendToChatBox("V - Client !Lock");
 			    	
 			    }
+			    else if (message.charAt(0) == 'V') {
+			    	
+			    	model.setPlacementMultiEstFini(true);
+			    	
+			    	VueJeu.appendToChatBox("D - Client");
+			    	
+			    	System.out.println("Client - Debuter jeu");
+			    	
+			    	
+			    }
+			    
 			    
 			} catch(IOException e) {
 			    System.err.println("Erreur lors de la lecture : " + e);

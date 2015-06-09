@@ -1,5 +1,8 @@
 package Joueurs.Humain;
 
+import multijoueur.ClientTCP;
+import multijoueur.ServeurTCP;
+import multijoueur.VueConnexion;
 import Joueurs.Joueurs;
 import Model.Model;
 import View.VueJeu;
@@ -32,7 +35,23 @@ public class Humain extends Joueurs {
             joueurAdverse.updateTabJoueurTouche(x, y);
             updateIconGrilleJoueurTouche(x, y, joueurAdverse, true);
             VueJeu.getChatTexte().append(nomJoueur+" : Coup réussi\n");
+            
+            if (Model.getJoueur(2).getTypeIdJoueurs() == Joueurs.HUMAIN) {
+	            if (VueConnexion.isHost())
+	        		ServeurTCP.getOutPut().println("I" + x + y + "1");
+	        	else
+	        		ClientTCP.getOutPut().println("I" + x + y + "1");
+            }
+            
         } else {
+        	
+        	if (Model.getJoueur(2).getTypeIdJoueurs() == Joueurs.HUMAIN) {
+	            if (VueConnexion.isHost())
+	        		ServeurTCP.getOutPut().println("I" + x + y + "0");
+	        	else
+	        		ClientTCP.getOutPut().println("I" + x + y + "0");
+            }
+        	
             nombreCoups--;
             updateIconGrilleJoueurTouche(x, y, joueurAdverse, false);
             VueJeu.getChatTexte().append(nomJoueur+" : Coup raté\n");

@@ -4,6 +4,9 @@ import java.awt.event.ActionEvent;
 
 import javax.swing.JButton;
 
+import multijoueur.ClientTCP;
+import multijoueur.ServeurTCP;
+import multijoueur.VueConnexion;
 import Bateaux.Bateaux;
 import Joueurs.Joueurs;
 import Joueurs.Humain.Humain;
@@ -32,6 +35,12 @@ public class Model {
     private boolean isGameActive;
 	private boolean isBonusActive;
 	
+	private boolean tourJoueurEstFini;
+	
+	private boolean placementMultiEstFini;
+	
+	private static boolean jeuEstEnMulti;
+	
 	// 0 = joueur / 1= level 1 / 2 = level 2 etc
 	private int levelAI = 1;
 	
@@ -43,6 +52,8 @@ public class Model {
 		Bateaux.initMapTouche();
 		
 		placementBateauEstLock = false;
+		placementMultiEstFini = false;
+		jeuEstEnMulti = false;
 	}
 	
 	public void initJeu() {
@@ -88,6 +99,34 @@ public class Model {
 		}
 	}
 	
+	public int[][] convertStringToTab(String msg) {
+				
+		int[][] tab = new int[taillePlateau][taillePlateau];
+		
+		int count = 0;
+		
+		for(int i = 0; i < taillePlateau; i++) {
+			for(int j = 0; j < taillePlateau; j++) {
+					tab[i][j] = Character.getNumericValue(msg.charAt(count));
+					count++;
+				}
+		}
+			          
+		return tab;
+	}
+	
+	public String convertTabToString() {
+		
+		String msg = "";
+		
+		for(int i = 0; i < taillePlateau; i++)
+            for(int j = 0; j < taillePlateau; j++)
+                msg = msg + joueur1.getValeurTabJoueur(i, j);
+                    
+		
+		return msg;
+	}
+	
 	public void setAILevel(int level) {
 		levelAI = level;
 	}
@@ -125,6 +164,18 @@ public class Model {
         this.isGameActive = state;
     }
 	
+	public void updateTabToucheMulti(int x, int y, int valeur) {
+		
+		if (valeur == 1) {
+			joueur1.updateTabJoueurTouche(x, y);
+            joueur1.updateIconGrilleJoueurTouche(x, y, joueur1, true);
+		}
+		else {
+			joueur1.updateIconGrilleJoueurTouche(x, y, joueur1, false);
+		}
+		
+	}
+	
 	public void jouer(ActionEvent source) {
 		
 		placementBateauEstLock = true;
@@ -146,8 +197,9 @@ public class Model {
     		verif = partieEstFini();
     		
     		// Vérifie si le joueur a encore des coups à jouer et si la partie est finis
-    		if (joueur1.coupEstDisponible() && verif == null)
+    		if (joueur1.coupEstDisponible() && verif == null) {
     			return; 
+    		}
     		else {
     			if (verif != null) {
     				javax.swing.JOptionPane.showMessageDialog(null,verif.getNomJoueur()+" a gagné la partie !");
@@ -155,17 +207,21 @@ public class Model {
     			}
     		}
     	}
+    	
+    	if (joueur2.getTypeIdJoueurs() == Joueurs.HUMAIN) {
+			
+			tourJoueurEstFini = true;
+			
+			if (VueConnexion.isHost())
+        		ServeurTCP.getOutPut().println("S");
+        	else
+        		ClientTCP.getOutPut().println("S");
+			
+			return;
+		}
 
-    	// si le joueur 2 est humain
-    	if (joueur2.getTypeIdJoueurs() == 0) {
-    		
-    		// Mettre la fonction multijoueurs d'attente de coups
-    		
-    		
-    		
-    	}
     	// Si le bot est level 4, il ne faut pas qu'il est plusieurs coups à jouer
-    	else if (joueur2.getTypeIdJoueurs() != 4) {
+    	if (joueur2.getTypeIdJoueurs() != 4) {
     		
     		while (joueur2.coupEstDisponible()) {
     			
@@ -246,5 +302,29 @@ public class Model {
 
 	public void setPlacementBateauEstLock(boolean placementBateauEstLock) {
 		this.placementBateauEstLock = placementBateauEstLock;
+	}
+
+	public boolean placementMultiIsFini() {
+		return placementMultiEstFini;
+	}
+
+	public void setPlacementMultiEstFini(boolean placementMultiEstFini) {
+		this.placementMultiEstFini = placementMultiEstFini;
+	}
+
+	public boolean tourJoueurIsFini() {
+		return tourJoueurEstFini;
+	}
+
+	public void setTourJoueurEstFini(boolean tourJoueur1EstFini) {
+		this.tourJoueurEstFini = tourJoueur1EstFini;
+	}
+
+	public static boolean jeuIsEnMulti() {
+		return jeuEstEnMulti;
+	}
+
+	public void setJeuEstEnMulti(boolean jeuEstEnMulti) {
+		this.jeuEstEnMulti = jeuEstEnMulti;
 	}
 }

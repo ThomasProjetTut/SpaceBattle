@@ -62,6 +62,13 @@ public class ServeurTCP extends Thread {
 		if (socketClient == null)
 			return;
 	 
+		if (VueConnexion.isHost())
+    		model.setTourJoueurEstFini(true);
+    	else
+    		model.setTourJoueurEstFini(false);
+		
+		model.setJeuEstEnMulti(true);
+		model.setAILevel(0);
 		model.initJeu();
         vueJeu.repaintFantomeBateau();
         vueJeu.reiniBtnBateaux();
@@ -101,10 +108,37 @@ public class ServeurTCP extends Thread {
 			    	VueJeu.appendToChatBox(message);
 			    }
 			    else if (message.charAt(0) == 'I') {
-			    	
+			    	message = message.substring(1,  message.length());
+			    	model.updateTabToucheMulti(Character.getNumericValue(message.charAt(0)), Character.getNumericValue(message.charAt(1)), Character.getNumericValue(message.charAt(2)));
+			    }
+			    else if (message.charAt(0) == 'S') {
+			    	model.setTourJoueurEstFini(false);
 			    }
 			    else if (message.charAt(0) == 'T') {
+			    	message = message.substring(1,  message.length());
+			    	Model.getJoueur(2).setTabJoueur(model.convertStringToTab(message));
+			    	vueJeu.initGrilleTexte();
 			    	
+			    	if (model.placementBateauIsLock()) {
+			    		
+			    		output.println("V");
+			    		
+			    		VueJeu.appendToChatBox("V - Serveur Lock");
+			    		
+			    		model.setPlacementMultiEstFini(true);
+			    		
+			    		System.out.println("Serveur - Valider jeu");
+			    	}
+			    	else
+			    		VueJeu.appendToChatBox("V - Serveur !Lock");
+			    }
+			    else if (message.charAt(0) == 'V') {
+			    	
+			    	model.setPlacementMultiEstFini(true);
+			    	
+			    	System.out.println("Serveur - Debuter jeu");
+			    	
+			    	VueJeu.appendToChatBox("D - Serveur");
 			    }
 			    
 			} catch(IOException e) {

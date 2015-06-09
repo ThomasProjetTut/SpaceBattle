@@ -31,6 +31,7 @@ public class ControlParametre implements ActionListener{
         Object source = e.getSource();
 
         if (source == vueParametre.getValider()){
+        	model.setJeuEstEnMulti(false);
             model.initJeu();
             vueJeu.reiniPteGrille();
             vueJeu.repaintFantomeBateau();

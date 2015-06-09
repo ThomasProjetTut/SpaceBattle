@@ -7,6 +7,9 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 
+import multijoueur.ClientTCP;
+import multijoueur.ServeurTCP;
+import multijoueur.VueConnexion;
 import Joueurs.Joueurs;
 import Model.Model;
 import View.VueJeu;
@@ -189,6 +192,14 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 				VueJeu.getChatTexte().append("Vous devez placer tous vos bateaux avant de pouvoir valider puis jouer !\n");
 			}
 			else {
+				
+				if (model.getJoueur(2).getTypeIdJoueurs() == Joueurs.HUMAIN) {
+					if (VueConnexion.isHost())
+	            		ServeurTCP.getOutPut().println("T"+model.convertTabToString());
+	            	else
+	            		ClientTCP.getOutPut().println("T"+model.convertTabToString());
+				}
+				
 				model.setPlacementBateauEstLock(true);
 				VueJeu.getChatTexte().append("Cliquez sur la grille pour commencer à jouer !\n");
 			}
@@ -208,6 +219,16 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
             		
             		if (Model.getJoueur(2).getValeurTabJoueur(i, j) < 0) {
             			VueJeu.getChatTexte().append("Vous ne pouvez pas cliquer deux fois sur la même case !\n");
+            			return;
+            		}
+            		
+            		if (!model.placementMultiIsFini() && Model.getJoueur(2).getTypeIdJoueurs() == Joueurs.HUMAIN) {
+            			VueJeu.getChatTexte().append("L'autre joueur n'a pas fini le placement de ces bateaux !\n");
+            			return;
+            		}
+            		
+            		if (model.tourJoueurIsFini()) {
+            			VueJeu.getChatTexte().append("L'autre joueur n'a pas fini son tour !\n");
             			return;
             		}
             		

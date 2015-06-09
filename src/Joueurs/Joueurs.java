@@ -69,7 +69,7 @@ public abstract class Joueurs {
 	// Met à jour les icons si le joueur est touché
 	public void updateIconGrilleJoueurTouche(int x, int y, Joueurs joueurAdverse, boolean estTouche) {
 		
-		if (joueurAdverse.typeId == HUMAIN) {
+		if (joueurAdverse.typeId == HUMAIN && joueurAdverse == Model.getJoueur1()) {
 			
 			JButton btn = VueJeu.getPteGrilleJeu(x, y);	
 			
@@ -122,6 +122,10 @@ public abstract class Joueurs {
 		return tabJoueur;
 	}
 
+	public void setTabJoueur(int[][] tab) {
+		this.tabJoueur = tab;
+	}
+	
 	public static int getTaille(int idBateau){
 
 		switch (idBateau) {
