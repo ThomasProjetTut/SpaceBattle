@@ -130,6 +130,9 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 		int x = Character.getNumericValue(btn.getActionCommand().charAt(0));
 		int y = Character.getNumericValue(btn.getActionCommand().charAt(1));
 		
+		if (bateau == null)
+			return;
+		
 		int nbCase = Character.getNumericValue(bateau.getActionCommand().charAt(0));
 		int idBateau = Character.getNumericValue(bateau.getActionCommand().charAt(1));
 		
