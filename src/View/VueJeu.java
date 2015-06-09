@@ -276,13 +276,13 @@ public class VueJeu extends JFrame {
         chatPanel.add(chatLigne, BorderLayout.SOUTH);
         chatPanel.add(chatTextPane, BorderLayout.CENTER);
         chatPanel.setPreferredSize(new Dimension(200, 200));
-        tools.changerFontJTextField(chatLigne, 15, Color.black, tools.getFontTexte());
-        tools.changerFontJTextField(chatNomJoueur,15,Color.black,tools.getFontTexte());
+        tools.changerFontJTextField(chatLigne, 10, Color.black, tools.getFontTexte());
+        tools.changerFontJTextField(chatNomJoueur,10,Color.black,tools.getFontTexte());
 
         nomPanel.add(chatNomJoueurInfo);
         nomPanel.add(chatNomJoueur);
         tools.changerFontJLabel(chatNomJoueurInfo,10,Color.black,tools.getFontTexte());
-        tools.changerFontJTextArea(chatTexte,15,Color.black,tools.getFontTexte());
+        tools.changerFontJTextArea(chatTexte,10,Color.black,tools.getFontTexte());
         chatPanel.add(nomPanel, BorderLayout.NORTH);
 
 
@@ -427,7 +427,6 @@ public class VueJeu extends JFrame {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        //panGrille = afficheGrille(panGrille);
         panPteGrille = afficheGrille(panPteGrille, 1, pteGrilleJeu);
         fond.add(panPteGrille);
         panJeu.add(fond);
@@ -443,7 +442,6 @@ public class VueJeu extends JFrame {
         panPorteAvion.setLayout(gbl_panel_1);
 
         panOption.add(bateauxAffiche);
-        //panOption.add(panGrille);
         panValider.add(valider);
         panOption.add(panValider);
         panOption.setLayout(new BoxLayout(panOption, BoxLayout.Y_AXIS));
