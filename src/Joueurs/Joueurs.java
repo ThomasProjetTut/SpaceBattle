@@ -160,6 +160,77 @@ public abstract class Joueurs {
 		}
 			
 	}
+	
+	public static void paintTousLesBateaux() {
+
+		for(int i = 0; i < Model.getTaillePlateau(); i++) {
+            for(int j = 0; j < Model.getTaillePlateau(); j++) {
+            	paintBateaux(i, j);
+            }
+		}
+
+	}
+	
+	public static void paintBateaux(int x, int y) {
+		
+		int count = 0;
+		
+		int idBateau = -Model.getJoueur(2).getValeurTabJoueur(x, y);
+		
+		if (idBateau == 0)
+			return;
+		
+		int x0 = -100;
+		int x1 = -100;
+		
+		int sens;
+		
+		for(int i = 0; i < Model.getTaillePlateau(); i++) {
+            for(int j = 0; j < Model.getTaillePlateau(); j++) {
+            	if (Model.getJoueur(2).getValeurTabJoueur(i, j) == -idBateau || Model.getJoueur(2).getValeurTabJoueur(i, j) == idBateau) {
+            		if (x0 == -100) 
+            			x0 = i;
+            		else if (x1 == -100)
+            			x1 = i;
+            		count++;
+            	}
+            }
+		}
+		
+		if (x0 == x1) 
+			sens = Bateaux.VERTICAL;
+		else
+			sens = Bateaux.HORIZONTAL;
+		
+		int taille = getTaille(idBateau);
+		
+		if (taille == 0)
+			taille = getTaille(-idBateau);
+		
+		System.out.println(count +" "+taille+" "+sens+" "+idBateau);
+		
+		if (count != taille)
+			return;
+		
+		count = 1;
+		
+		for(int i = 0; i < Model.getTaillePlateau(); i++) {
+            for(int j = 0; j < Model.getTaillePlateau(); j++) {
+            	if (Model.getJoueur(2).getValeurTabJoueur(i, j) == -idBateau || Model.getJoueur(2).getValeurTabJoueur(i, j) == idBateau) {
+            		         		
+            		if (idBateau < 0)
+            			VueJeu.getGrilleJeu(i, j).setIcon(Bateaux.imageBateau(-idBateau, sens, count, Bateaux.SANSETAT));
+            		else
+            			VueJeu.getGrilleJeu(i, j).setIcon(Bateaux.imageBateau(idBateau, sens, count, Bateaux.TOUCHE));
+            			
+            		
+            		
+            		count++;
+            	}
+            }
+		}
+		
+	}
 
 	// Return true si un bâteau est touché par le tir
 	public boolean estTouche(int x, int y) {

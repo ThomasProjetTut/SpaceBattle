@@ -103,7 +103,7 @@ public class VueConnexion extends JFrame {
 
       // IP address input
       paneNom = new JPanel(new FlowLayout(FlowLayout.LEFT));
-      label1 = new JLabel("Host IP : ");
+      label1 = new JLabel("Hôte IP : ");
       paneNom.add(label1);
       ipField = new JTextField(10); 
       ipField.setText(hostIP);
@@ -165,11 +165,11 @@ public class VueConnexion extends JFrame {
          };
          
       ButtonGroup bg = new ButtonGroup();
-      hostOption = new JRadioButton("Host", true);
+      hostOption = new JRadioButton("Hôte", true);
       hostOption.setMnemonic(KeyEvent.VK_H);
       hostOption.setActionCommand("host");
       hostOption.addActionListener(buttonListener);
-      guestOption = new JRadioButton("Guest", false);
+      guestOption = new JRadioButton("Client", false);
       guestOption.setMnemonic(KeyEvent.VK_G);
       guestOption.setActionCommand("guest");
       guestOption.addActionListener(buttonListener);

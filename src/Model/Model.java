@@ -138,15 +138,23 @@ public class Model {
 	
 	public Joueurs partieEstFini() {
 		
-		if (verifGrillesJoueursEstFini(joueur1))
-			return joueur2;
-		else if (verifGrillesJoueursEstFini(joueur2))
+		if (verifGrillesJoueursEstFini(joueur1)) {
+			Joueurs.paintTousLesBateaux();
+			return joueur2; 
+			}
+		else if (verifGrillesJoueursEstFini(joueur2)) {
+			Joueurs.paintTousLesBateaux();
 			return joueur1;
+		 }
 		
-		if (joueur1.getVieJoueur() <= 0)
+		if (joueur1.getVieJoueur() <= 0){
+			Joueurs.paintTousLesBateaux();
 			return joueur2;
-		else if	(joueur2.getVieJoueur() <= 0)
+		}
+		else if	(joueur2.getVieJoueur() <= 0) {
+			Joueurs.paintTousLesBateaux();
 			return joueur1;
+		}
 		
 		return null;
 	}
