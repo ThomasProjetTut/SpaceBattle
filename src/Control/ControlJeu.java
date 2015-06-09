@@ -263,7 +263,6 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 		        vueJeu.repaintGrilleAdverseBateau();
 		        vueJeu.resetTextChat();
 		        vueMenu.setVisible(false);
-		        model.setIsGameActive(true);
 		        vueJeu.setVisible(true);
 		        
 		        if (VueConnexion.isHost()) {
@@ -276,7 +275,6 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 			}
 			else {
 				vueParametre.setVisible(true);
-				model.setIsGameActive(false);
 			}
 				
 				
