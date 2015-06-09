@@ -24,6 +24,7 @@ public class IALevel3 extends IA {
 		nomJoueur = "Novice3";
 		typeId = IA_LEVEL_3;
 		tabJoueurAdverse = modificationTab(Model.getJoueur(1).getTabJoueur());
+        tabJoueurAdverse = correctionTab(Model.getJoueur(1).getTabJoueur());
 	}
 	
     @Override
