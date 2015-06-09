@@ -25,7 +25,6 @@ public class VueMenu extends JFrame{
         initAttribut();
         creerFenetreMenu();
         pack();
-        setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Space Battle");
         setSize(800, 600);
