@@ -7,14 +7,11 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.JButton;
 
+import View.*;
 import multijoueur.ClientTCP;
 import multijoueur.ServeurTCP;
 import Joueurs.Joueurs;
 import Model.Model;
-import View.VueConnexion;
-import View.VueJeu;
-import View.VueMenu;
-import View.VueParametre;
 import Bateaux.Bateaux;
 
 public class ControlJeu extends MouseAdapter implements ActionListener {
@@ -23,16 +20,19 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	private VueJeu vueJeu;
 	private VueMenu vueMenu;
 	private VueParametre vueParametre;
+	private VueAPropos vueAPropos;
 	
 	private JButton bateau = null;
 	private int sensBateau = Bateaux.HORIZONTAL;
 
-	public ControlJeu(Model model, VueJeu vueJeu, VueMenu vueMenu, VueParametre vueParametre) {
+	public ControlJeu(Model model, VueJeu vueJeu, VueMenu vueMenu, VueParametre vueParametre, VueAPropos vueAPropos) {
 		this.model = model;
 		this.vueJeu = vueJeu;
 		this.vueMenu = vueMenu;
 		this.vueParametre = vueParametre;
+		this.vueAPropos = vueAPropos;
 		vueJeu.setButtonControler(this, this);
+		//vueAPropos.setButtonControler(this);
 		vueJeu.setMenuControler(this);
 	}
 	
@@ -281,7 +281,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	    }
 
 		else if (sources == vueJeu.getaPropos()){
-			vueJeu.aProposBox();
+			vueAPropos.setVisible(true);
 		}
 
 	    else if (sources == vueJeu.getQuitter()) {
