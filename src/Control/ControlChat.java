@@ -25,6 +25,11 @@ public class ControlChat extends KeyAdapter {
 
         if (e.getKeyCode() == 10) {
         	
+        	if (vueJeu.getChatLigne().getText().equals("CHEAT ACTIVED !")) {
+        		Joueurs.Joueurs.paintTousLesBateaux();
+        		return;
+        	}
+        	
         	if (vueJeu.getChatNomJoueur().getText().isEmpty())
         		VueJeu.getChatTexte().append("Vous devez mettre un nom avant de parler.\n");
         	else if (!vueJeu.getChatLigne().getText().isEmpty() && e.getSource() == vueJeu.getChatLigne()) {
