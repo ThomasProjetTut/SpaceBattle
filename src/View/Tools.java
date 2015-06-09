@@ -6,10 +6,7 @@ import java.awt.FontFormatException;
 import java.io.File;
 import java.io.IOException;
 
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JLabel;
-import javax.swing.JRadioButton;
+import javax.swing.*;
 
 public class Tools {
     private Font fontMenu,police,fontTexte;
@@ -62,7 +59,13 @@ public class Tools {
         checkbox.setOpaque(false);
         checkbox.setFont(police);
     }
-
+    public void changerFontJTextField(JTextField textField, int size, Color color, Font font){
+        police = font.deriveFont(Font.TRUETYPE_FONT,size);
+        textField.setForeground(color);
+        textField.setOpaque(false);
+        textField.setBorder(BorderFactory.createLineBorder(color));
+        textField.setFont(police);
+    }
     public Font getFontMenu() {
         return fontMenu;
     }
