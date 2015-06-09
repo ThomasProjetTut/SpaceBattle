@@ -32,7 +32,7 @@ public class ControlParametre implements ActionListener{
 
         if (source == vueParametre.getValider()){
         	
-        	if (Model.getJoueur(2).getTypeIdJoueurs() == Joueurs.HUMAIN)
+        	if (Model.getJoueur(2) != null && Model.getJoueur(2).getTypeIdJoueurs() == Joueurs.HUMAIN)
         		model.setAILevel(Joueurs.IA_LEVEL_1);
         	
         	model.setJeuEstEnMulti(false);

@@ -77,6 +77,8 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
             	else
             		sensBateau = Bateaux.HORIZONTAL;
             }
+            
+            fantomeBateau(btn);
         }
 		else { // Clic gauche pour mettre les bateaux
            		
@@ -123,19 +125,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 		}
 	}
 	
-	// Placement fantome bateaux
-	@Override
-	public void mouseEntered(MouseEvent event){
-
-		if (model.placementBateauIsLock())
-			return;
-		
-		if (bateau == null)
-			return;
-		
-		vueJeu.repaintFantomeBateau();
-
-		JButton btn = (JButton) event.getSource();
+	public void fantomeBateau(JButton btn) {
 		
 		int x = Character.getNumericValue(btn.getActionCommand().charAt(0));
 		int y = Character.getNumericValue(btn.getActionCommand().charAt(1));
@@ -162,6 +152,23 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 				count++;
 			}
 		}
+	}
+	
+	// Placement fantome bateaux
+	@Override
+	public void mouseEntered(MouseEvent event){
+
+		if (model.placementBateauIsLock())
+			return;
+		
+		if (bateau == null)
+			return;
+		
+		vueJeu.repaintFantomeBateau();
+
+		JButton btn = (JButton) event.getSource();
+		
+		fantomeBateau(btn);
     }
 
 
