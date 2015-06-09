@@ -79,6 +79,7 @@ public abstract class Joueurs {
 		int sens = Character.getNumericValue(btn.getActionCommand().charAt(3));
 		
 		btn.setIcon(Bateaux.imageBateau(idBateau, sens, partie, Bateaux.TOUCHE));
+		System.out.println(btn.getActionCommand());
 		
 	}
 

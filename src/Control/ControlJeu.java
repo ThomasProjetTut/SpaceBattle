@@ -94,7 +94,6 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
         			for (int a = x ; a < x + nbCase ; a++) {
         				VueJeu.getPteGrilleJeu(a, y).setIcon(Bateaux.imageBateau(idBateau, Bateaux.HORIZONTAL, count, Bateaux.SANSETAT));
         				VueJeu.getPteGrilleJeu(a, y).setActionCommand(VueJeu.getPteGrilleJeu(a, y).getActionCommand() + count + sensBateau);
-        				System.out.println(VueJeu.getPteGrilleJeu(a, y).getActionCommand());
         				Model.getJoueur(1).setValeurTabJoueur(a, y, idBateau);
         				count++;
         			}
@@ -104,7 +103,6 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
     				for (int a = y ; a < y + nbCase ; a++) {
         				VueJeu.getPteGrilleJeu(x, a).setIcon(Bateaux.imageBateau(idBateau, Bateaux.VERTICAL, count, Bateaux.SANSETAT));
         				VueJeu.getPteGrilleJeu(x, a).setActionCommand(VueJeu.getPteGrilleJeu(x, a).getActionCommand() + count + sensBateau);
-        				System.out.println(VueJeu.getPteGrilleJeu(x, a).getActionCommand());
         				Model.getJoueur(1).setValeurTabJoueur(x, a, idBateau);
         				count++;
         			}
