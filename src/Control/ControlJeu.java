@@ -252,6 +252,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 		// Menu
 		if (sources == vueJeu.getNouvellePartie()) {
 			if (Model.jeuIsEnMulti()) {
+				
 				vueJeu.creerFenetreJeu();
 				vueJeu.pack();
 				model.setJeuEstEnMulti(true);
@@ -266,6 +267,14 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 		        vueMenu.setVisible(false);
 		        model.setIsGameActive(true);
 		        vueJeu.setVisible(true);
+		        
+		        if (VueConnexion.isHost()) {
+            		ServeurTCP.getOutPut().println("P");
+            	}
+            	else {
+            		ClientTCP.getOutPut().println("P");
+            	}
+		        
 			}
 			else {
 				vueParametre.setVisible(true);
@@ -282,6 +291,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	    else if (sources == vueJeu.getQuitter()) {
 	    	vueJeu.setVisible(false);
 	    	vueMenu.setVisible(true);
+	    	VueConnexion.deconnexion();
 	    }	
 		
 	}

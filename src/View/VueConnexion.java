@@ -44,8 +44,8 @@ public class VueConnexion extends JFrame {
    private Model model;
    private VueConnexion vueConnexion;
 
-   private ServeurTCP serveur;
-   private ClientTCP client;
+   private static ServeurTCP serveur;
+   private static ClientTCP client;
    
    public VueConnexion(Model model, VueJeu vueJeu, VueMenu vueMenu) {
 	   this.vueMenu = vueMenu;
@@ -71,7 +71,7 @@ public class VueConnexion extends JFrame {
       setVisible(false);
    }
 
-   public void deconnexion() {
+   public static void deconnexion() {
 	   client.deconnexion();
 	   serveur.deconnexion();
    }
