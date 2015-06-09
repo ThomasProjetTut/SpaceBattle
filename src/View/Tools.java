@@ -9,7 +9,7 @@ import java.io.IOException;
 import javax.swing.*;
 
 public class Tools {
-    private Font fontMenu,police,fontTexte,autrePolice;
+    private Font fontMenu,police,fontTexte;
     public Tools(){
         try {
             fontMenu = loadFont("font/Sailor-Stitch.ttf");
@@ -54,8 +54,7 @@ public class Tools {
         textField.setFont(police);
     }
     public void changerFontJTextArea(JTextArea textArea,int size, Color color, Font font){
-        police = font.deriveFont(Font.BOLD,size);
-        //autrePolice = font.deriveFont(Font.BOLD,size);
+        police = font.deriveFont(Font.TRUETYPE_FONT,size);
         textArea.setForeground(color);
         textArea.setFont(police);
 
