@@ -139,7 +139,7 @@ public class VueJeu extends JFrame {
         chatNomJoueur.setHorizontalAlignment(SwingConstants.CENTER);
         chatNomJoueur.setEnabled(true);
         chatNomJoueur.setText("Joueur1");
-        chatNomJoueur.setColumns(7);
+        chatNomJoueur.setColumns(6);
 
     }
     
@@ -275,13 +275,13 @@ public class VueJeu extends JFrame {
         chatPanel.add(chatLigne, BorderLayout.SOUTH);
         chatPanel.add(chatTextPane, BorderLayout.CENTER);
         chatPanel.setPreferredSize(new Dimension(200, 200));
-        tools.changerFontJTextField(chatLigne, 13, Color.black, tools.getFontTexte());
-        tools.changerFontJTextField(chatNomJoueur, 14, Color.black, tools.getFontTexte());
+        tools.changerFontJTextField(chatLigne, 15, Color.black, tools.getFontTexte());
+        tools.changerFontJTextField(chatNomJoueur, 15, Color.black, tools.getFontTexte());
 
         nomPanel.add(chatNomJoueurInfo);
         nomPanel.add(chatNomJoueur);
-        tools.changerFontJLabel(chatNomJoueurInfo, 14, Color.black, tools.getFontTexte());
-        tools.changerFontJTextArea(chatTexte, 13, Color.black, tools.getFontTexte());
+        tools.changerFontJLabel(chatNomJoueurInfo, 13, Color.black, tools.getFontTexte());
+        tools.changerFontJTextArea(chatTexte, 15, Color.black, tools.getFontTexte());
         chatPanel.add(nomPanel, BorderLayout.NORTH);
 
 
