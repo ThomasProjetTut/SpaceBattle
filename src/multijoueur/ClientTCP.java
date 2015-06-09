@@ -94,7 +94,25 @@ public class ClientTCP extends Thread {
 			    	continue;
 			    
 			    // 'C' = Chat | 'I' = Index coordonnées | 'T' = TabBateau | 'S' = Tour suivant
-			    if (message.charAt(0) == 'N') {
+			    if (message.charAt(0) == 'P') {
+			    	message = message.substring(1,  message.length());
+			    	
+			    	vueJeu.creerFenetreJeu();
+					vueJeu.pack();
+					model.setJeuEstEnMulti(true);
+					model.setAILevel(0);
+					model.initJeu();
+			        vueJeu.repaintFantomeBateau();
+			        vueJeu.reiniBtnBateaux();
+			        model.setPlacementBateauEstLock(false);
+			        vueJeu.initGrilleTexte();
+			        vueJeu.repaintGrilleAdverseBateau();
+			        vueJeu.resetTextChat();
+			        vueMenu.setVisible(false);
+			        model.setIsGameActive(true);
+			        vueJeu.setVisible(true);
+			    }
+			    else if (message.charAt(0) == 'N') {
 			    	message = message.substring(1,  message.length());
 			    	Model.getJoueur(2).setNomJoueur(message);
 			    }
