@@ -11,9 +11,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by Zous on 06/06/2015.
- */
 public class VueParametre extends JFrame {
 
     protected Model model;

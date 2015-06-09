@@ -37,6 +37,7 @@ public class VueJeu extends JFrame {
     private JTable tableJoueur1;
 
     private JLabel chatNomJoueurInfo;
+    private JLabel tour;
 
     private Model model;
     private String nomJoueur;
@@ -97,6 +98,7 @@ public class VueJeu extends JFrame {
 
         barreMenu = new JMenuBar();
         menu = new JMenu("Menu");
+        tour = new JLabel("");
         setNouvellePartie(new JMenuItem("Nouvelle Partie"));
         setQuitter(new JMenuItem("Quitter"));
         setAPropos(new JMenuItem("A propos"));
@@ -431,9 +433,7 @@ public class VueJeu extends JFrame {
         panOption.add(bateauxAffiche);
         //panOption.add(panGrille);
         panValider.add(valider);
-        if (!model.placementBateauIsLock()){
-            panOption.add(panValider);
-        }
+        panOption.add(panValider);
         panOption.setLayout(new BoxLayout(panOption, BoxLayout.Y_AXIS));
 
         panPrincipal.add(panOption, BorderLayout.EAST);
@@ -451,6 +451,7 @@ public class VueJeu extends JFrame {
         menu.add(getQuitter());
 
         barreMenu.add(menu);
+        barreMenu.add(tour);
 
         setJMenuBar(barreMenu);
 
