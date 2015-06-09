@@ -19,6 +19,7 @@ public class VueMenu extends JFrame{
     private JButton instruction;
     private JButton accueil;
     private JLabel titre;
+    private JLabel texte;
 
     public VueMenu(){
 
@@ -101,51 +102,23 @@ public class VueMenu extends JFrame{
 
     }
 
-    public void creerFenetreScore(){
-
-
-        JPanel panPrincipal = new JPanel();
-        panPrincipal.setOpaque(false);
-        JPanel panScore = new JPanel();
-        panScore.setOpaque(false);
-        JPanel panBouton = new JPanel();
-        panBouton.setOpaque(false);
-
-        JPanel fond = null;
-
-        try {
-            fond = new JPanel() {
-                BufferedImage image = ImageIO.read(new File("images/Autres/imageMenu.jpg"));
-
-                public void paintComponent(Graphics g) {
-                    super.paintComponent(g);
-                    g.drawImage(image, 0, 0, 800, 600, this);
-                }
-            };
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        fond.add(panPrincipal);
-        panBouton.add(accueil);
-
-        panPrincipal.add(panBouton);
-        panPrincipal.add(panScore);
-
-        setContentPane(fond);
-
-        panPrincipal.setLayout(new BoxLayout(panPrincipal, BoxLayout.Y_AXIS));
-    }
-
     public void creerFenetreInstruction(){
 
+        titre = new JLabel("Comment jouer : ");
+        texte = new JLabel();
+        texte.setText("<html><br><br>Pour placer vos bateaux, cliquez une fois sur le bateau<br><br> que vous voulez selectionner." +
+                " Puis déplacez le sur la grille<br><br> à l'endroit où vous voulez le placer.<br><br>" +
+                "Vous pouvez changer l'orientation de votre bateau avec le clic droit.<br><br>" +
+                "Pour gagner, détruisez les cinq vaisseaux adverses en premier.<br><br></html>");
 
         JPanel panPrincipal = new JPanel();
         panPrincipal.setOpaque(false);
-        JPanel panInstructions = new JPanel();
-        panInstructions.setOpaque(false);
         JPanel panBouton = new JPanel();
         panBouton.setOpaque(false);
+        JPanel panTexte = new JPanel();
+        panTexte.setOpaque(false);
+        JPanel panTitre = new JPanel();
+        panTitre.setOpaque(false);
 
         JPanel fond = null;
 
@@ -162,14 +135,23 @@ public class VueMenu extends JFrame{
             e.printStackTrace();
         }
 
+        tools.changerFontJLabel(titre, 30, Color.white, tools.getFontTexte());
+        tools.changerFontJLabel(texte,20,Color.white,tools.getFontTexte());
+        tools.changerFontButton(accueil, 30, Color.white, tools.getFontTexte());
+
+        panTexte.add(texte);
+        panTitre.add(titre);
+
         fond.add(panPrincipal);
         panBouton.add(accueil);
 
+        panPrincipal.add(panTitre);
+        panPrincipal.add(panTexte);
         panPrincipal.add(panBouton);
-        panPrincipal.add(panInstructions);
 
         setContentPane(fond);
         panPrincipal.setLayout(new BoxLayout(panPrincipal, BoxLayout.Y_AXIS));
+        pack();
 
     }
 

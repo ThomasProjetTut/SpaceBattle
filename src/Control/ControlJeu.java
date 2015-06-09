@@ -293,7 +293,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	    }
 
 		else if (sources == vueJeu.getaPropos()){
-			vueJeu.aProposBox();
+			vueAPropos.setVisible(true);
 		}
 
 	    else if (sources == vueJeu.getQuitter()) {

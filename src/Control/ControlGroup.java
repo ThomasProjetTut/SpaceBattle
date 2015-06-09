@@ -23,6 +23,7 @@ public class ControlGroup {
 		vueMenu = new VueMenu();
 		vueJeu = new VueJeu(model);
 		vueParametre = new VueParametre(model);
+		vueAPropos = new VueAPropos();
 
 		musicPlayer = new MusicPlayer();
 
@@ -32,6 +33,7 @@ public class ControlGroup {
 		new ControlMenu(vueMenu, vueParametre, vueConnexion);
 		new ControlChat(vueJeu);
 		new ControlParametre(model, vueJeu, vueMenu, vueParametre);
+		new ControlAPropos(vueAPropos);
 		
 		vueMenu.setVisible(true);
 		musicPlayer.start();

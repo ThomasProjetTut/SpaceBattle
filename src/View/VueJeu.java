@@ -450,31 +450,6 @@ public class VueJeu extends JFrame {
 
     }
 
-    public void creerFenetreScore(){
-
-        barreMenu.setVisible(false);
-
-        JPanel panPrincipal = new JPanel();
-        JPanel panInstructions = new JPanel();
-        JPanel panBouton = new JPanel();
-
-        panPrincipal.add(panBouton, BorderLayout.SOUTH);
-        panPrincipal.add(panInstructions, BorderLayout.CENTER);
-
-        setContentPane(panPrincipal);
-        panPrincipal.setLayout(new BoxLayout(panPrincipal, BoxLayout.Y_AXIS));
-    }
-
-    //TODO
-    public void aProposBox(){
-        JOptionPane.showMessageDialog(this, " Ce projet a été réalisé par l'équipe de thomasprojettut,\n" +
-                "Chef de projet : Daloz Thomas, Membres : Bigé Mégane, Crelier Nicolas, Hecht Adam, Janod Lucie,\n" +
-                "Lim Richard, Royer Félix, Van Der Post Johan.\n La musique a été créee par Planetary Confinement et les " +
-                "images trouvées sur Google.\n Nous remercions également notre tuteur Mr Hakem Mourad pour son suivi et " +
-                "ses conseils.");
-    }
-
-
     // Les controlleurs
     public void setMenuControler(ActionListener listener){
         getNouvellePartie().addActionListener(listener);

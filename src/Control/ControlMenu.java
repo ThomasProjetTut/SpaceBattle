@@ -30,7 +30,6 @@ public class ControlMenu implements ActionListener {
 		}
 
 		else if (source == vueMenu.getJouerM()) {
-
 			vueParametre.setVisible(false);
 			vueConnexion.setVisible(true);
 		}
@@ -43,6 +42,7 @@ public class ControlMenu implements ActionListener {
 		else if (source == vueMenu.getAccueil()){
 			vueMenu.setVisible(false);
 			vueMenu.creerFenetreMenu();
+			vueMenu.setSize(800, 600);
 			vueMenu.setVisible(true);
 		}
 	}

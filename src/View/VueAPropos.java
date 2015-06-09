@@ -19,8 +19,7 @@ public class VueAPropos extends JFrame {
 
     private JButton okay;
 
-    public VueAPropos(Model model){
-        this.model = model;
+    public VueAPropos(){
 
         initAttribut();
         affichage();
