@@ -104,6 +104,7 @@ public class VueConnexion extends JFrame {
       ipField = new JTextField(10); 
       ipField.setText(hostIP);
       ipField.setEnabled(false);
+      tools.changerFontJTextField(ipField, 30, Color.white, tools.getFontTexte());
       tools.changerFontJLabel(label1, 30, Color.white, tools.getFontTexte());
       ipField.addFocusListener(new FocusAdapter() {
          public void focusLost(FocusEvent e) {
@@ -123,6 +124,7 @@ public class VueConnexion extends JFrame {
       paneNom.add(label2);
       portField = new JTextField(10);
       portField.setEditable(true);
+      tools.changerFontJTextField(portField, 30, Color.white, tools.getFontTexte());
       tools.changerFontJLabel(label2, 30, Color.white, tools.getFontTexte());
       portField.setText((new Integer(port)).toString());
       portField.addFocusListener(new FocusAdapter() {
