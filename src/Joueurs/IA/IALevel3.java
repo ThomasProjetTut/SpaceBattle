@@ -320,25 +320,21 @@ public class IALevel3 extends IA {
     }
 
     public int[][] modificationTab(int[][] tab){
-
         for(int i = 0; i < 10; i++){
             for(int j = 0; j < 10; j++){
                 if(tab[i][j] == 0){
-                    tab[i][j] = -10;
+                    tab[i][j] = -15;
                 }
             }
         }
 
-        //affichageTab(tab);
-
         for(int i = 0; i < 10; i++){
             for(int j = 0; j < 10; j++){
                 if(tab[i][j] > 0) {
-
                     for (int k = i - 1; k <= i + 1; k++) {
                         for (int l = j - 1; l <= j + 1; l++) {
                             if (k < 10 && k >= 0 && l < 10 && l >= 0) {
-                                if (tab[k][l] == -10) {
+                                if (tab[k][l] == -15) {
                                     tab[k][l] = 0;
                                 }
                             }
@@ -351,8 +347,22 @@ public class IALevel3 extends IA {
             }
         }
 
-
         return tab;
     }
+
+    public int[][] correctionTab(int[][] tab){
+
+        for(int i = 0; i < 10; i++){
+            for (int j = 0; j < 10; j++){
+                if(tab[i][j] == -15){
+                    tab[i][j] = 0;
+                }
+            }
+        }
+
+        return tab;
+
+    }
+
 
 }

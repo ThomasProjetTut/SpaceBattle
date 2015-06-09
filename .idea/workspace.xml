@@ -7,7 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58d0859a-f8e0-45a1-af2f-35b98f4c033b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Joueurs/IA/IALevel2.java" afterPath="$PROJECT_DIR$/src/Joueurs/IA/IALevel2.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Joueurs/IA/IALevel3.java" afterPath="$PROJECT_DIR$/src/Joueurs/IA/IALevel3.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BatailleNavale.iws" />
@@ -46,9 +46,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -57,20 +55,20 @@
         <entry file="file://$PROJECT_DIR$/src/View/VueJeu.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+              <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IALevel3.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IALevel3.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Joueurs/IA/IALevel3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+            <state vertical-scroll-proportion="-8.133449">
+              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
               <folding>
-                <element signature="e#3930#3931#0" expanded="true" />
-                <element signature="e#3975#3976#0" expanded="true" />
+                <element signature="e#4020#4021#0" expanded="true" />
+                <element signature="e#4065#4066#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -80,10 +78,9 @@
         <entry file="file://$PROJECT_DIR$/src/Bateaux/Bateaux.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding>
-                <element signature="e#3566#3567#0" expanded="true" />
-                <element signature="e#3589#3590#0" expanded="true" />
+                <element signature="e#3993#3994#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -93,17 +90,17 @@
         <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+              <caret line="81" column="36" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IALevel2.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IALevel2.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Joueurs/IA/IALevel2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29289427">
-              <caret line="245" column="0" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="84" column="37" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -114,13 +111,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
               <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#2325#2326#0" expanded="true" />
-                <element signature="e#2356#2357#0" expanded="true" />
-                <element signature="e#2390#2391#0" expanded="true" />
-                <element signature="e#2422#2423#0" expanded="true" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -131,7 +122,16 @@
             <state vertical-scroll-proportion="0.0">
               <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#5974#5975#0" expanded="false" />
+                <element signature="e#6003#6004#0" expanded="false" />
+                <element signature="e#6037#6038#0" expanded="false" />
+                <element signature="e#6066#6067#0" expanded="false" />
+                <element signature="e#6105#6106#0" expanded="false" />
+                <element signature="e#6139#6140#0" expanded="false" />
+                <element signature="e#6172#6173#0" expanded="false" />
+                <element signature="e#6200#6201#0" expanded="false" />
+                <element signature="e#6235#6236#0" expanded="false" />
+                <element signature="e#6265#6266#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -191,8 +191,8 @@
         <option value="$PROJECT_DIR$/src/View/VueParametre.java" />
         <option value="$PROJECT_DIR$/src/Control/ControlMenu.java" />
         <option value="$PROJECT_DIR$/src/View/VueJeu.java" />
-        <option value="$PROJECT_DIR$/src/Joueurs/IA/IALevel3.java" />
         <option value="$PROJECT_DIR$/src/Joueurs/IA/IALevel2.java" />
+        <option value="$PROJECT_DIR$/src/Joueurs/IA/IALevel3.java" />
       </list>
     </option>
   </component>
@@ -521,11 +521,20 @@
           <option name="mySupportsDeletion" value="false" />
           <option name="myCanBeAbsent" value="false" />
           <option name="myId" value="UPDATED" />
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Bateaux/Bateaux.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Control/ControlJeu.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Control/ControlParametre.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Joueurs/Humain/Humain.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Joueurs/IA/IALevel1.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Joueurs/IA/IALevel2.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Joueurs/IA/IALevel3.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Joueurs/IA/IALevel4.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Joueurs/Joueurs.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Model/Model.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/View/VueJeu.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/View/VueParametre.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/multijoueur/ClientTCP.java</PATH>
+          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/multijoueur/ServeurTCP.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
           <option name="myUpdateName" value="Created" />
@@ -928,7 +937,7 @@
       <workItem from="1433696579129" duration="382000" />
       <workItem from="1433697055718" duration="599000" />
       <workItem from="1433832436349" duration="113000" />
-      <workItem from="1433836956968" duration="1661000" />
+      <workItem from="1433836956968" duration="5507000" />
     </task>
     <task id="LOCAL-00001" summary="Test sur mon portable">
       <created>1433664291883</created>
@@ -1032,11 +1041,17 @@
       <option name="project" value="LOCAL" />
       <updated>1433838461880</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Ia 2 V2.3">
+      <created>1433838626630</created>
+      <option name="number" value="00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1433838626630</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17501000" />
+    <option name="totallyTimeSpent" value="21347000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1049,7 +1064,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31045753" sideWeight="0.5030257" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32372504" sideWeight="0.49092284" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32372504" sideWeight="0.49092284" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14079823" sideWeight="0.4969743" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1115,7 +1130,8 @@
     <MESSAGE value="La Nature est un temple où de vivants piliers&#10;Laissent parfois sortir de confuses paroles ;&#10;L'homme y passe à travers des forêts de symboles&#10;Qui l'observent avec des regards familiers.&#10;&#10;Comme de longs échos qui de loin se confondent&#10;Dans une ténébreuse et profonde unité,&#10;Vaste comme la nuit et comme la clarté,&#10;Les parfums, les couleurs et les sons se répondent.&#10;&#10;Il est des parfums frais comme des chairs d'enfants,&#10;Doux comme les hautbois, verts comme les prairies,&#10;- Et d'autres, corrompus, riches et triomphants,&#10;&#10;Ayant l'expansion des choses infinies,&#10;Comme l'ambre, le musc, le benjoin et l'encens,&#10;Qui chantent les transports de l'esprit et des sens.&#10;&#10;Ia 3 V2" />
     <MESSAGE value="La Nature est un temple où de vivants piliers&#10;Laissent parfois sortir de confuses paroles ;&#10;L'homme y passe à travers des forêts de symboles&#10;Qui l'observent avec des regards familiers.&#10;&#10;Comme de longs échos qui de loin se confondent&#10;Dans une ténébreuse et profonde unité,&#10;Vaste comme la nuit et comme la clarté,&#10;Les parfums, les couleurs et les sons se répondent.&#10;&#10;Il est des parfums frais comme des chairs d'enfants,&#10;Doux comme les hautbois, verts comme les prairies,&#10;- Et d'autres, corrompus, riches et triomphants,&#10;&#10;Ayant l'expansion des choses infinies,&#10;Comme l'ambre, le musc, le benjoin et l'encens,&#10;Qui chantent les transports de l'esprit et des sens.&#10;&#10;Ia 2 V2" />
     <MESSAGE value="Ia 2 V2.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ia 2 V2.2" />
+    <MESSAGE value="Ia 2 V2.3" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ia 2 V2.3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1407,9 +1423,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="47" column="9" selection-start-line="47" selection-start-column="9" selection-end-line="47" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1417,13 +1431,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="17" column="58" selection-start-line="17" selection-start-column="58" selection-end-line="17" selection-end-column="58" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2325#2326#0" expanded="true" />
-            <element signature="e#2356#2357#0" expanded="true" />
-            <element signature="e#2390#2391#0" expanded="true" />
-            <element signature="e#2422#2423#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1437,7 +1445,16 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#5974#5975#0" expanded="false" />
+            <element signature="e#6003#6004#0" expanded="false" />
+            <element signature="e#6037#6038#0" expanded="false" />
+            <element signature="e#6066#6067#0" expanded="false" />
+            <element signature="e#6105#6106#0" expanded="false" />
+            <element signature="e#6139#6140#0" expanded="false" />
+            <element signature="e#6172#6173#0" expanded="false" />
+            <element signature="e#6200#6201#0" expanded="false" />
+            <element signature="e#6235#6236#0" expanded="false" />
+            <element signature="e#6265#6266#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1454,16 +1471,14 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/VueJeu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+          <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1471,21 +1486,9 @@
     <entry file="file://$PROJECT_DIR$/src/Bateaux/Bateaux.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding>
-            <element signature="e#3566#3567#0" expanded="true" />
-            <element signature="e#3589#3590#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Joueurs/IA/IALevel3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
-          <folding>
-            <element signature="e#3930#3931#0" expanded="true" />
-            <element signature="e#3975#3976#0" expanded="true" />
+            <element signature="e#3993#3994#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1493,7 +1496,7 @@
     <entry file="file://$PROJECT_DIR$/src/Model/Model.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="79" column="36" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
+          <caret line="81" column="36" selection-start-line="81" selection-start-column="36" selection-end-line="81" selection-end-column="36" />
           <folding />
         </state>
       </provider>
@@ -1505,9 +1508,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Joueurs/IA/IALevel2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29289427">
-          <caret line="245" column="0" selection-start-line="245" selection-start-column="0" selection-end-line="245" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="84" column="37" selection-start-line="84" selection-start-column="37" selection-end-line="84" selection-end-column="37" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Joueurs/IA/IALevel3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.133449">
+          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding>
+            <element signature="e#4020#4021#0" expanded="true" />
+            <element signature="e#4065#4066#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
