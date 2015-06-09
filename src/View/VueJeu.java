@@ -287,11 +287,8 @@ public class VueJeu extends JFrame {
         bateauxAffiche.setLayout(new BoxLayout(bateauxAffiche, BoxLayout.Y_AXIS));
 
         panOption.add(bateauxAffiche);
-
-        // PANEL DE LA GRILLE A AFFICHER AU MILIEU
-        if (!tousLesBateauxSontPlace()){
-            panOption.add(panValider);
-        }
+        panOption.add(panValider);
+        
         panOption.add(panGrille);
         panOption.setLayout(new BoxLayout(panOption, BoxLayout.Y_AXIS));
 
