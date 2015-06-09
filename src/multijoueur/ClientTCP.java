@@ -6,8 +6,7 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.PrintWriter;
- 
-import java.net.ServerSocket;
+
 import java.net.Socket;
 import java.net.UnknownHostException;
 
@@ -15,8 +14,7 @@ import Model.Model;
 import View.VueConnexion;
 import View.VueJeu;
 import View.VueMenu;
-import View.VueParametre;
- 
+
 public class ClientTCP extends Thread {
  
 	private static Socket socket;
