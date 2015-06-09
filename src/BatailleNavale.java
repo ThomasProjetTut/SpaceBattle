@@ -9,7 +9,7 @@ public class BatailleNavale {
     	
     	EventQueue.invokeLater(() -> {
             Model model = new Model();
-            ControlGroup controlGroup = new ControlGroup(model);
+            new ControlGroup(model);
 
         });
     }

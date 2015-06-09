@@ -176,16 +176,8 @@ public class Bateaux {
 		return (HashMap<Integer, Bateaux>) tabBateaux;
 	}
 
-	public int getIdBateau() {
-		return idBateau;
-	}
-
 	public int getNombreCases() {
 		return nombreCases;
-	}
-
-	public String getNomBateau() {
-		return nomBateau;
 	}
 
 	public static Map<String, ImageIcon> getMapStringIconTouche() {

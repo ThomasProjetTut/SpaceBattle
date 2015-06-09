@@ -125,7 +125,7 @@ public abstract class Joueurs {
 			int x0 = -100;
 			int x1 = -100;
 			
-			int sens = 0;
+			int sens;
 			
 			for(int i = 0; i < Model.getTaillePlateau(); i++) {
 	            for(int j = 0; j < Model.getTaillePlateau(); j++) {

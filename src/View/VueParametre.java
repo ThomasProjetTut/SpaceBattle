@@ -11,9 +11,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 
-/**
- * Created by Zous on 06/06/2015.
- */
 public class VueParametre extends JFrame {
 
     protected Model model;
@@ -30,7 +27,7 @@ public class VueParametre extends JFrame {
 
     private ButtonGroup buttonGroup;
 
-    private JButton valider,annuler,vide;
+    private JButton valider,annuler;
 
     public VueParametre(Model model){
         this.model = model;

@@ -21,9 +21,6 @@ public class VueMenu extends JFrame{
     private JButton accueil;
     private JLabel titre;
 
-    //USELESS
-    private boolean changerFenetre;
-
     public VueMenu(){
 
         initAttribut();
@@ -193,9 +190,6 @@ public class VueMenu extends JFrame{
         score.addActionListener(listener);
         accueil.addActionListener(listener);
     }
-
-    public boolean getChangerFenetre() {
-        return changerFenetre;}
 
     public JButton getJouerS() {
         return jouerS;

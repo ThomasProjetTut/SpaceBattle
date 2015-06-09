@@ -11,17 +11,15 @@ public class IALevel3 extends IA {
 	
 	private int[][] tabJoueurAdverse;
 	
-	private static ArrayList<int[] > listeCiblesPotentielles = new ArrayList<int[] >();
-	private static ArrayList<int[] > listePositionCible = new ArrayList<int[] >();
-	private static ArrayList<int[] > listeCiblesFutures = new ArrayList<int[] >();
-	
-	int[][] tabCaseDejaTouche = new int[Model.getTaillePlateau()][Model.getTaillePlateau()];
+	private static ArrayList<int[] > listeCiblesPotentielles = new ArrayList<>();
+	private static ArrayList<int[] > listePositionCible = new ArrayList<>();
+	private static ArrayList<int[] > listeCiblesFutures = new ArrayList<>();
 	
 	private int idBateauCible;
 	
 	public IALevel3() {
         super();
-		nomJoueur = "Novice3";
+		nomJoueur = "Loup de mer";
 		typeId = IA_LEVEL_3;
 		tabJoueurAdverse = modificationTab(Model.getJoueur(1).getTabJoueur());
         tabJoueurAdverse = correctionTab(Model.getJoueur(1).getTabJoueur());
@@ -32,7 +30,7 @@ public class IALevel3 extends IA {
 
         nombreCoups = Model.getNombresCoupsDepart();
 
-        int[] cible = new int[2];
+        int[] cible;
 
         cible = aquisitionCoordonnees();
         
@@ -69,7 +67,7 @@ public class IALevel3 extends IA {
 
     public int[] aquisitionCible(){
 
-        int[] cible = new int[2];
+        int[] cible;
 
         cible = listePositionCible.get(0);
 
@@ -111,7 +109,7 @@ public class IALevel3 extends IA {
 
 
     public int[] aquisitionProchaineCibles(){
-        int[] prochaineCible = new int[2];
+        int[] prochaineCible;
 
         prochaineCible = listeCiblesFutures.get(0);
 
@@ -126,7 +124,7 @@ public class IALevel3 extends IA {
     }
 
     public int[] aquisitionCoordonneesPotentielles(){
-        int[] cible = new int[2];
+        int[] cible;
 
         cible = listeCiblesPotentielles.get(0);
         listeCiblesPotentielles.remove(0);
