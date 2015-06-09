@@ -67,20 +67,35 @@ public abstract class Joueurs {
 	}
 	
 	// Met à jour les icons si le joueur est touché
-	public void updateIconGrilleJoueurTouche(int x, int y, Joueurs joueurAdverse) {
+	public void updateIconGrilleJoueurTouche(int x, int y, Joueurs joueurAdverse, boolean estTouche) {
 		
-		if (joueurAdverse.typeId != HUMAIN)
-			return;
-		
-		JButton btn = VueJeu.getPteGrilleJeu(x, y);
-		
-		int idBateau = -joueurAdverse.getValeurTabJoueur(x, y);
-		int partie = Character.getNumericValue(btn.getActionCommand().charAt(2));
-		int sens = Character.getNumericValue(btn.getActionCommand().charAt(3));
-		
-		btn.setIcon(Bateaux.imageBateau(idBateau, sens, partie, Bateaux.TOUCHE));
-		System.out.println(btn.getActionCommand());
-		
+		if (joueurAdverse.typeId == HUMAIN) {
+			
+			JButton btn = VueJeu.getPteGrilleJeu(x, y);	
+			
+			if (!estTouche) {
+				btn.setIcon(Bateaux.getMapStringIconTouche().get("Plouf"));
+				return;
+			}
+			
+			int idBateau = -joueurAdverse.getValeurTabJoueur(x, y);
+			int partie = Character.getNumericValue(btn.getActionCommand().charAt(2));
+			int sens = Character.getNumericValue(btn.getActionCommand().charAt(3));
+			
+			btn.setIcon(Bateaux.imageBateau(idBateau, sens, partie, Bateaux.TOUCHE));
+			
+		}
+		else {
+			JButton btn = VueJeu.getGrilleJeu(x, y);
+			
+			if (!estTouche) {
+				btn.setIcon(Bateaux.getMapStringIconTouche().get("Plouf"));
+				return;
+			}
+			
+			btn.setIcon(Bateaux.getMapStringIconTouche().get("Touche"));
+		}
+			
 	}
 
 	// Return true si un bâteau est touché par le tir

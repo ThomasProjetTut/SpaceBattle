@@ -43,6 +43,8 @@ public class Bateaux {
 	private static Map<Bateaux, Map<String, ImageIcon>> mapBateauxListeIcons;
 
 	private static Map<String, ImageIcon> mapStringIcon;
+	
+	private static Map<String, ImageIcon> mapStringIconTouche;
 
 	public static void initImagesBateaux() {
 
@@ -148,6 +150,15 @@ public class Bateaux {
 
 		return imageBateau;
 	}
+	
+	public static void initMapTouche() {
+
+		mapStringIconTouche = new HashMap();
+
+		mapStringIconTouche.put("Touche", new ImageIcon("images/Touche/touche.png"));
+		mapStringIconTouche.put("Plouf", new ImageIcon("images/Touche/plouf.png"));
+
+	}
 
 	public static void initTabBateaux() {
 
@@ -175,5 +186,9 @@ public class Bateaux {
 
 	public String getNomBateau() {
 		return nomBateau;
+	}
+
+	public static Map<String, ImageIcon> getMapStringIconTouche() {
+		return mapStringIconTouche;
 	}
 }

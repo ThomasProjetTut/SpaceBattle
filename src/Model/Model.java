@@ -40,6 +40,7 @@ public class Model {
 	public Model() {
 		Bateaux.initTabBateaux();
 		Bateaux.initImagesBateaux();
+		Bateaux.initMapTouche();
 		
 		placementBateauEstLock = false;
 	}
