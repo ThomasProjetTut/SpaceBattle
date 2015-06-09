@@ -43,6 +43,7 @@ public class ControlParametre implements ActionListener{
             vueParametre.setVisible(false);
             model.setIsGameActive(true);
             vueJeu.setVisible(true);
+            VueJeu.getChatTexte().append("Placez vos bateaux dans la grille \n");
 
         }
         else if (source == vueParametre.getAnnuler()){

@@ -35,7 +35,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	
 	@Override
 	public void mouseReleased (MouseEvent event) {
-		
+
 		if (model.placementBateauIsLock())
 			return;
 		
@@ -120,7 +120,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	// Placement fantome bateaux
 	@Override
 	public void mouseEntered(MouseEvent event){
-		
+
 		if (model.placementBateauIsLock())
 			return;
 		
@@ -184,6 +184,15 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 			bateau = vueJeu.getCroiseur();
 			return;
 		}
+		else if (sources == vueJeu.getValider()){
+			if (!vueJeu.tousLesBateauxSontPlace()) {
+				VueJeu.getChatTexte().append("Vous devez placer tous vos bateaux avant de pouvoir valider puis jouer !\n");
+			}
+			else {
+				model.setPlacementBateauEstLock(true);
+				VueJeu.getChatTexte().append("Cliquez sur la grille pour commencer à jouer !\n");
+			}
+		}
 		
 		// Fonction pour jouer quand n clique sur la grille adverse
 		for (int i = 0; i < Model.getTaillePlateau(); i++){
@@ -192,7 +201,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
             	// Regarde si le JButton est un bouton de la grille adverse
             	if (sources == VueJeu.getGrilleJeu(i, j)){
             		
-            		if (!vueJeu.tousLesBateauxSontPlace()) {
+            		if (!model.placementBateauIsLock()) {
             			VueJeu.getChatTexte().append("Vous devez placer tous vos bateaux avant de pouvoir jouer !\n");
             			return;
             		}
@@ -216,14 +225,11 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
             }
         }
 		
-		
+
 		// Menu
 		if (sources == vueJeu.getNouvellePartie()) {
 				vueParametre.setVisible(true);
 				model.setIsGameActive(false);
-	    }
-	    else if (sources == vueJeu.getAide()){
-	    	System.out.println("aide");
 	    }
 
 		else if (sources == vueJeu.getaPropos()){

@@ -18,19 +18,19 @@ public class VueJeu extends JFrame {
 
     private JMenuBar barreMenu;
     private JMenu menu;
-    private JMenuItem aide;
     private JMenuItem nouvellePartie;
     private JMenuItem quitter;
     private JMenuItem aPropos;
 
     private static JButton [][] grilleJeu;
     private static JButton [][] pteGrilleJeu;
+    private static JButton [][] tableauPasserelle;
     private JButton contreTorpilleurs;
     private JButton torpilleur;
     private JButton porteAvion;
     private JButton croiseur;
     private JButton sousMarin;
-    private JButton valider,tourner;
+    private JButton valider;
 
     private static JTextArea chatTexte;
     private JTextField chatLigne;
@@ -44,7 +44,8 @@ public class VueJeu extends JFrame {
 
     private JPanel panPrincipal,panJeu,panOption,panPteGrille,bateauxAffiche
             ,panCroiseur,panTorpilleur,panContreTorpilleur
-            ,panSousMarin,panPorteAvion,chatPanel,panGrille,nomPanel,fond,panBouton;
+            ,panSousMarin,panPorteAvion,chatPanel,panGrille,nomPanel,fond,panBouton, panValider;
+
     private GridBagLayout gbl_panel_1;
 
     public VueJeu(Model model){
@@ -89,6 +90,7 @@ public class VueJeu extends JFrame {
  	    		grilleJeu[i][j].setText(""+Model.getJoueur(2).getValeurTabJoueur(i, j));
 	}
 
+
     // Les initialisations
     public void initAttribut(){
         Bateaux.initTabBateaux();
@@ -96,7 +98,6 @@ public class VueJeu extends JFrame {
 
         barreMenu = new JMenuBar();
         menu = new JMenu("Menu");
-        setAide(new JMenuItem("Aide"));
         setNouvellePartie(new JMenuItem("Nouvelle Partie"));
         setQuitter(new JMenuItem("Quitter"));
         setAPropos(new JMenuItem("A propos"));
@@ -109,7 +110,6 @@ public class VueJeu extends JFrame {
         initBateaux();
 
         valider = new JButton("Valider");
-        tourner = new JButton("Tourner");
 
     }
 
@@ -142,7 +142,7 @@ public class VueJeu extends JFrame {
 
         for (int i = 0; i < grilleJeu.length; i++){
             for (int j = 0; j < grilleJeu.length; j++){
-                grilleJeu[i][j] = new JButton("0");
+                grilleJeu[i][j] = new JButton();
                 grilleJeu[i][j].setVerticalTextPosition(SwingConstants.CENTER);
                 grilleJeu[i][j].setHorizontalTextPosition(SwingConstants.CENTER);
                 grilleJeu[i][j].setBackground(Color.lightGray);
@@ -151,26 +151,6 @@ public class VueJeu extends JFrame {
                 grilleJeu[i][j].setBorder(null);
             }
         }
-    }
-    
-    public JButton getBtnBateau(int idBateau) {
-    	
-    	switch (idBateau)
-    	{
-    		case Bateaux.CONTRETORPILLEUR:
-    			return contreTorpilleurs;
-    		case Bateaux.TORPILLEUR:
-    			return torpilleur;
-    		case Bateaux.CROISEUR:
-    			return croiseur;
-    		case Bateaux.SOUSMARIN:
-    			return sousMarin;
-    		case Bateaux.PORTEAVIONS:
-    			return porteAvion;
-    	}
-    	
-    	return null;
-    	
     }
     
     public boolean tousLesBateauxSontPlace() {
@@ -193,6 +173,20 @@ public class VueJeu extends JFrame {
 		croiseur.setEnabled(true);
 		sousMarin.setEnabled(true);
 		porteAvion.setEnabled(true);
+    }
+
+    public void echangerGrille(){
+
+        tableauPasserelle = new JButton[10][10];
+
+        for (int i = 0; i < tableauPasserelle.length; i++){
+            for (int j = 0; j < tableauPasserelle.length; j++){
+                tableauPasserelle[i][j] = new JButton();
+                tableauPasserelle[i][j] = grilleJeu[i][j];
+                grilleJeu[i][j] = pteGrilleJeu[i][j];
+                pteGrilleJeu[i][j] = tableauPasserelle[i][j];
+            }
+        }
     }
     
     // ne pas réutiliser
@@ -233,21 +227,6 @@ public class VueJeu extends JFrame {
         porteAvion.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.PORTEAVIONS).getNombreCases())+Bateaux.PORTEAVIONS);
     }
 
-    /*public void initPteGrille(){
-
-        for (int i = 0; i < pteGrilleJeu.length; i++){
-            for (int j = 0; j < pteGrilleJeu.length; j++){
-                pteGrilleJeu[i][j] = new JButton("0");
-                pteGrilleJeu[i][j].setBackground(Color.lightGray);
-                pteGrilleJeu[i][j].setPreferredSize(new Dimension(20, 20));
-                pteGrilleJeu[i][j].setActionCommand("" + i + "" + j);
-                pteGrilleJeu[i][j].setBorder(null);
-            }
-        }
-    }*/
-    /* Version 1 = Grande grille du milieu
-    *  Version 2 = Petite grille du bas droit
-    */
     public JPanel afficheGrille (JPanel panel, int version, JButton[][] grille) {
         switch (version) {
             case 1:
@@ -280,19 +259,6 @@ public class VueJeu extends JFrame {
         return panel;
     }
 
-    /*public JPanel affichePetiteGrille(JPanel panel){
-        for (int i = 0; i < pteGrilleJeu.length; i++){
-            for (int j = 0; j < pteGrilleJeu.length; j++){
-
-                GridBagConstraints gbc_btnNewButton2 = new GridBagConstraints();
-                gbc_btnNewButton2.gridx = i;
-                gbc_btnNewButton2.gridy = j;
-                panel.add(pteGrilleJeu[i][j], gbc_btnNewButton2);
-            }
-        }
-
-        return panel;
-    }*/
     public void creerPanelGauche(){
 
         //COTE GAUCHE DE LA FENETRE
@@ -314,7 +280,11 @@ public class VueJeu extends JFrame {
 
 
     }
+    
     public void creerPanelDroite(){
+
+        panValider = new JPanel();
+        panValider.add(valider);
         panContreTorpilleur.add(contreTorpilleurs);
         panTorpilleur.add(torpilleur);
         panSousMarin.add(sousMarin);
@@ -330,13 +300,18 @@ public class VueJeu extends JFrame {
         bateauxAffiche.setLayout(new BoxLayout(bateauxAffiche, BoxLayout.Y_AXIS));
 
         panOption.add(bateauxAffiche);
+
         // PANEL DE LA GRILLE A AFFICHER AU MILIEU
+        if (!tousLesBateauxSontPlace()){
+            panOption.add(panValider);
+        }
         panOption.add(panGrille);
         panOption.setLayout(new BoxLayout(panOption, BoxLayout.Y_AXIS));
 
         panPrincipal.add(panOption, BorderLayout.EAST);
 
     }
+
     public void creerFenetreJeu(){
 
         barreMenu.setVisible(true);
@@ -369,7 +344,6 @@ public class VueJeu extends JFrame {
         //TABLEAU DE JEU CENTRE DU PANEL
 
         fond = null;
-        panPteGrille = new JPanel();
         panPteGrille.setLayout(gbl_panel_1);
         panPteGrille.setOpaque(false);
 
@@ -412,11 +386,10 @@ public class VueJeu extends JFrame {
 
     }
 
-    public void creerBarreMenu(){
+    public void creerBarreMenu() {
 
         menu.add(getNouvellePartie());
         menu.addSeparator();
-        menu.add(getAide());
         menu.add(getaPropos());
         menu.addSeparator();
         menu.add(getQuitter());
@@ -447,11 +420,11 @@ public class VueJeu extends JFrame {
         JOptionPane.showMessageDialog(this, " Hellow ! ");
     }
 
+
     // Les controlleurs
     public void setMenuControler(ActionListener listener){
         getNouvellePartie().addActionListener(listener);
         getQuitter().addActionListener(listener);
-        getAide().addActionListener(listener);
         getaPropos().addActionListener(listener);
     }
 
@@ -467,7 +440,8 @@ public class VueJeu extends JFrame {
             contreTorpilleurs.addActionListener(listener);
             croiseur.addActionListener(listener);
             sousMarin.addActionListener(listener);
-            porteAvion.addActionListener(listener);
+        porteAvion.addActionListener(listener);
+        valider.addActionListener(listener);
     }
 
     public void setChatControler(KeyListener listener) {
@@ -491,10 +465,6 @@ public class VueJeu extends JFrame {
 
     public void setQuitter(JMenuItem quitter) {
         this.quitter = quitter;
-    }
-
-    public void setAide(JMenuItem aide) {
-        this.aide = aide;
     }
 
     public void setAPropos(JMenuItem aPropos){
@@ -523,6 +493,26 @@ public class VueJeu extends JFrame {
         return chatLigne;
     }
 
+    public JButton getBtnBateau(int idBateau) {
+
+        switch (idBateau)
+        {
+            case Bateaux.CONTRETORPILLEUR:
+                return contreTorpilleurs;
+            case Bateaux.TORPILLEUR:
+                return torpilleur;
+            case Bateaux.CROISEUR:
+                return croiseur;
+            case Bateaux.SOUSMARIN:
+                return sousMarin;
+            case Bateaux.PORTEAVIONS:
+                return porteAvion;
+        }
+
+        return null;
+
+    }
+
 	public JMenuItem getNouvellePartie() {
 		return nouvellePartie;
 	}
@@ -531,17 +521,21 @@ public class VueJeu extends JFrame {
 		return quitter;
 	}
 
-	public JMenuItem getAide() {
-		return aide;
-	}
-
     public JMenuItem getaPropos() {
         return aPropos;
+    }
+
+    public JButton getValider(){
+        return valider;
     }
 
 	public static JButton[][] getGrilleJeu() {
 		return grilleJeu;
 	}
+
+    public static JButton[][] getTableauPasserelle(){
+        return tableauPasserelle;
+    }
 
 	public JButton getContreTorpilleurs() {
 		return contreTorpilleurs;
