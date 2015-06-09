@@ -140,7 +140,7 @@ public class VueParametre extends JFrame {
         panButton.add(valider);
         panButton.add(annuler);
         panButton.setLayout(new GridLayout(1,2));
-// richard FDP
+
         panMenu.add(panGButton);
 
         panPrincipal.add(panTitre);
@@ -152,8 +152,6 @@ public class VueParametre extends JFrame {
         panGlobal.setLayout(new BoxLayout(panGlobal, BoxLayout.Y_AXIS));
 
         panGlobal.add(panPrincipal);
-
-
 
         setContentPane(panGlobal);
     }

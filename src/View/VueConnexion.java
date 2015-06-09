@@ -1,14 +1,16 @@
 package View;
 
-import java.awt.BorderLayout;
-import java.awt.FlowLayout;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusAdapter;
 import java.awt.event.FocusEvent;
 import java.awt.event.KeyEvent;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JCheckBox;
@@ -31,6 +33,7 @@ public class VueConnexion extends JFrame {
    private static boolean isHost = true;
    
    private JTextField ipField = null;
+   private JLabel label1,label2;
    private JTextField portField = null;
    private JRadioButton hostOption = null;
    private JRadioButton guestOption = null;
@@ -40,7 +43,7 @@ public class VueConnexion extends JFrame {
    private VueMenu vueMenu;
    private Model model;
    private VueConnexion vueConnexion;
-   
+
    private ServeurTCP serveur;
    private ClientTCP client;
    
@@ -74,51 +77,71 @@ public class VueConnexion extends JFrame {
    }
    
    public JPanel initOptionsPane() {
-      JPanel pane = null;
+      Tools tools = new Tools();
+      JPanel paneNom = null;
       ActionAdapter buttonListener = null;
+      JPanel fond = null;
+      try {
+         fond = new JPanel() {
+            BufferedImage image = ImageIO.read(new File("images/Autres/fondText.jpg"));
+
+            public void paintComponent(Graphics g) {
+               super.paintComponent(g);
+               g.drawImage(image, 0, 0, 600, 400, this);
+            }
+         };
+      } catch (IOException e) {
+         e.printStackTrace();
+      }
 
       // Create an options pane
       JPanel optionsPane = new JPanel(new GridLayout(4, 1));
 
       // IP address input
-      pane = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-      pane.add(new JLabel("Host IP:"));
+      paneNom = new JPanel(new FlowLayout(FlowLayout.LEFT));
+      label1 = new JLabel("Host IP : ");
+      paneNom.add(label1);
       ipField = new JTextField(10); 
       ipField.setText(hostIP);
       ipField.setEnabled(false);
+      tools.changerFontJLabel(label1, 30, Color.white, tools.getFontTexte());
       ipField.addFocusListener(new FocusAdapter() {
-          public void focusLost(FocusEvent e) {
-	         ipField.selectAll();
-	
-	         hostIP = ipField.getText();
+         public void focusLost(FocusEvent e) {
+            ipField.selectAll();
+
+            hostIP = ipField.getText();
          }
-       });
-      
-      pane.add(ipField);
-      optionsPane.add(pane);
+      });
+
+      paneNom.add(ipField);
+      paneNom.setOpaque(false);
+      optionsPane.add(paneNom);
 
       // Port input
-      pane = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-      pane.add(new JLabel("Port:"));
-      portField = new JTextField(10); portField.setEditable(true);
+      paneNom = new JPanel(new FlowLayout(FlowLayout.LEFT));
+      label2 = new JLabel("Port : ");
+      paneNom.add(label2);
+      portField = new JTextField(10);
+      portField.setEditable(true);
+      tools.changerFontJLabel(label2, 30, Color.white, tools.getFontTexte());
       portField.setText((new Integer(port)).toString());
       portField.addFocusListener(new FocusAdapter() {
-          public void focusLost(FocusEvent e) {
+         public void focusLost(FocusEvent e) {
 
             int temp;
             try {
                temp = Integer.parseInt(portField.getText());
                port = temp;
-            }
-            catch (NumberFormatException nfe) {
+            } catch (NumberFormatException nfe) {
                portField.setText((new Integer(port)).toString());
                repaint();
             }
-          }
-       });
-      
-      pane.add(portField);
-      optionsPane.add(pane);
+         }
+      });
+
+      paneNom.add(portField);
+      paneNom.setOpaque(false);
+      optionsPane.add(paneNom);
 
       buttonListener = new ActionAdapter() {
             public void actionPerformed(ActionEvent e) {
@@ -144,14 +167,19 @@ public class VueConnexion extends JFrame {
       guestOption.setMnemonic(KeyEvent.VK_G);
       guestOption.setActionCommand("guest");
       guestOption.addActionListener(buttonListener);
+      tools.changerFontJRadioButton(hostOption, 30, Color.white, tools.getFontTexte());
+      tools.changerFontJRadioButton(guestOption,30,Color.white,tools.getFontTexte());
       bg.add(hostOption);
       bg.add(guestOption);
-      pane = new JPanel(new GridLayout(2, 2));
-      pane.add(hostOption);
-      pane.add(guestOption);
-      optionsPane.add(pane);
+      paneNom = new JPanel(new GridLayout(2, 2));
+      paneNom.add(hostOption);
+      paneNom.add(guestOption);
+      paneNom.setOpaque(false);
+      optionsPane.add(paneNom);
       checkBoxBonus = new JCheckBox("Activer les bonus");
-      pane.add(checkBoxBonus);
+      tools.changerFontJCheckBox(checkBoxBonus,30,Color.white,tools.getFontTexte());
+      paneNom.add(checkBoxBonus);
+      paneNom.setOpaque(false);
 
       // Connect/disconnect buttons
       JPanel buttonPane = new JPanel(new GridLayout(1, 2));
@@ -196,8 +224,11 @@ public class VueConnexion extends JFrame {
 
       buttonPane.add(connectButton);
       optionsPane.add(buttonPane);
-
-      return optionsPane;
+      fond.add(optionsPane);
+      paneNom.setOpaque(false);
+      buttonPane.setOpaque(false);
+      optionsPane.setOpaque(false);
+      return fond;
    }
 
    public static boolean isHost() {
