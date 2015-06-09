@@ -135,6 +135,8 @@ public class VueJeu extends JFrame {
         for (int i = 0; i < grilleJeu.length; i++){
             for (int j = 0; j < grilleJeu.length; j++){
                 grilleJeu[i][j] = new JButton("0");
+                grilleJeu[i][j].setVerticalTextPosition(SwingConstants.CENTER);
+                grilleJeu[i][j].setHorizontalTextPosition(SwingConstants.CENTER);
                 grilleJeu[i][j].setBackground(Color.lightGray);
                 grilleJeu[i][j].setPreferredSize(new Dimension(size, size));
                 grilleJeu[i][j].setActionCommand("" + i + "" + j);
