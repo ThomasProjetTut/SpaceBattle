@@ -131,10 +131,6 @@ public class IALevel3 extends IA {
         cible = listeCiblesPotentielles.get(0);
         listeCiblesPotentielles.remove(0);
 
-        if(listeCiblesPotentielles.isEmpty()){
-            cible = aquisitionCoordonneesAleatoire();
-        }
-
         if(tabJoueurAdverse[cible[0]][cible[1]] == idBateauCible){
             listeCiblesPotentielles.clear();
             creationListePositionCible(cible);

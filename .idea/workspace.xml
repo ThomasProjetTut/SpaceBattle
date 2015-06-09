@@ -6,7 +6,8 @@
     <bookmark url="file://$PROJECT_DIR$/src/View/VueMenu.java" line="39" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58d0859a-f8e0-45a1-af2f-35b98f4c033b" name="Default" comment="">
+    <list default="true" id="58d0859a-f8e0-45a1-af2f-35b98f4c033b" name="Default" comment="IA 3/2/1 V5">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Joueurs/IA/IALevel2.java" afterPath="$PROJECT_DIR$/src/Joueurs/IA/IALevel2.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Joueurs/IA/IALevel3.java" afterPath="$PROJECT_DIR$/src/Joueurs/IA/IALevel3.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -61,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IALevel3.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="IALevel3.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Joueurs/IA/IALevel3.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.35114503">
-              <caret line="303" column="0" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,11 +97,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IALevel2.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="IALevel2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Joueurs/IA/IALevel2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="214" column="0" selection-start-line="214" selection-start-column="0" selection-end-line="239" selection-end-column="5" />
+            <state vertical-scroll-proportion="0.43256998">
+              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -189,9 +190,9 @@
         <option value="$PROJECT_DIR$/src/View/VueParametre.java" />
         <option value="$PROJECT_DIR$/src/Control/ControlMenu.java" />
         <option value="$PROJECT_DIR$/src/View/VueJeu.java" />
-        <option value="$PROJECT_DIR$/src/Joueurs/IA/IALevel2.java" />
         <option value="$PROJECT_DIR$/src/Joueurs/IA/IALevel1.java" />
         <option value="$PROJECT_DIR$/src/Joueurs/IA/IALevel3.java" />
+        <option value="$PROJECT_DIR$/src/Joueurs/IA/IALevel2.java" />
       </list>
     </option>
   </component>
@@ -822,7 +823,7 @@
       <workItem from="1433832436349" duration="113000" />
       <workItem from="1433836956968" duration="6900000" />
       <workItem from="1433856967337" duration="1852000" />
-      <workItem from="1433859633781" duration="920000" />
+      <workItem from="1433859633781" duration="1230000" />
     </task>
     <task id="LOCAL-00001" summary="Test sur mon portable">
       <created>1433664291883</created>
@@ -956,11 +957,17 @@
       <option name="project" value="LOCAL" />
       <updated>1433860320030</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="IA 3/2/1 V5">
+      <created>1433860571189</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1433860571189</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25512000" />
+    <option name="totallyTimeSpent" value="25822000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1043,7 +1050,8 @@
     <MESSAGE value="IA3 V2.2" />
     <MESSAGE value="IA3 V2.3" />
     <MESSAGE value="IA 2/1 V4" />
-    <option name="LAST_COMMIT_MESSAGE" value="IA 2/1 V4" />
+    <MESSAGE value="IA 3/2/1 V5" />
+    <option name="LAST_COMMIT_MESSAGE" value="IA 3/2/1 V5" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1409,18 +1417,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Joueurs/IA/IALevel2.java">
+    <entry file="file://$PROJECT_DIR$/src/Joueurs/IA/IALevel3.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="214" column="0" selection-start-line="214" selection-start-column="0" selection-end-line="239" selection-end-column="5" />
+          <caret line="132" column="0" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Joueurs/IA/IALevel3.java">
+    <entry file="file://$PROJECT_DIR$/src/Joueurs/IA/IALevel2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35114503">
-          <caret line="303" column="0" selection-start-line="303" selection-start-column="0" selection-end-line="303" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.43256998">
+          <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
           <folding />
         </state>
       </provider>
