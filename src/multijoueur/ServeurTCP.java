@@ -9,14 +9,12 @@ import java.io.PrintWriter;
  
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.UnknownHostException;
 
 import Model.Model;
 import View.VueConnexion;
 import View.VueJeu;
 import View.VueMenu;
-import View.VueParametre;
- 
+
 public class ServeurTCP extends Thread {
  
 	private static BufferedReader input;

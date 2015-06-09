@@ -22,9 +22,9 @@ public class VueJeu extends JFrame {
     private JMenuItem quitter;
     private JMenuItem aPropos;
 
-    private static JButton[][] grilleJeu;
-    private static JButton[][] pteGrilleJeu;
-    private static JButton[][] tableauPasserelle;
+    private static JButton [][] grilleJeu;
+    private static JButton [][] pteGrilleJeu;
+    private static JButton [][] tableauPasserelle;
     private JButton contreTorpilleurs;
     private JButton torpilleur;
     private JButton porteAvion;
@@ -42,11 +42,13 @@ public class VueJeu extends JFrame {
     private Model model;
     private String nomJoueur;
 
-    private JPanel panPrincipal, panJeu, panOption, fond1, panPteGrille, bateauxAffiche, panCroiseur, panTorpilleur, panContreTorpilleur, panSousMarin, panPorteAvion, chatPanel, panGrille, nomPanel, fond, panBouton, panValider;
+    private JPanel panPrincipal,panJeu,panOption,panPteGrille,bateauxAffiche
+            ,panCroiseur,panTorpilleur,panContreTorpilleur, fond1, panFond, panFond1
+            ,panSousMarin,panPorteAvion,chatPanel,panGrille,nomPanel,fond,panBouton, panValider;
 
     private GridBagLayout gbl_panel_1;
 
-    public VueJeu(Model model) {
+    public VueJeu(Model model){
 
         this.model = model;
         initAttribut();
@@ -58,38 +60,39 @@ public class VueJeu extends JFrame {
         setIconImage(new ImageIcon("images/Autres/icone.png").getImage());
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
-
+    
     public void initGrilleTexte() {
-        updateTextCellsJoueur1();
-        updateTextCellsJoueur2();
+    	//updateTextCellsJoueur1();
+    	//updateTextCellsJoueur2();
     }
 
     public void resetTextChat() {
-
-        chatTexte.setText("");
+		
+		chatTexte.setText("");
+	}
+    
+    public static void appendToChatBox(String msg)
+    {
+    	chatTexte.append(msg + "\n");
     }
-
-    public static void appendToChatBox(String msg) {
-        chatTexte.append(msg + "\n");
-    }
-
+    
     public void updateTextCellsJoueur1() {
-
-        for (int i = 0; i < Model.getTaillePlateau(); i++)
-            for (int j = 0; j < Model.getTaillePlateau(); j++)
-                pteGrilleJeu[i][j].setText("" + Model.getJoueur(1).getValeurTabJoueur(i, j));
-    }
-
+		
+		for (int i = 0 ; i < Model.getTaillePlateau() ; i++)
+ 	    	for (int j = 0 ; j < Model.getTaillePlateau() ; j++)
+ 	    		pteGrilleJeu[i][j].setText(""+Model.getJoueur(1).getValeurTabJoueur(i, j));
+	}
+    
     public void updateTextCellsJoueur2() {
-
-        for (int i = 0; i < Model.getTaillePlateau(); i++)
-            for (int j = 0; j < Model.getTaillePlateau(); j++)
-                grilleJeu[i][j].setText("" + Model.getJoueur(2).getValeurTabJoueur(i, j));
-    }
+		
+		for (int i = 0 ; i < Model.getTaillePlateau() ; i++)
+ 	    	for (int j = 0 ; j < Model.getTaillePlateau() ; j++)
+ 	    		grilleJeu[i][j].setText(""+Model.getJoueur(2).getValeurTabJoueur(i, j));
+	}
 
 
     // Les initialisations
-    public void initAttribut() {
+    public void initAttribut(){
         Bateaux.initTabBateaux();
         Bateaux.initImagesBateaux();
 
@@ -112,7 +115,7 @@ public class VueJeu extends JFrame {
 
     }
 
-    public void initChat() {
+    public void initChat(){
         chatTexte = new JTextArea(10, 20);
         chatTexte.setLineWrap(true);
         chatTexte.setEditable(false);
@@ -128,19 +131,19 @@ public class VueJeu extends JFrame {
         chatNomJoueur.setColumns(8);
 
     }
-
+    
     public void reiniPteGrille() {
-        for (int i = 0; i < pteGrilleJeu.length; i++) {
-            for (int j = 0; j < pteGrilleJeu.length; j++) {
-                pteGrilleJeu[i][j].setActionCommand("" + i + "" + j);
+    	for (int i = 0; i < pteGrilleJeu.length; i++){
+            for (int j = 0; j < pteGrilleJeu.length; j++){
+            	pteGrilleJeu[i][j].setActionCommand("" + i + "" + j);
             }
         }
     }
 
-    public void initGrille(JButton[][] grilleJeu, int size) {
+    public void initGrille(JButton[][] grilleJeu, int size){
 
-        for (int i = 0; i < grilleJeu.length; i++) {
-            for (int j = 0; j < grilleJeu.length; j++) {
+        for (int i = 0; i < grilleJeu.length; i++){
+            for (int j = 0; j < grilleJeu.length; j++){
                 grilleJeu[i][j] = new JButton();
                 grilleJeu[i][j].setVerticalTextPosition(SwingConstants.CENTER);
                 grilleJeu[i][j].setHorizontalTextPosition(SwingConstants.CENTER);
@@ -151,82 +154,68 @@ public class VueJeu extends JFrame {
             }
         }
     }
-
+    
     public boolean tousLesBateauxSontPlace() {
-
-        if (!contreTorpilleurs.isEnabled() &&
-                !torpilleur.isEnabled() &&
-                !croiseur.isEnabled() &&
-                !sousMarin.isEnabled() &&
-                !porteAvion.isEnabled())
-            return true;
-        else
-            return false;
-
+		
+    	if (!contreTorpilleurs.isEnabled() &&
+    			!torpilleur.isEnabled() &&
+    			!croiseur.isEnabled() &&
+    			!sousMarin.isEnabled() &&
+    			!porteAvion.isEnabled())
+    		return true;
+    	else
+    		return false;
+    	
     }
-
+    
     public void reiniBtnBateaux() {
-
-        contreTorpilleurs.setEnabled(true);
-        torpilleur.setEnabled(true);
-        croiseur.setEnabled(true);
-        sousMarin.setEnabled(true);
-        porteAvion.setEnabled(true);
+    	
+    	contreTorpilleurs.setEnabled(true);
+		torpilleur.setEnabled(true);
+		croiseur.setEnabled(true);
+		sousMarin.setEnabled(true);
+		porteAvion.setEnabled(true);
     }
-
-    public void echangerGrille(JButton[][] grilleDepart, JButton[][] grilleArrivee) {
-
-        tableauPasserelle = new JButton[10][10];
-
-        for (int i = 0; i < tableauPasserelle.length; i++) {
-            for (int j = 0; j < tableauPasserelle.length; j++) {
-                tableauPasserelle[i][j] = new JButton();
-                tableauPasserelle[i][j] = grilleDepart[i][j];
-                grilleDepart[i][j] = grilleArrivee[i][j];
-                grilleArrivee[i][j] = tableauPasserelle[i][j];
-            }
-        }
-    }
-
+    
     // ne pas réutiliser
     public void repaintFantomeBateau() {
-        for (int i = 0; i < Model.getTaillePlateau(); i++) {
-            for (int j = 0; j < Model.getTaillePlateau(); j++) {
-                if (Model.getJoueur(1).getTabJoueur()[i][j] == 0)
-                    VueJeu.getPteGrilleJeu(i, j).setIcon(null);
+    	for (int i = 0; i < Model.getTaillePlateau(); i++){
+            for (int j = 0; j < Model.getTaillePlateau(); j++){
+            	if (Model.getJoueur(1).getTabJoueur()[i][j] == 0)
+            		VueJeu.getPteGrilleJeu(i, j).setIcon(null);
             }
         }
     }
-
+    
     public void repaintGrilleAdverseBateau() {
-        for (int i = 0; i < Model.getTaillePlateau(); i++)
+    	for (int i = 0; i < Model.getTaillePlateau(); i++)
             for (int j = 0; j < Model.getTaillePlateau(); j++)
-                VueJeu.getGrilleJeu(i, j).setIcon(null);
+            		VueJeu.getGrilleJeu(i, j).setIcon(null);
     }
 
-    public void initBateaux() {
+    public void initBateaux(){
         contreTorpilleurs = new JButton();
-        contreTorpilleurs.setIcon(Bateaux.imageBateau(Bateaux.CONTRETORPILLEUR, Bateaux.HORIZONTAL, Bateaux.COMPLET, Bateaux.SANSETAT));
-        contreTorpilleurs.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.CONTRETORPILLEUR).getNombreCases()) + Bateaux.CONTRETORPILLEUR);
+        contreTorpilleurs.setIcon(Bateaux.imageBateau(Bateaux.CONTRETORPILLEUR, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
+        contreTorpilleurs.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.CONTRETORPILLEUR).getNombreCases())+Bateaux.CONTRETORPILLEUR);
 
         torpilleur = new JButton();
-        torpilleur.setIcon(Bateaux.imageBateau(Bateaux.TORPILLEUR, Bateaux.HORIZONTAL, Bateaux.COMPLET, Bateaux.SANSETAT));
-        torpilleur.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.TORPILLEUR).getNombreCases()) + Bateaux.TORPILLEUR);
+        torpilleur.setIcon(Bateaux.imageBateau(Bateaux.TORPILLEUR, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
+        torpilleur.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.TORPILLEUR).getNombreCases())+Bateaux.TORPILLEUR);
 
         croiseur = new JButton();
-        croiseur.setIcon(Bateaux.imageBateau(Bateaux.CROISEUR, Bateaux.HORIZONTAL, Bateaux.COMPLET, Bateaux.SANSETAT));
-        croiseur.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.CROISEUR).getNombreCases()) + Bateaux.CROISEUR);
+        croiseur.setIcon(Bateaux.imageBateau(Bateaux.CROISEUR, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
+        croiseur.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.CROISEUR).getNombreCases())+Bateaux.CROISEUR);
 
         sousMarin = new JButton();
-        sousMarin.setIcon(Bateaux.imageBateau(Bateaux.SOUSMARIN, Bateaux.HORIZONTAL, Bateaux.COMPLET, Bateaux.SANSETAT));
-        sousMarin.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.SOUSMARIN).getNombreCases()) + Bateaux.SOUSMARIN);
+        sousMarin.setIcon(Bateaux.imageBateau(Bateaux.SOUSMARIN, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
+        sousMarin.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.SOUSMARIN).getNombreCases())+Bateaux.SOUSMARIN);
 
         porteAvion = new JButton();
-        porteAvion.setIcon(Bateaux.imageBateau(Bateaux.PORTEAVIONS, Bateaux.HORIZONTAL, Bateaux.COMPLET, Bateaux.SANSETAT));
-        porteAvion.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.PORTEAVIONS).getNombreCases()) + Bateaux.PORTEAVIONS);
+        porteAvion.setIcon(Bateaux.imageBateau(Bateaux.PORTEAVIONS, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
+        porteAvion.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.PORTEAVIONS).getNombreCases())+Bateaux.PORTEAVIONS);
     }
 
-    public JPanel afficheGrille(JPanel panel, int version, JButton[][] grille) {
+    public JPanel afficheGrille (JPanel panel, int version, JButton[][] grille) {
         switch (version) {
             case 1:
                 for (int i = 0; i < grille.length; i++) {
@@ -258,7 +247,7 @@ public class VueJeu extends JFrame {
         return panel;
     }
 
-    public void creerPanelGauche() {
+    public void creerPanelGauche(){
 
         //COTE GAUCHE DE LA FENETRE
         nomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -266,6 +255,7 @@ public class VueJeu extends JFrame {
         JScrollPane chatTextPane = new JScrollPane(chatTexte,
                 JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
                 JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
 
 
         chatPanel.add(chatLigne, BorderLayout.SOUTH);
@@ -278,8 +268,8 @@ public class VueJeu extends JFrame {
 
 
     }
-
-    public void creerPanelDroite() {
+    
+    public void creerPanelDroite(){
 
         panValider = new JPanel();
         panValider.add(valider);
@@ -300,18 +290,10 @@ public class VueJeu extends JFrame {
         panOption.add(bateauxAffiche);
 
         // PANEL DE LA GRILLE A AFFICHER AU MILIEU
-        if (!tousLesBateauxSontPlace()) {
+        if (!tousLesBateauxSontPlace()){
             panOption.add(panValider);
-        }/* else if (tousLesBateauxSontPlace()) {
-            System.out.println("lol ca doit marcher");
-            echangerGrille();
-            panGrille = afficheGrille(panGrille, 1, grilleJeu);
-            fond.add(panGrille);
-            panJeu.add(fond);
-            panPteGrille = afficheGrille(panPteGrille, 2, pteGrilleJeu);
-            panOption.add(panPteGrille);
-        }*/
-
+        }
+        panOption.add(panGrille);
         panOption.setLayout(new BoxLayout(panOption, BoxLayout.Y_AXIS));
 
         panPrincipal.add(panOption, BorderLayout.EAST);
@@ -324,6 +306,8 @@ public class VueJeu extends JFrame {
         panPteGrille = new JPanel();
         panGrille = new JPanel();
         panBouton = new JPanel();
+        panFond1 = new JPanel();
+        panFond = new JPanel();
         gbl_panel_1 = new GridBagLayout();
 
         creerPanelGauche();
@@ -370,12 +354,17 @@ public class VueJeu extends JFrame {
         panGrille = afficheGrille(panGrille, 1, grilleJeu);
         fond.add(panPteGrille);
         fond1.add(panGrille);
-        panJeu.add(fond1, BorderLayout.EAST);
-        panJeu.add(fond, BorderLayout.WEST);
+        panFond.add(fond);
+        panFond1.add(fond1);
+        panJeu.add(panFond);
+        panJeu.add(panFond1);
+        panJeu.setLayout(new GridLayout(1, 2, 10, 10));
         panPrincipal.add(panJeu, BorderLayout.CENTER);
 
         setContentPane(panPrincipal);
-        repaint();
+        pack();
+        setVisible(false);
+        setVisible(true);
     }
     public void creerFenetreJeu() {
 
@@ -386,6 +375,7 @@ public class VueJeu extends JFrame {
         //La grille de jeu pdt la game est placé en bas à droite
         //initGrille(grilleJeu, 20);
 
+        panValider = new JPanel();
         panPrincipal = new JPanel();
         panJeu = new JPanel();
         panOption = new JPanel();
@@ -438,11 +428,13 @@ public class VueJeu extends JFrame {
         panSousMarin.setLayout(gbl_panel_1);
         panCroiseur.setLayout(gbl_panel_1);
         panPorteAvion.setLayout(gbl_panel_1);
-        panGrille.setLayout(gbl_panel_1);
-        panGrille = afficheGrille(panGrille, 2, grilleJeu);
 
         panOption.add(bateauxAffiche);
         //panOption.add(panGrille);
+        panValider.add(valider);
+        if (!model.placementBateauIsLock()){
+            panOption.add(panValider);
+        }
         panOption.setLayout(new BoxLayout(panOption, BoxLayout.Y_AXIS));
 
         panPrincipal.add(panOption, BorderLayout.EAST);
@@ -465,7 +457,7 @@ public class VueJeu extends JFrame {
 
     }
 
-    public void creerFenetreScore() {
+    public void creerFenetreScore(){
 
         barreMenu.setVisible(false);
 
@@ -481,30 +473,30 @@ public class VueJeu extends JFrame {
     }
 
     //TODO
-    public void aProposBox() {
+    public void aProposBox(){
         JOptionPane.showMessageDialog(this, " Hellow ! ");
     }
 
 
     // Les controlleurs
-    public void setMenuControler(ActionListener listener) {
+    public void setMenuControler(ActionListener listener){
         getNouvellePartie().addActionListener(listener);
         getQuitter().addActionListener(listener);
         getaPropos().addActionListener(listener);
     }
 
-    public void setButtonControler(ActionListener listener, MouseListener listener2) {
+    public void setButtonControler(ActionListener listener, MouseListener listener2){
 
-        for (int i = 0; i < Model.getTaillePlateau(); i++) {
-            for (int j = 0; j < Model.getTaillePlateau(); j++) {
+        for	(int i = 0 ; i < Model.getTaillePlateau() ; i++) {
+            for	(int j = 0 ; j < Model.getTaillePlateau() ; j++) {
                 grilleJeu[i][j].addActionListener(listener);
                 pteGrilleJeu[i][j].addMouseListener(listener2);
             }
         }
-        torpilleur.addActionListener(listener);
-        contreTorpilleurs.addActionListener(listener);
-        croiseur.addActionListener(listener);
-        sousMarin.addActionListener(listener);
+            torpilleur.addActionListener(listener);
+            contreTorpilleurs.addActionListener(listener);
+            croiseur.addActionListener(listener);
+            sousMarin.addActionListener(listener);
         porteAvion.addActionListener(listener);
         valider.addActionListener(listener);
     }
@@ -532,7 +524,7 @@ public class VueJeu extends JFrame {
         this.quitter = quitter;
     }
 
-    public void setAPropos(JMenuItem aPropos) {
+    public void setAPropos(JMenuItem aPropos){
         this.aPropos = aPropos;
     }
 
@@ -541,7 +533,7 @@ public class VueJeu extends JFrame {
     public static JButton getGrilleJeu(int x, int y) {
         return grilleJeu[x][y];
     }
-
+    
     public static JButton getPteGrilleJeu(int x, int y) {
         return pteGrilleJeu[x][y];
     }
@@ -560,7 +552,8 @@ public class VueJeu extends JFrame {
 
     public JButton getBtnBateau(int idBateau) {
 
-        switch (idBateau) {
+        switch (idBateau)
+        {
             case Bateaux.CONTRETORPILLEUR:
                 return contreTorpilleurs;
             case Bateaux.TORPILLEUR:
@@ -577,82 +570,51 @@ public class VueJeu extends JFrame {
 
     }
 
-    public JMenuItem getNouvellePartie() {
-        return nouvellePartie;
-    }
+	public JMenuItem getNouvellePartie() {
+		return nouvellePartie;
+	}
 
-    public JMenuItem getQuitter() {
-        return quitter;
-    }
+	public JMenuItem getQuitter() {
+		return quitter;
+	}
 
     public JMenuItem getaPropos() {
         return aPropos;
     }
 
-    public JButton getValider() {
+    public JButton getValider(){
         return valider;
     }
 
-    public static JButton[][] getGrilleJeu() {
-        return grilleJeu;
-    }
+	public static JButton[][] getGrilleJeu() {
+		return grilleJeu;
+	}
 
-    public static JButton[][] getTableauPasserelle() {
+    public static JButton[][] getTableauPasserelle(){
         return tableauPasserelle;
     }
 
-    public JButton getContreTorpilleurs() {
-        return contreTorpilleurs;
-    }
+	public JButton getContreTorpilleurs() {
+		return contreTorpilleurs;
+	}
 
-    public JButton getTorpilleur() {
-        return torpilleur;
-    }
+	public JButton getTorpilleur() {
+		return torpilleur;
+	}
 
-    public JButton getPorteAvion() {
-        return porteAvion;
-    }
+	public JButton getPorteAvion() {
+		return porteAvion;
+	}
 
-    public JButton getCroiseur() {
-        return croiseur;
-    }
+	public JButton getCroiseur() {
+		return croiseur;
+	}
 
-    public JPanel getPanJeu() {
-        return panJeu;
-    }
+	public JButton getSousMarin() {
+		return sousMarin;
+	}
 
-    public JPanel getPanOption() {
-
-        return panOption;
-    }
-
-    public JButton getSousMarin() {
-        return sousMarin;
-
-    }
-
-    public JPanel getPanPteGrille() {
-        return panPteGrille;
-    }
-
-    public JPanel getFond() {
-
-        return fond;
-    }
-
-    public JPanel getPanGrille() {
-        return panGrille;
-    }
-
-    public static JButton[][] getPteGrilleJeu() {
-        return pteGrilleJeu;
-    }
-
-    public void setPanPteGrille(JPanel panPteGrille) {
-        this.panPteGrille = panPteGrille;
-    }
-
-    public void setPanGrille(JPanel panGrille) {
-        this.panGrille = panGrille;
-    }
+	public static JButton[][] getPteGrilleJeu() {
+		return pteGrilleJeu;
+	}
 }
