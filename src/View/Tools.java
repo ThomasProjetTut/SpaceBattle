@@ -58,6 +58,21 @@ public class Tools {
         textArea.setForeground(color);
         textArea.setFont(police);
     }
+    public void changerFontJMenuBar(JMenuBar menuBar,int size,Color color, Font font){
+        police = font.deriveFont(Font.TRUETYPE_FONT,size);
+        menuBar.setForeground(color);
+        menuBar.setFont(police);
+    }
+    public void changerFontJMenuItem(JMenuItem menuItem,int size,Color color, Font font){
+        police = font.deriveFont(Font.TRUETYPE_FONT,size);
+        menuItem.setForeground(color);
+        menuItem.setFont(police);
+    }
+    public void changerFontJMenu(JMenu menu,int size,Color color, Font font){
+        police = font.deriveFont(Font.TRUETYPE_FONT,size);
+        menu.setForeground(color);
+        menu.setFont(police);
+    }
     public Font getFontMenu() {
         return fontMenu;
     }

@@ -42,7 +42,7 @@ public class VueJeu extends JFrame {
 
     private JPanel panPrincipal,panJeu,panOption,panPteGrille,bateauxAffiche
             ,panCroiseur,panTorpilleur,panContreTorpilleur, fond1, panFond, panFond1
-            ,panSousMarin,panPorteAvion,chatPanel,panGrille,nomPanel,fond,panBouton, panValider;
+            ,panSousMarin,panPorteAvion,chatPanel,panGrille,nomPanel,fond, panValider;
 
     private GridBagLayout gbl_panel_1;
 
@@ -131,7 +131,6 @@ public class VueJeu extends JFrame {
         chatTexte = new JTextArea(10, 20);
         chatTexte.setLineWrap(true);
         chatTexte.setEditable(false);
-        chatTexte.setForeground(Color.blue);
         chatLigne = new JTextField();
         chatLigne.setEnabled(true);
 
@@ -140,7 +139,7 @@ public class VueJeu extends JFrame {
         chatNomJoueur.setHorizontalAlignment(SwingConstants.CENTER);
         chatNomJoueur.setEnabled(true);
         chatNomJoueur.setText("Joueur1");
-        chatNomJoueur.setColumns(8);
+        chatNomJoueur.setColumns(7);
 
     }
     
@@ -276,13 +275,13 @@ public class VueJeu extends JFrame {
         chatPanel.add(chatLigne, BorderLayout.SOUTH);
         chatPanel.add(chatTextPane, BorderLayout.CENTER);
         chatPanel.setPreferredSize(new Dimension(200, 200));
-        tools.changerFontJTextField(chatLigne, 10, Color.black, tools.getFontTexte());
-        tools.changerFontJTextField(chatNomJoueur,10,Color.black,tools.getFontTexte());
+        tools.changerFontJTextField(chatLigne, 13, Color.black, tools.getFontTexte());
+        tools.changerFontJTextField(chatNomJoueur, 14, Color.black, tools.getFontTexte());
 
         nomPanel.add(chatNomJoueurInfo);
         nomPanel.add(chatNomJoueur);
-        tools.changerFontJLabel(chatNomJoueurInfo,10,Color.black,tools.getFontTexte());
-        tools.changerFontJTextArea(chatTexte,10,Color.black,tools.getFontTexte());
+        tools.changerFontJLabel(chatNomJoueurInfo, 14, Color.black, tools.getFontTexte());
+        tools.changerFontJTextArea(chatTexte, 13, Color.black, tools.getFontTexte());
         chatPanel.add(nomPanel, BorderLayout.NORTH);
 
 
@@ -291,8 +290,9 @@ public class VueJeu extends JFrame {
     public void creerPanelDroite(){
         tools = new Tools();
         panValider = new JPanel();
-        tools.changerFontButton(valider,30,Color.black,tools.getFontTexte());
-        panValider.add(valider);
+
+
+
         panContreTorpilleur.add(contreTorpilleurs);
         panTorpilleur.add(torpilleur);
         panSousMarin.add(sousMarin);
@@ -307,14 +307,6 @@ public class VueJeu extends JFrame {
         bateauxAffiche.add(panPorteAvion);
         bateauxAffiche.setLayout(new BoxLayout(bateauxAffiche, BoxLayout.Y_AXIS));
 
-        panOption.add(bateauxAffiche);
-        panOption.add(panValider);
-        
-        panOption.add(panGrille);
-        panOption.setLayout(new BoxLayout(panOption, BoxLayout.Y_AXIS));
-
-        panPrincipal.add(panOption, BorderLayout.EAST);
-
     }
     public void changerPanelGrille(){
 
@@ -322,7 +314,6 @@ public class VueJeu extends JFrame {
         panJeu = new JPanel();
         panPteGrille = new JPanel();
         panGrille = new JPanel();
-        panBouton = new JPanel();
         panFond1 = new JPanel();
         panFond = new JPanel();
         gbl_panel_1 = new GridBagLayout();
@@ -386,7 +377,6 @@ public class VueJeu extends JFrame {
     public void creerFenetreJeu() {
 
         barreMenu.setVisible(true);
-        //initChat();
 
         panValider = new JPanel();
         panPrincipal = new JPanel();
@@ -394,7 +384,6 @@ public class VueJeu extends JFrame {
         panOption = new JPanel();
         panPteGrille = new JPanel();
         panGrille = new JPanel();
-        panBouton = new JPanel();
 
         bateauxAffiche = new JPanel();
         panCroiseur = new JPanel();
@@ -442,8 +431,10 @@ public class VueJeu extends JFrame {
         panPorteAvion.setLayout(gbl_panel_1);
 
         panOption.add(bateauxAffiche);
+        tools.changerFontButton(valider, 30, Color.black, tools.getFontTexte());
         panValider.add(valider);
         panOption.add(panValider);
+        panValider.setBorder(BorderFactory.createLineBorder(Color.black, 2));
         panOption.setLayout(new BoxLayout(panOption, BoxLayout.Y_AXIS));
 
         panPrincipal.add(panOption, BorderLayout.EAST);
@@ -453,16 +444,21 @@ public class VueJeu extends JFrame {
     }
 
     public void creerBarreMenu() {
-
+        tools = new Tools();
         menu.add(getNouvellePartie());
         menu.addSeparator();
         menu.add(getaPropos());
         menu.addSeparator();
         menu.add(getQuitter());
-
+        tools.changerFontJMenuItem(getNouvellePartie(), 15, Color.black, tools.getFontTexte());
+        tools.changerFontJMenuItem(getaPropos(), 15, Color.black, tools.getFontTexte());
+        tools.changerFontJMenuItem(getQuitter(), 15, Color.black, tools.getFontTexte());
+        tools.changerFontJMenu(menu, 15, Color.black, tools.getFontTexte());
         barreMenu.add(menu);
         barreMenu.add(Box.createRigidArea(new Dimension(400,10)));
         barreMenu.add(tour);
+        tools.changerFontJLabel(tour,15,Color.black,tools.getFontTexte());
+        tools.changerFontJMenuBar(barreMenu, 15, Color.black, tools.getFontTexte());
         setJMenuBar(barreMenu);
 
     }

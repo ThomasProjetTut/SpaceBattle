@@ -69,6 +69,7 @@ public class VueConnexion extends JFrame {
       setContentPane(mainPane);
       setSize(getPreferredSize());
       setLocation(200, 200);
+      setIconImage(new ImageIcon("images/Autres/icone.png").getImage());
       setResizable(false);
       pack();
       setVisible(false);
@@ -214,7 +215,7 @@ public class VueConnexion extends JFrame {
          };
          
       connectButton = new JButton("Connexion");
-      tools.changerFontButton(connectButton,30,Color.white,tools.getFontTexte());
+      tools.changerFontButton(connectButton, 30, Color.white, tools.getFontTexte());
       connectButton.setMnemonic(KeyEvent.VK_C);
       connectButton.setActionCommand("connect");
       connectButton.addActionListener(buttonListener);
