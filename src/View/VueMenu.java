@@ -17,7 +17,6 @@ public class VueMenu extends JFrame{
     private JButton jouerS;
     private JButton jouerM;
     private JButton instruction;
-    private JButton score;
     private JButton accueil;
     private JLabel titre;
 
@@ -39,7 +38,6 @@ public class VueMenu extends JFrame{
         jouerS = new JButton("Jeu Solo");
         jouerM = new JButton("Jeu Multi");
         instruction = new JButton("Instructions");
-        score = new JButton("Score");
         accueil = new JButton ("Menu");
     }
     // Creer les différents aspects de la fenetre
@@ -52,7 +50,6 @@ public class VueMenu extends JFrame{
         JPanel panJouerS = new JPanel();
         JPanel panJouerM = new JPanel();
         JPanel panInstructions = new JPanel();
-        JPanel panScore = new JPanel();
 
         panButton.setOpaque(false);
         panTitre.setOpaque(false);
@@ -85,20 +82,16 @@ public class VueMenu extends JFrame{
         panJouerM.setOpaque(false);
         panInstructions.add(instruction);
         panInstructions.setOpaque(false);
-        panScore.add(score);
-        panScore.setOpaque(false);
 
         tools.changerFontButton(instruction,30,Color.white,tools.getFontTexte());
         tools.changerFontButton(jouerM,30,Color.white,tools.getFontTexte());
         tools.changerFontButton(jouerS,30,Color.white,tools.getFontTexte());
-        tools.changerFontButton(score,30,Color.white,tools.getFontTexte());
 
 
         panTitre.add(titre);
         panButton.add(panJouerS);
         panButton.add(panJouerM);
         panButton.add(panInstructions);
-        panButton.add(panScore);
 
         panMenu.add(panButton,BorderLayout.CENTER);
         panPrincipal.add(panTitre,BorderLayout.NORTH);
@@ -187,7 +180,6 @@ public class VueMenu extends JFrame{
         jouerS.addActionListener(listener);
         jouerM.addActionListener(listener);
         instruction.addActionListener(listener);
-        score.addActionListener(listener);
         accueil.addActionListener(listener);
     }
 
@@ -201,10 +193,6 @@ public class VueMenu extends JFrame{
 
     public JButton getInstruction() {
         return instruction;
-    }
-
-    public JButton getScore() {
-        return score;
     }
 
     public JButton getAccueil() {
