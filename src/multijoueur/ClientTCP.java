@@ -132,6 +132,7 @@ public class ClientTCP extends Thread {
 			    }
 			    else if (message.charAt(0) == 'S') {
 			    	model.setTourJoueurEstFini(false);
+			    	vueJeu.updateTourLabel();
 			    }
 			    else if (message.charAt(0) == 'T') {
 			    	message = message.substring(1,  message.length());

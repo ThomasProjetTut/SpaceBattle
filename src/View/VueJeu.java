@@ -62,6 +62,17 @@ public class VueJeu extends JFrame {
     	//updateTextCellsJoueur1();
     	//updateTextCellsJoueur2();
     }
+    
+    public void updateTourLabel() {
+    	
+    	if (model.tourJoueurIsFini()) {
+    		tour.setText("Tour de : "+Model.getJoueur(2).getNomJoueur());
+    	}
+    	else {
+    		tour.setText("Tour de : "+Model.getJoueur(1).getNomJoueur());
+    	}
+    	
+    }
 
     public void resetTextChat() {
 		
