@@ -257,8 +257,26 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 
 		// Menu
 		if (sources == vueJeu.getNouvellePartie()) {
+			if (Model.jeuIsEnMulti()) {
+				model.setJeuEstEnMulti(true);
+				model.setAILevel(0);
+				model.initJeu();
+		        vueJeu.repaintFantomeBateau();
+		        vueJeu.reiniBtnBateaux();
+		        model.setPlacementBateauEstLock(false);
+		        vueJeu.initGrilleTexte();
+		        vueJeu.repaintGrilleAdverseBateau();
+		        vueJeu.resetTextChat();
+		        vueMenu.setVisible(false);
+		        model.setIsGameActive(true);
+		        vueJeu.setVisible(true);
+			}
+			else {
 				vueParametre.setVisible(true);
 				model.setIsGameActive(false);
+			}
+				
+				
 	    }
 
 		else if (sources == vueJeu.getaPropos()){
