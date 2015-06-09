@@ -240,7 +240,7 @@ public class IALevel2 extends IA {
 
         return retour;
     }
-    
+
     public int[] aquisitionProchaineCibles(){
         int[] prochaineCible = new int[2];
 
@@ -248,11 +248,16 @@ public class IALevel2 extends IA {
 
         listeCiblesFutures.remove(0);
 
-        idBateauCible = tabJoueurAdverse[prochaineCible[0]][prochaineCible[1]];
+        if(tabJoueurAdverse[prochaineCible[0]][prochaineCible[1]] > 0) {
 
-        creationListeCiblesPotentielles(prochaineCible);
+            idBateauCible = tabJoueurAdverse[prochaineCible[0]][prochaineCible[1]];
 
-        return aquisitionCoordonneesPotentielles();
+            creationListeCiblesPotentielles(prochaineCible);
+
+            return aquisitionCoordonneesPotentielles();
+        }else {
+            return aquisitionCoordonneesAleatoire();
+        }
 
     }
     
