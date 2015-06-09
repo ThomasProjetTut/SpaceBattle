@@ -37,10 +37,10 @@ public class VueAPropos extends JFrame {
         tools = new Tools();
         titre = new JLabel("A propos de nous : ");
         texte = new JLabel();
-        texte.setText("<html>Ce projet a été réalisé par l'équipe de thomasprojettut,<br>" +
-                "Chef de projet : Daloz Thomas, Membres : Bigé Mégane, Crelier Nicolas, Hecht Adam, Janod Lucie,<br>" +
-                "Lim Richard, Royer Félix, Van Der Post Johan.<br> La musique a été créee par Planetary Confinement et les " +
-                "images trouvées sur Google.<br> Nous remercions également notre tuteur Mr Hakem Mourad pour son suivi et " +
+        texte.setText("<html>Ce projet a été réalisé par l'équipe de thomasprojettut,<br><br>" +
+                "Chef de projet : Daloz Thomas,<br> Membres : Bigé Mégane, Crelier Nicolas, Hecht Adam, Janod Lucie,<br>" +
+                "Lim Richard, Royer Félix, Van Der Post Johan.<br><br> La musique a été créee par Planetary Confinement <br>et les " +
+                "images trouvées sur Google.<br><br> Nous remercions également notre tuteur<br> Mr Hakem Mourad pour son suivi et " +
                 "ses conseils.</html>");
         okay = new JButton("OK");
 
@@ -73,7 +73,7 @@ public class VueAPropos extends JFrame {
 
         //changement de la police
         tools.changerFontJLabel(titre, 30, Color.white, tools.getFontTexte());
-        tools.changerFontJLabel(texte,15,Color.white,tools.getFontTexte());
+        tools.changerFontJLabel(texte,20,Color.white,tools.getFontTexte());
         tools.changerFontButton(okay,30,Color.white,tools.getFontTexte());
 
         panTexte.add(texte);
