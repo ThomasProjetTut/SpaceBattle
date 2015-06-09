@@ -51,8 +51,8 @@ public class VueParametre extends JFrame {
         tools = new Tools();
         titre = new JLabel("Paramétrer la partie");
         IA = new JLabel("Choisir le niveau de difficulté");
-        IA1 = new JRadioButton("Ballade de plaisance");
-        IA2 = new JRadioButton("Survie dans l'espace", true);
+        IA1 = new JRadioButton("Ballade de plaisance", true);
+        IA2 = new JRadioButton("Survie dans l'espace");
         IA3 = new JRadioButton("Guerre interstellaire");
         IA4 = new JRadioButton("Annihilation extraterrestre");
         buttonGroup = new ButtonGroup();

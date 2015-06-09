@@ -42,6 +42,8 @@ public class ControlParametre implements ActionListener{
             vueJeu.resetTextChat();
             vueMenu.setVisible(false);
             vueParametre.setVisible(false);
+            vueJeu.creerFenetreJeu();
+            vueJeu.pack();
             model.setIsGameActive(true);
             vueJeu.setVisible(true);
             VueJeu.getChatTexte().append("Placez vos bateaux dans la grille \n");

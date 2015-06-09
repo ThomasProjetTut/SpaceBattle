@@ -56,17 +56,18 @@ public class IALevel1 extends IA {
         Random random = new Random();
 
         Point retour = new Point();
-        
+
         retour.x = random.nextInt(Model.getTaillePlateau());
         retour.y = random.nextInt(Model.getTaillePlateau());
-        
+
         while (tabCaseDejaTouche[retour.x][retour.y] != 0) {
         	retour.x = random.nextInt(Model.getTaillePlateau());
             retour.y = random.nextInt(Model.getTaillePlateau());
         }
- 
+
         tabCaseDejaTouche[retour.x][retour.y] = 1;
-        
+
         return retour;
     }
+
 }

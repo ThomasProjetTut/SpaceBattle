@@ -131,10 +131,6 @@ public class IALevel3 extends IA {
         cible = listeCiblesPotentielles.get(0);
         listeCiblesPotentielles.remove(0);
 
-        if(listeCiblesPotentielles.isEmpty()){
-            cible = aquisitionCoordonneesAleatoire();
-        }
-
         if(tabJoueurAdverse[cible[0]][cible[1]] == idBateauCible){
             listeCiblesPotentielles.clear();
             creationListePositionCible(cible);
@@ -299,16 +295,15 @@ public class IALevel3 extends IA {
 
         int cibleX;
         int cibleY;
-        
+
         do{
 
             cibleX = random.nextInt(Model.getTaillePlateau());
             cibleY = random.nextInt(Model.getTaillePlateau());
 
-        }while (tabCaseDejaTouche[cibleX][cibleY] != 0);
+        }while (tabJoueurAdverse[cibleX][cibleY] < 0);
 
-        tabCaseDejaTouche[cibleX][cibleY] = 1;
-        
+
         retour[0] = cibleX;
         retour[1] = cibleY;
 
