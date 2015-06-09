@@ -58,7 +58,6 @@ public class ClientTCP extends Thread {
     	else
     		model.setTourJoueurEstFini(false);
 		
-		vueJeu.updateTourLabel();
 		model.setJeuEstEnMulti(true);
 		model.setAILevel(0);
 		model.initJeu();

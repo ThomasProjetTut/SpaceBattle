@@ -9,6 +9,7 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.net.UnknownHostException;
 
 import javax.imageio.ImageIO;
 import javax.swing.ButtonGroup;
@@ -61,7 +62,16 @@ public class VueConnexion extends JFrame {
       JPanel mainPane = new JPanel(new BorderLayout());
       mainPane.add(optionsPane, BorderLayout.WEST);
       
-      setTitle("TCP");
+      String ipv4 = "";
+      
+      try {
+		ipv4 = java.net.InetAddress.getLocalHost().getHostAddress();
+      } catch (UnknownHostException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+      }
+      
+      setTitle("Multijoueurs - IPv4 : "+ipv4);
       setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
       setContentPane(mainPane);
       setSize(getPreferredSize());
