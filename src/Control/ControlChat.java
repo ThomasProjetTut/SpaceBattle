@@ -29,10 +29,14 @@ public class ControlChat extends KeyAdapter {
         	else if (!vueJeu.getChatLigne().getText().isEmpty() && e.getSource() == vueJeu.getChatLigne()) {
             	Model.getJoueur1().setNomJoueur(vueJeu.getChatNomJoueur().getText());
             	
-            	if (VueConnexion.isHost())
+            	if (VueConnexion.isHost()) {
             		ServeurTCP.getOutPut().println("C"+Model.getJoueur1().getNomJoueur() + " : " + vueJeu.getChatLigne().getText() + "\n");
-            	else
+            		ServeurTCP.getOutPut().println("N"+Model.getJoueur1().getNomJoueur());
+            	}
+            	else {
             		ClientTCP.getOutPut().println("C"+Model.getJoueur1().getNomJoueur() + " : " + vueJeu.getChatLigne().getText() + "\n");
+            		ClientTCP.getOutPut().println("N"+Model.getJoueur1().getNomJoueur());
+            	}
             	
             	VueJeu.getChatTexte().append(Model.getJoueur1().getNomJoueur() + " : " + vueJeu.getChatLigne().getText() + "\n");
             	

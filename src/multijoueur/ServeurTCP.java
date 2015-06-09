@@ -105,7 +105,11 @@ public class ServeurTCP extends Thread {
 			    	continue;
 			    
 			    // 'C' = Chat | 'I' = Index coordonnées | 'T' = TabBateau
-			    if (message.charAt(0) == 'C') {
+			    if (message.charAt(0) == 'N') {
+			    	message = message.substring(1,  message.length());
+			    	Model.getJoueur(2).setNomJoueur(message);
+			    }
+			    else if (message.charAt(0) == 'C') {
 			    	message = message.substring(1,  message.length());
 			    	VueJeu.appendToChatBox(message);
 			    }

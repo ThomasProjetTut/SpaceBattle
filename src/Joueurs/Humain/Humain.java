@@ -32,6 +32,7 @@ public class Humain extends Joueurs {
         nombreCoups = Model.getNombresCoupsDepart();
 
         if (joueurAdverse.estTouche(x, y)) {
+        	joueurAdverse.updateBateauEntierTouche(x, y);
             joueurAdverse.updateTabJoueurTouche(x, y);
             updateIconGrilleJoueurTouche(x, y, joueurAdverse, true);
             VueJeu.getChatTexte().append(nomJoueur+" : Coup réussi\n");

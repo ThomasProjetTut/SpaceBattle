@@ -67,8 +67,12 @@ public class VueConnexion extends JFrame {
       pack();
       setVisible(false);
    }
-   /////////////////////////////////////////////////////////////////
 
+   public void deconnexion() {
+	   client.deconnexion();
+	   serveur.deconnexion();
+   }
+   
    public JPanel initOptionsPane() {
       JPanel pane = null;
       ActionAdapter buttonListener = null;

@@ -163,15 +163,29 @@ public class Model {
 	public void setIsGameActive(boolean state){
         this.isGameActive = state;
     }
-	
+
 	public void updateTabToucheMulti(int x, int y, int valeur) {
 		
 		if (valeur == 1) {
+			joueur1.updateBateauEntierTouche(x, y);
 			joueur1.updateTabJoueurTouche(x, y);
             joueur1.updateIconGrilleJoueurTouche(x, y, joueur1, true);
+            
+            
+            
+            VueJeu.getChatTexte().append(Model.getJoueur(2).getNomJoueur()+" : Coup réussi\n");
+            
+            Joueurs verif = partieEstFini();
+
+			if (verif != null) {
+				javax.swing.JOptionPane.showMessageDialog(null, verif.getNomJoueur()+" a gagné la partie !");
+				return;
+			}
+        
 		}
 		else {
 			joueur1.updateIconGrilleJoueurTouche(x, y, joueur1, false);
+			VueJeu.getChatTexte().append(Model.getJoueur(2).getNomJoueur()+" : Coup raté\n");
 		}
 		
 	}

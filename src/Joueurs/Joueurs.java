@@ -66,6 +66,42 @@ public abstract class Joueurs {
 		this.setValeurTabJoueur(x, y, -tabJoueur[x][y]);
 	}
 	
+	public void updateBateauEntierTouche(int x, int y) {
+		
+		int idBateau = Model.getJoueur1().getValeurTabJoueur(x, y);
+		
+		JButton btn = VueJeu.getPteGrilleJeu(x, y);	
+		
+		int sens = Character.getNumericValue(btn.getActionCommand().charAt(3));
+		
+		int count = 0;
+		
+		for(int i = 0; i < Model.getTaillePlateau(); i++) {
+            for(int j = 0; j < Model.getTaillePlateau(); j++) {
+            	if (Model.getJoueur1().getValeurTabJoueur(i, j) == -idBateau) {
+            		count++;
+            	}
+            }
+		}
+		
+		int caseBateau = getTaille(idBateau);
+		
+		if (caseBateau != count)
+			return;
+		
+		count = 0;
+					
+		for(int i = 0; i < Model.getTaillePlateau(); i++) {
+            for(int j = 0; j < Model.getTaillePlateau(); j++) {
+            	if (Model.getJoueur1().getValeurTabJoueur(i, j) == -idBateau) {
+            		btn.setIcon(Bateaux.imageBateau(-idBateau, sens, count, Bateaux.TOUCHE));
+            		count++;
+            	}
+            }
+		}
+
+	}
+	
 	// Met à jour les icons si le joueur est touché
 	public void updateIconGrilleJoueurTouche(int x, int y, Joueurs joueurAdverse, boolean estTouche) {
 		
