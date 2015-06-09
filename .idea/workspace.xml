@@ -7,11 +7,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="58d0859a-f8e0-45a1-af2f-35b98f4c033b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Control/ControlParametre.java" afterPath="$PROJECT_DIR$/src/Control/ControlParametre.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/VueConnexion.java" afterPath="$PROJECT_DIR$/src/View/VueConnexion.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/VueJeu.java" afterPath="$PROJECT_DIR$/src/View/VueJeu.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/VueParametre.java" afterPath="$PROJECT_DIR$/src/View/VueParametre.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BatailleNavale.iws" />
@@ -71,7 +66,7 @@
       <file leaf-file-name="VueConnexion.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/VueConnexion.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="2.014218">
+            <state vertical-scroll-proportion="1.7725118">
               <caret line="97" column="54" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="54" />
               <folding />
             </state>
@@ -1036,7 +1031,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/VueConnexion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.014218">
+        <state vertical-scroll-proportion="1.7725118">
           <caret line="97" column="54" selection-start-line="97" selection-start-column="54" selection-end-line="97" selection-end-column="54" />
           <folding />
         </state>
