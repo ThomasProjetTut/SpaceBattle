@@ -31,6 +31,10 @@ public class ControlParametre implements ActionListener{
         Object source = e.getSource();
 
         if (source == vueParametre.getValider()){
+        	
+        	if (Model.getJoueur(2).getTypeIdJoueurs() == Joueurs.HUMAIN)
+        		model.setAILevel(Joueurs.IA_LEVEL_1);
+        	
         	model.setJeuEstEnMulti(false);
             model.initJeu();
             vueJeu.reiniPteGrille();

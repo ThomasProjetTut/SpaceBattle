@@ -23,15 +23,17 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	private VueJeu vueJeu;
 	private VueMenu vueMenu;
 	private VueParametre vueParametre;
+	private VueConnexion vueConnexion;
 	
 	private JButton bateau = null;
 	private int sensBateau = Bateaux.HORIZONTAL;
 
-	public ControlJeu(Model model, VueJeu vueJeu, VueMenu vueMenu, VueParametre vueParametre) {
+	public ControlJeu(Model model, VueJeu vueJeu, VueMenu vueMenu, VueParametre vueParametre, VueConnexion vueConnexion) {
 		this.model = model;
 		this.vueJeu = vueJeu;
 		this.vueMenu = vueMenu;
 		this.vueParametre = vueParametre;
+		this.vueConnexion = vueConnexion;
 		vueJeu.setButtonControler(this, this);
 		vueJeu.setMenuControler(this);
 	}
@@ -291,7 +293,21 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	    else if (sources == vueJeu.getQuitter()) {
 	    	vueJeu.setVisible(false);
 	    	vueMenu.setVisible(true);
-	    	VueConnexion.deconnexion();
+	    	
+	    	if (Model.jeuIsEnMulti()) {
+	    		if (VueConnexion.isHost()) {
+	    			ServeurTCP.getOutPut().println("Q");
+	    			vueConnexion.getConnectButton().setText("Connexion");
+			    	vueConnexion.deconnexion();
+			    	ServeurTCP.currentThread().interrupt();
+            	}
+            	else {
+            		ClientTCP.getOutPut().println("Q");
+            		vueConnexion.getConnectButton().setText("Connexion");
+			    	vueConnexion.deconnexion();
+			    	ClientTCP.currentThread().interrupt();
+            	}
+	    	}
 	    }	
 		
 	}

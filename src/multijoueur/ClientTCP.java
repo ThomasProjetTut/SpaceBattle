@@ -112,6 +112,14 @@ public class ClientTCP extends Thread {
 			        model.setIsGameActive(true);
 			        vueJeu.setVisible(true);
 			    }
+			    else if (message.charAt(0) == 'Q') {
+			    	vueJeu.setVisible(false);
+			    	vueMenu.setVisible(true);
+			    	vueConnexion.getConnectButton().setText("Connexion");
+			    	deconnexion();
+			    	Thread.currentThread().interrupt();
+			    	return;
+			    }
 			    else if (message.charAt(0) == 'N') {
 			    	message = message.substring(1,  message.length());
 			    	Model.getJoueur(2).setNomJoueur(message);

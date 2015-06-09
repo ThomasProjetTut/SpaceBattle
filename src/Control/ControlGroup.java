@@ -28,7 +28,7 @@ public class ControlGroup {
 
 		vueConnexion = new VueConnexion(model, vueJeu, vueMenu);
 		
-		new ControlJeu(model, vueJeu, vueMenu, vueParametre);
+		new ControlJeu(model, vueJeu, vueMenu, vueParametre, vueConnexion);
 		new ControlMenu(vueMenu, vueParametre, vueConnexion);
 		new ControlChat(vueJeu);
 		new ControlParametre(model, vueJeu, vueMenu, vueParametre);

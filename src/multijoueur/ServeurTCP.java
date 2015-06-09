@@ -6,7 +6,6 @@ import java.io.InputStreamReader;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.PrintWriter;
- 
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -104,7 +103,6 @@ public class ServeurTCP extends Thread {
 			    
 			    // 'C' = Chat | 'I' = Index coordonnées | 'T' = TabBateau
 			    if (message.charAt(0) == 'P') {
-			    	message = message.substring(1,  message.length());
 			    	
 			    	vueJeu.creerFenetreJeu();
 					vueJeu.pack();
@@ -124,6 +122,14 @@ public class ServeurTCP extends Thread {
 			    else if (message.charAt(0) == 'N') {
 			    	message = message.substring(1,  message.length());
 			    	Model.getJoueur(2).setNomJoueur(message);
+			    }
+			    else if (message.charAt(0) == 'Q') {
+			    	vueJeu.setVisible(false);
+			    	vueMenu.setVisible(true);
+			    	vueConnexion.getConnectButton().setText("Connexion");
+			    	deconnexion();
+			    	Thread.currentThread().interrupt();
+			    	return;
 			    }
 			    else if (message.charAt(0) == 'C') {
 			    	message = message.substring(1,  message.length());

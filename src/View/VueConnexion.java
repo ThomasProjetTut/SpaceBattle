@@ -44,8 +44,8 @@ public class VueConnexion extends JFrame {
    private Model model;
    private VueConnexion vueConnexion;
 
-   private static ServeurTCP serveur;
-   private static ClientTCP client;
+   private ServeurTCP serveur;
+   private ClientTCP client;
    
    public VueConnexion(Model model, VueJeu vueJeu, VueMenu vueMenu) {
 	   this.vueMenu = vueMenu;
@@ -71,7 +71,7 @@ public class VueConnexion extends JFrame {
       setVisible(false);
    }
 
-   public static void deconnexion() {
+   public void deconnexion() {
 	   client.deconnexion();
 	   serveur.deconnexion();
    }
@@ -244,6 +244,10 @@ public class VueConnexion extends JFrame {
 
 	public String getHostIP() {
 		return hostIP;
+	}
+
+	public JButton getConnectButton() {
+		return connectButton;
 	}
 
 }
