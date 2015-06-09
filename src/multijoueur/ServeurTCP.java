@@ -67,6 +67,7 @@ public class ServeurTCP extends Thread {
         vueJeu.reiniBtnBateaux();
         model.setPlacementBateauEstLock(false);
         vueJeu.initGrilleTexte();
+        vueJeu.repaintGrilleAdverseBateau();
         vueJeu.resetTextChat();
         vueMenu.setVisible(false);
         model.setIsGameActive(true);
