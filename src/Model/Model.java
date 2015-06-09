@@ -167,7 +167,6 @@ public class Model {
 	public void updateTabToucheMulti(int x, int y, int valeur) {
 		
 		if (valeur == 1) {
-			joueur1.updateBateauEntierTouche(x, y);
 			joueur1.updateTabJoueurTouche(x, y);
             joueur1.updateIconGrilleJoueurTouche(x, y, joueur1, true);
             

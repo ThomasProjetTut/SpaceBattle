@@ -64,43 +64,7 @@ public abstract class Joueurs {
 	public void updateTabJoueurTouche(int x, int y) {
 		this.setVieJoueur(this.getVieJoueur() - 1);
 		this.setValeurTabJoueur(x, y, -tabJoueur[x][y]);
-	}
-	
-	public void updateBateauEntierTouche(int x, int y) {
-		
-		int idBateau = Model.getJoueur1().getValeurTabJoueur(x, y);
-		
-		JButton btn = VueJeu.getPteGrilleJeu(x, y);	
-		
-		int sens = Character.getNumericValue(btn.getActionCommand().charAt(3));
-		
-		int count = 0;
-		
-		for(int i = 0; i < Model.getTaillePlateau(); i++) {
-            for(int j = 0; j < Model.getTaillePlateau(); j++) {
-            	if (Model.getJoueur1().getValeurTabJoueur(i, j) == -idBateau) {
-            		count++;
-            	}
-            }
-		}
-		
-		int caseBateau = getTaille(idBateau);
-		
-		if (caseBateau != count)
-			return;
-		
-		count = 0;
-					
-		for(int i = 0; i < Model.getTaillePlateau(); i++) {
-            for(int j = 0; j < Model.getTaillePlateau(); j++) {
-            	if (Model.getJoueur1().getValeurTabJoueur(i, j) == -idBateau) {
-            		btn.setIcon(Bateaux.imageBateau(-idBateau, sens, count, Bateaux.TOUCHE));
-            		count++;
-            	}
-            }
-		}
-
-	}
+	}		
 	
 	// Met à jour les icons si le joueur est touché
 	public void updateIconGrilleJoueurTouche(int x, int y, Joueurs joueurAdverse, boolean estTouche) {
@@ -118,8 +82,31 @@ public abstract class Joueurs {
 			int partie = Character.getNumericValue(btn.getActionCommand().charAt(2));
 			int sens = Character.getNumericValue(btn.getActionCommand().charAt(3));
 			
+			int count = 0;
+			
 			btn.setIcon(Bateaux.imageBateau(idBateau, sens, partie, Bateaux.TOUCHE));
 			
+			for(int i = 0; i < Model.getTaillePlateau(); i++) {
+	            for(int j = 0; j < Model.getTaillePlateau(); j++) {
+	            	if (joueurAdverse.getValeurTabJoueur(i, j) == -idBateau) {
+	            		count++;
+	            	}
+	            }
+			}
+			
+			if (count != getTaille(idBateau))
+				return;
+			
+			count = 1;
+			
+			for(int i = 0; i < Model.getTaillePlateau(); i++) {
+	            for(int j = 0; j < Model.getTaillePlateau(); j++) {
+	            	if (joueurAdverse.getValeurTabJoueur(i, j) == -idBateau) {
+	            		VueJeu.getPteGrilleJeu(i, j).setIcon(Bateaux.imageBateau(idBateau, sens, count, Bateaux.TOUCHE));
+	            		count++;
+	            	}
+	            }
+			}
 		}
 		else {
 			JButton btn = VueJeu.getGrilleJeu(x, y);
@@ -130,6 +117,46 @@ public abstract class Joueurs {
 			}
 			
 			btn.setIcon(Bateaux.getMapStringIconTouche().get("Touche"));
+			
+			int count = 0;
+			
+			int idBateau = -joueurAdverse.getValeurTabJoueur(x, y);
+			
+			int x0 = -100;
+			int x1 = -100;
+			
+			int sens = 0;
+			
+			for(int i = 0; i < Model.getTaillePlateau(); i++) {
+	            for(int j = 0; j < Model.getTaillePlateau(); j++) {
+	            	if (joueurAdverse.getValeurTabJoueur(i, j) == -idBateau) {
+	            		if (x0 == -100) 
+	            			x0 = i;
+	            		else if (x1 == -100)
+	            			x1 = i;
+	            		count++;
+	            	}
+	            }
+			}
+			
+			if (x0 == x1) 
+				sens = Bateaux.VERTICAL;
+			else
+				sens = Bateaux.HORIZONTAL;
+			
+			if (count != getTaille(idBateau))
+				return;
+			
+			count = 1;
+			
+			for(int i = 0; i < Model.getTaillePlateau(); i++) {
+	            for(int j = 0; j < Model.getTaillePlateau(); j++) {
+	            	if (joueurAdverse.getValeurTabJoueur(i, j) == -idBateau) {
+	            		VueJeu.getGrilleJeu(i, j).setIcon(Bateaux.imageBateau(idBateau, sens, count, Bateaux.TOUCHE));
+	            		count++;
+	            	}
+	            }
+			}
 		}
 			
 	}
