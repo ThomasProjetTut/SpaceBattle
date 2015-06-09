@@ -102,8 +102,8 @@
       <file leaf-file-name="IALevel2.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Joueurs/IA/IALevel2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.94107455">
-              <caret line="144" column="44" selection-start-line="144" selection-start-column="44" selection-end-line="144" selection-end-column="44" />
+            <state vertical-scroll-proportion="0.6863085">
+              <caret line="213" column="5" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -928,7 +928,7 @@
       <workItem from="1433696579129" duration="382000" />
       <workItem from="1433697055718" duration="599000" />
       <workItem from="1433832436349" duration="113000" />
-      <workItem from="1433836956968" duration="1416000" />
+      <workItem from="1433836956968" duration="1490000" />
     </task>
     <task id="LOCAL-00001" summary="Test sur mon portable">
       <created>1433664291883</created>
@@ -1020,11 +1020,17 @@
       <option name="project" value="LOCAL" />
       <updated>1433837894419</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="La Nature est un temple où de vivants piliers&#10;Laissent parfois sortir de confuses paroles ;&#10;L'homme y passe à travers des forêts de symboles&#10;Qui l'observent avec des regards familiers.&#10;&#10;Comme de longs échos qui de loin se confondent&#10;Dans une ténébreuse et profonde unité,&#10;Vaste comme la nuit et comme la clarté,&#10;Les parfums, les couleurs et les sons se répondent.&#10;&#10;Il est des parfums frais comme des chairs d'enfants,&#10;Doux comme les hautbois, verts comme les prairies,&#10;- Et d'autres, corrompus, riches et triomphants,&#10;&#10;Ayant l'expansion des choses infinies,&#10;Comme l'ambre, le musc, le benjoin et l'encens,&#10;Qui chantent les transports de l'esprit et des sens.&#10;&#10;Ia 2 V2">
+      <created>1433838387289</created>
+      <option name="number" value="00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1433838387289</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17256000" />
+    <option name="totallyTimeSpent" value="17330000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1050" extended-state="6" />
@@ -1101,7 +1107,8 @@
     <MESSAGE value="Test ou ce que tu veux" />
     <MESSAGE value="C'est ici la case sacrée&#10;Où cette fille très parée,&#10;Tranquille et toujours préparée,&#10;&#10;D'une main éventant ses seins,&#10;Et son coude dans les coussins,&#10;Ecoute pleurer les bassins ;&#10;&#10;C'est la chambre de Dorothée.&#10;- La brise et l'eau chantent au loin&#10;Leur chanson de sanglots heurtée&#10;Pour bercer cette enfant gâtée.&#10;&#10;Du haut en bas, avec grand soin,&#10;Sa peau délicate est frottée&#10;D'huile odorante et de benjoin.&#10;- Des fleurs se pâment dans un coin." />
     <MESSAGE value="La Nature est un temple où de vivants piliers&#10;Laissent parfois sortir de confuses paroles ;&#10;L'homme y passe à travers des forêts de symboles&#10;Qui l'observent avec des regards familiers.&#10;&#10;Comme de longs échos qui de loin se confondent&#10;Dans une ténébreuse et profonde unité,&#10;Vaste comme la nuit et comme la clarté,&#10;Les parfums, les couleurs et les sons se répondent.&#10;&#10;Il est des parfums frais comme des chairs d'enfants,&#10;Doux comme les hautbois, verts comme les prairies,&#10;- Et d'autres, corrompus, riches et triomphants,&#10;&#10;Ayant l'expansion des choses infinies,&#10;Comme l'ambre, le musc, le benjoin et l'encens,&#10;Qui chantent les transports de l'esprit et des sens.&#10;&#10;Ia 3 V2" />
-    <option name="LAST_COMMIT_MESSAGE" value="La Nature est un temple où de vivants piliers&#10;Laissent parfois sortir de confuses paroles ;&#10;L'homme y passe à travers des forêts de symboles&#10;Qui l'observent avec des regards familiers.&#10;&#10;Comme de longs échos qui de loin se confondent&#10;Dans une ténébreuse et profonde unité,&#10;Vaste comme la nuit et comme la clarté,&#10;Les parfums, les couleurs et les sons se répondent.&#10;&#10;Il est des parfums frais comme des chairs d'enfants,&#10;Doux comme les hautbois, verts comme les prairies,&#10;- Et d'autres, corrompus, riches et triomphants,&#10;&#10;Ayant l'expansion des choses infinies,&#10;Comme l'ambre, le musc, le benjoin et l'encens,&#10;Qui chantent les transports de l'esprit et des sens.&#10;&#10;Ia 3 V2" />
+    <MESSAGE value="La Nature est un temple où de vivants piliers&#10;Laissent parfois sortir de confuses paroles ;&#10;L'homme y passe à travers des forêts de symboles&#10;Qui l'observent avec des regards familiers.&#10;&#10;Comme de longs échos qui de loin se confondent&#10;Dans une ténébreuse et profonde unité,&#10;Vaste comme la nuit et comme la clarté,&#10;Les parfums, les couleurs et les sons se répondent.&#10;&#10;Il est des parfums frais comme des chairs d'enfants,&#10;Doux comme les hautbois, verts comme les prairies,&#10;- Et d'autres, corrompus, riches et triomphants,&#10;&#10;Ayant l'expansion des choses infinies,&#10;Comme l'ambre, le musc, le benjoin et l'encens,&#10;Qui chantent les transports de l'esprit et des sens.&#10;&#10;Ia 2 V2" />
+    <option name="LAST_COMMIT_MESSAGE" value="La Nature est un temple où de vivants piliers&#10;Laissent parfois sortir de confuses paroles ;&#10;L'homme y passe à travers des forêts de symboles&#10;Qui l'observent avec des regards familiers.&#10;&#10;Comme de longs échos qui de loin se confondent&#10;Dans une ténébreuse et profonde unité,&#10;Vaste comme la nuit et comme la clarté,&#10;Les parfums, les couleurs et les sons se répondent.&#10;&#10;Il est des parfums frais comme des chairs d'enfants,&#10;Doux comme les hautbois, verts comme les prairies,&#10;- Et d'autres, corrompus, riches et triomphants,&#10;&#10;Ayant l'expansion des choses infinies,&#10;Comme l'ambre, le musc, le benjoin et l'encens,&#10;Qui chantent les transports de l'esprit et des sens.&#10;&#10;Ia 2 V2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1491,8 +1498,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Joueurs/IA/IALevel2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.94107455">
-          <caret line="144" column="44" selection-start-line="144" selection-start-column="44" selection-end-line="144" selection-end-column="44" />
+        <state vertical-scroll-proportion="0.6863085">
+          <caret line="213" column="5" selection-start-line="213" selection-start-column="5" selection-end-line="213" selection-end-column="5" />
           <folding />
         </state>
       </provider>
