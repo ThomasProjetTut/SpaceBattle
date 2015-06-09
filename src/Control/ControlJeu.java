@@ -214,7 +214,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 				model.setPlacementBateauEstLock(true);
 				VueJeu.getChatTexte().append("Cliquez sur la grille pour commencer à jouer !\n");
 				vueJeu.changerPanelGrille();
-				
+				vueJeu.updateTourLabel();
 			}
 		}
 		
