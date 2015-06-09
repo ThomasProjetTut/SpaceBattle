@@ -23,17 +23,17 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	private VueJeu vueJeu;
 	private VueMenu vueMenu;
 	private VueParametre vueParametre;
-	private VueConnexion vueConnexion;
+	private VueAPropos vueAPropos;
 	
 	private JButton bateau = null;
 	private int sensBateau = Bateaux.HORIZONTAL;
 
-	public ControlJeu(Model model, VueJeu vueJeu, VueMenu vueMenu, VueParametre vueParametre, VueConnexion vueConnexion) {
+	public ControlJeu(Model model, VueJeu vueJeu, VueMenu vueMenu, VueParametre vueParametre, VueAPropos vueAPropos) {
 		this.model = model;
 		this.vueJeu = vueJeu;
 		this.vueMenu = vueMenu;
 		this.vueParametre = vueParametre;
-		this.vueConnexion = vueConnexion;
+		this.vueAPropos = vueAPropos;
 		vueJeu.setButtonControler(this, this);
 		vueJeu.setMenuControler(this);
 	}
