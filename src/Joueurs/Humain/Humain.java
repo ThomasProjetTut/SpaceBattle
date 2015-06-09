@@ -38,18 +38,18 @@ public class Humain extends Joueurs {
             
             if (Model.getJoueur(2).getTypeIdJoueurs() == Joueurs.HUMAIN) {
 	            if (VueConnexion.isHost())
-	        		ServeurTCP.getOutPut().println("I" + x + y + "1");
+	        		ServeurTCP.getOutPut().println("I" + x + y + "1"+Model.getJoueur1().getNomJoueur());
 	        	else
-	        		ClientTCP.getOutPut().println("I" + x + y + "1");
+	        		ClientTCP.getOutPut().println("I" + x + y + "1"+Model.getJoueur1().getNomJoueur());
             }
             
         } else {
         	
         	if (Model.getJoueur(2).getTypeIdJoueurs() == Joueurs.HUMAIN) {
 	            if (VueConnexion.isHost())
-	        		ServeurTCP.getOutPut().println("I" + x + y + "0");
+	        		ServeurTCP.getOutPut().println("I" + x + y + "0"+Model.getJoueur1().getNomJoueur());
 	        	else
-	        		ClientTCP.getOutPut().println("I" + x + y + "0");
+	        		ClientTCP.getOutPut().println("I" + x + y + "0"+Model.getJoueur1().getNomJoueur());
             }
         	
             nombreCoups--;

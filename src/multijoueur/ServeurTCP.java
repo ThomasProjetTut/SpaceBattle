@@ -137,6 +137,9 @@ public class ServeurTCP extends Thread {
 			    else if (message.charAt(0) == 'I') {
 			    	message = message.substring(1,  message.length());
 			    	model.updateTabToucheMulti(Character.getNumericValue(message.charAt(0)), Character.getNumericValue(message.charAt(1)), Character.getNumericValue(message.charAt(2)));
+			    	message = message.substring(3,  message.length());
+			    	Model.getJoueur(2).setNomJoueur(message);
+			    	vueJeu.updateTourLabel();
 			    }
 			    else if (message.charAt(0) == 'S') {
 			    	model.setTourJoueurEstFini(false);
@@ -151,22 +154,12 @@ public class ServeurTCP extends Thread {
 			    		
 			    		output.println("V");
 			    		
-			    		VueJeu.appendToChatBox("V - Serveur Lock");
-			    		
 			    		model.setPlacementMultiEstFini(true);
-			    		
-			    		System.out.println("Serveur - Valider jeu");
 			    	}
-			    	else
-			    		VueJeu.appendToChatBox("V - Serveur !Lock");
 			    }
 			    else if (message.charAt(0) == 'V') {
 			    	
 			    	model.setPlacementMultiEstFini(true);
-			    	
-			    	System.out.println("Serveur - Debuter jeu");
-			    	
-			    	VueJeu.appendToChatBox("D - Serveur");
 			    }
 			    
 			} catch(IOException e) {
