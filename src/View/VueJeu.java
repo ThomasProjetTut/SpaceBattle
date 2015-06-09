@@ -24,7 +24,6 @@ public class VueJeu extends JFrame {
 
     private static JButton [][] grilleJeu;
     private static JButton [][] pteGrilleJeu;
-    private static JButton [][] tableauPasserelle;
     private JButton contreTorpilleurs;
     private JButton torpilleur;
     private JButton porteAvion;
@@ -474,7 +473,11 @@ public class VueJeu extends JFrame {
 
     //TODO
     public void aProposBox(){
-        JOptionPane.showMessageDialog(this, " Hellow ! ");
+        JOptionPane.showMessageDialog(this, " Ce projet a été réalisé par l'équipe de thomasprojettut,\n" +
+                "Chef de projet : Daloz Thomas, Membres : Bigé Mégane, Crelier Nicolas, Hecht Adam, Janod Lucie,\n" +
+                "Lim Richard, Royer Félix, Van Der Post Johan.\n La musique a été créee par Planetary Confinement et les " +
+                "images trouvées sur Google.\n Nous remercions également notre tuteur Mr Hakem Mourad pour son suivi et " +
+                "ses conseils.");
     }
 
 
@@ -589,10 +592,6 @@ public class VueJeu extends JFrame {
 	public static JButton[][] getGrilleJeu() {
 		return grilleJeu;
 	}
-
-    public static JButton[][] getTableauPasserelle(){
-        return tableauPasserelle;
-    }
 
 	public JButton getContreTorpilleurs() {
 		return contreTorpilleurs;
