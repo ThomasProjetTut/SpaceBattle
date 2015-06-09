@@ -37,7 +37,7 @@ public class VueJeu extends JFrame {
 
     private JLabel chatNomJoueurInfo;
     private JLabel tour;
-
+    private Tools tools;
     private Model model;
 
     private JPanel panPrincipal,panJeu,panOption,panPteGrille,bateauxAffiche
@@ -101,6 +101,7 @@ public class VueJeu extends JFrame {
 
     // Les initialisations
     public void initAttribut(){
+        Tools tools = new Tools();
         Bateaux.initTabBateaux();
         Bateaux.initImagesBateaux();
 
@@ -117,6 +118,7 @@ public class VueJeu extends JFrame {
         pteGrilleJeu = new JButton[Model.getTaillePlateau()][Model.getTaillePlateau()];
 
         initBateaux();
+        initChat();
         initGrille(grilleJeu,50);
         initGrille(pteGrilleJeu,50);
 
@@ -260,6 +262,7 @@ public class VueJeu extends JFrame {
     }
 
     public void creerPanelGauche(){
+        tools = new Tools();
 
         //COTE GAUCHE DE LA FENETRE
         nomPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -273,17 +276,22 @@ public class VueJeu extends JFrame {
         chatPanel.add(chatLigne, BorderLayout.SOUTH);
         chatPanel.add(chatTextPane, BorderLayout.CENTER);
         chatPanel.setPreferredSize(new Dimension(200, 200));
+        tools.changerFontJTextField(chatLigne, 15, Color.black, tools.getFontTexte());
+        tools.changerFontJTextField(chatNomJoueur,15,Color.black,tools.getFontTexte());
 
         nomPanel.add(chatNomJoueurInfo);
         nomPanel.add(chatNomJoueur);
+        tools.changerFontJLabel(chatNomJoueurInfo,10,Color.black,tools.getFontTexte());
+        tools.changerFontJTextArea(chatTexte,15,Color.black,tools.getFontTexte());
         chatPanel.add(nomPanel, BorderLayout.NORTH);
 
 
     }
     
     public void creerPanelDroite(){
-
+        tools = new Tools();
         panValider = new JPanel();
+        tools.changerFontButton(valider,30,Color.black,tools.getFontTexte());
         panValider.add(valider);
         panContreTorpilleur.add(contreTorpilleurs);
         panTorpilleur.add(torpilleur);
@@ -378,7 +386,7 @@ public class VueJeu extends JFrame {
     public void creerFenetreJeu() {
 
         barreMenu.setVisible(true);
-        initChat();
+        //initChat();
 
         panValider = new JPanel();
         panPrincipal = new JPanel();

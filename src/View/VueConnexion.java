@@ -12,14 +12,7 @@ import java.io.IOException;
 import java.net.UnknownHostException;
 
 import javax.imageio.ImageIO;
-import javax.swing.ButtonGroup;
-import javax.swing.JButton;
-import javax.swing.JCheckBox;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 import multijoueur.ClientTCP;
 import multijoueur.ServeurTCP;
@@ -233,6 +226,7 @@ public class VueConnexion extends JFrame {
       guestOption.setSelected(!isHost);
 
       buttonPane.add(connectButton);
+      buttonPane.setBorder(BorderFactory.createLineBorder(Color.white, 3));
       optionsPane.add(buttonPane);
       fond.add(optionsPane);
       paneNom.setOpaque(false);

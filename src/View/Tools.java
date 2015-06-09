@@ -46,20 +46,17 @@ public class Tools {
         bouton.setContentAreaFilled(false);
         bouton.setFont(police);
     }
-    public void changerFontJCheckBox(JCheckBox checkbox, int size, Color color ,Font font){
-        police = font.deriveFont(Font.TRUETYPE_FONT, size);
-        checkbox.setForeground(color);
-        checkbox.setBorderPainted(false);
-        checkbox.setContentAreaFilled(false);
-        checkbox.setOpaque(false);
-        checkbox.setFont(police);
-    }
     public void changerFontJTextField(JTextField textField, int size, Color color, Font font){
         police = font.deriveFont(Font.TRUETYPE_FONT,size);
         textField.setForeground(color);
         textField.setOpaque(false);
         textField.setBorder(BorderFactory.createLineBorder(color));
         textField.setFont(police);
+    }
+    public void changerFontJTextArea(JTextArea textArea,int size, Color color, Font font){
+        police = font.deriveFont(Font.TRUETYPE_FONT,size);
+        textArea.setForeground(color);
+        textArea.setFont(police);
     }
     public Font getFontMenu() {
         return fontMenu;
