@@ -58,9 +58,12 @@ public class ClientTCP extends Thread {
     	else
     		model.setTourJoueurEstFini(false);
 		
+		vueJeu.updateTourLabel();
 		model.setJeuEstEnMulti(true);
 		model.setAILevel(0);
 		model.initJeu();
+		Model.getJoueur1().setNomJoueur(vueJeu.getChatNomJoueur().getText());
+		vueJeu.updateTourLabel();
         vueJeu.repaintFantomeBateau();
         vueJeu.reiniBtnBateaux();
         model.setPlacementBateauEstLock(false);

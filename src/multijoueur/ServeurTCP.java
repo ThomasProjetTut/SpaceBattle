@@ -103,13 +103,15 @@ public class ServeurTCP extends Thread {
 			    // 'C' = Chat | 'I' = Index coordonnées | 'T' = TabBateau
 			    if (message.charAt(0) == 'P') {
 
-			    	message.substring(1,  message.length());
+			    	message.substring(1,  message.length())
 			    	
 			    	vueJeu.creerFenetreJeu();
 					vueJeu.pack();
 					model.setJeuEstEnMulti(true);
 					model.setAILevel(0);
 					model.initJeu();
+					Model.getJoueur1().setNomJoueur(vueJeu.getChatNomJoueur().getText());
+					vueJeu.updateTourLabel();
 			        vueJeu.repaintFantomeBateau();
 			        vueJeu.reiniBtnBateaux();
 			        model.setPlacementBateauEstLock(false);

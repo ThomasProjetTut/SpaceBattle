@@ -250,6 +250,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
     	    		if (verif == null) {
     	    			Model.getJoueur1().setNomJoueur(vueJeu.getChatNomJoueur().getText());
     	    			model.jouer(source); 
+    	    			vueJeu.updateTourLabel();
     	    		}
     				
     				vueJeu.initGrilleTexte();
