@@ -11,6 +11,7 @@ import multijoueur.ClientTCP;
 import multijoueur.ServeurTCP;
 import Joueurs.Joueurs;
 import Model.Model;
+import View.VueAPropos;
 import View.VueConnexion;
 import View.VueJeu;
 import View.VueMenu;
@@ -24,14 +25,16 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 	private VueMenu vueMenu;
 	private VueParametre vueParametre;
 	private VueAPropos vueAPropos;
+	private VueConnexion vueConnexion;
 	
 	private JButton bateau = null;
 	private int sensBateau = Bateaux.HORIZONTAL;
 
-	public ControlJeu(Model model, VueJeu vueJeu, VueMenu vueMenu, VueParametre vueParametre, VueAPropos vueAPropos) {
+	public ControlJeu(Model model, VueJeu vueJeu, VueMenu vueMenu, VueParametre vueParametre, VueAPropos vueAPropos, VueConnexion vueConnexion) {
 		this.model = model;
 		this.vueJeu = vueJeu;
 		this.vueMenu = vueMenu;
+		this.vueConnexion = vueConnexion;
 		this.vueParametre = vueParametre;
 		this.vueAPropos = vueAPropos;
 		vueJeu.setButtonControler(this, this);

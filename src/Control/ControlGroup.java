@@ -2,6 +2,7 @@ package Control;
 
 import Model.Model;
 import Sounds.MusicPlayer;
+import View.VueAPropos;
 import View.VueConnexion;
 import View.VueJeu;
 import View.VueMenu;
@@ -15,7 +16,8 @@ public class ControlGroup {
 	private VueParametre vueParametre;
 	private MusicPlayer musicPlayer;
 	private VueConnexion vueConnexion;
-
+	private VueAPropos vueAPropos;
+	
 	public ControlGroup(Model model) {
 
 		vueMenu = new VueMenu();
@@ -26,7 +28,7 @@ public class ControlGroup {
 
 		vueConnexion = new VueConnexion(model, vueJeu, vueMenu);
 		
-		new ControlJeu(model, vueJeu, vueMenu, vueParametre, vueAPropos);
+		new ControlJeu(model, vueJeu, vueMenu, vueParametre, vueAPropos, vueConnexion);
 		new ControlMenu(vueMenu, vueParametre, vueConnexion);
 		new ControlChat(vueJeu);
 		new ControlParametre(model, vueJeu, vueMenu, vueParametre);

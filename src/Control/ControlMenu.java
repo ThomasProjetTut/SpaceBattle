@@ -40,20 +40,10 @@ public class ControlMenu implements ActionListener {
 			vueMenu.creerFenetreInstruction();
 			vueMenu.setVisible(true);
 		}
-
-		else if (source == vueMenu.getScore()){
-			vueParametre.setVisible(false);
-			vueMenu.setVisible(false);
-			vueMenu.creerFenetreScore();
-			vueMenu.setVisible(true);
-		}
-
 		else if (source == vueMenu.getAccueil()){
 			vueMenu.setVisible(false);
 			vueMenu.creerFenetreMenu();
 			vueMenu.setVisible(true);
-
-			VueConnexion.deconnexion();
 		}
 	}
 }
