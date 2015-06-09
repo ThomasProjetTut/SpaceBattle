@@ -113,6 +113,7 @@ public class VueJeu extends JFrame {
         initGrille(pteGrilleJeu,50);
 
         valider = new JButton("Valider");
+        valider.setContentAreaFilled(false);
 
     }
 
@@ -198,22 +199,27 @@ public class VueJeu extends JFrame {
         contreTorpilleurs = new JButton();
         contreTorpilleurs.setIcon(Bateaux.imageBateau(Bateaux.CONTRETORPILLEUR, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
         contreTorpilleurs.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.CONTRETORPILLEUR).getNombreCases())+Bateaux.CONTRETORPILLEUR);
+        contreTorpilleurs.setContentAreaFilled(false);
 
         torpilleur = new JButton();
         torpilleur.setIcon(Bateaux.imageBateau(Bateaux.TORPILLEUR, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
         torpilleur.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.TORPILLEUR).getNombreCases())+Bateaux.TORPILLEUR);
+        torpilleur.setContentAreaFilled(false);
 
         croiseur = new JButton();
         croiseur.setIcon(Bateaux.imageBateau(Bateaux.CROISEUR, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
         croiseur.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.CROISEUR).getNombreCases())+Bateaux.CROISEUR);
+        croiseur.setContentAreaFilled(false);
 
         sousMarin = new JButton();
         sousMarin.setIcon(Bateaux.imageBateau(Bateaux.SOUSMARIN, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
         sousMarin.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.SOUSMARIN).getNombreCases())+Bateaux.SOUSMARIN);
+        sousMarin.setContentAreaFilled(false);
 
         porteAvion = new JButton();
         porteAvion.setIcon(Bateaux.imageBateau(Bateaux.PORTEAVIONS, Bateaux.HORIZONTAL,Bateaux.COMPLET, Bateaux.SANSETAT));
         porteAvion.setActionCommand(Integer.toString(Bateaux.getTabBateaux().get(Bateaux.PORTEAVIONS).getNombreCases())+Bateaux.PORTEAVIONS);
+        porteAvion.setContentAreaFilled(false);
     }
 
     public JPanel afficheGrille (JPanel panel, int version, JButton[][] grille) {

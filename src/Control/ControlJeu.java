@@ -1,5 +1,6 @@
 package Control;
 
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -207,7 +208,7 @@ public class ControlJeu extends MouseAdapter implements ActionListener {
 			}
 		}
 		
-		// Fonction pour jouer quand n clique sur la grille adverse
+		// Fonction pour jouer quand on clique sur la grille adverse
 		for (int i = 0; i < Model.getTaillePlateau(); i++){
             for (int j = 0; j < Model.getTaillePlateau(); j++){
             	
