@@ -9,9 +9,9 @@ import javax.swing.JButton;
 
 import multijoueur.ClientTCP;
 import multijoueur.ServeurTCP;
-import multijoueur.VueConnexion;
 import Joueurs.Joueurs;
 import Model.Model;
+import View.VueConnexion;
 import View.VueJeu;
 import View.VueMenu;
 import View.VueParametre;

@@ -1,6 +1,7 @@
 package Control;
 
 import Model.Model;
+import View.VueConnexion;
 import View.VueJeu;
 
 import java.awt.event.KeyAdapter;
@@ -8,7 +9,6 @@ import java.awt.event.KeyEvent;
 
 import multijoueur.ClientTCP;
 import multijoueur.ServeurTCP;
-import multijoueur.VueConnexion;
 
 
 public class ControlChat extends KeyAdapter {

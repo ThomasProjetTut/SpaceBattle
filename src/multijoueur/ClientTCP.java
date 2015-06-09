@@ -12,6 +12,7 @@ import java.net.Socket;
 import java.net.UnknownHostException;
 
 import Model.Model;
+import View.VueConnexion;
 import View.VueJeu;
 import View.VueMenu;
 import View.VueParametre;

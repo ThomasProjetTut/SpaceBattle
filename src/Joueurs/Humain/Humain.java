@@ -2,9 +2,9 @@ package Joueurs.Humain;
 
 import multijoueur.ClientTCP;
 import multijoueur.ServeurTCP;
-import multijoueur.VueConnexion;
 import Joueurs.Joueurs;
 import Model.Model;
+import View.VueConnexion;
 import View.VueJeu;
 
 public class Humain extends Joueurs {

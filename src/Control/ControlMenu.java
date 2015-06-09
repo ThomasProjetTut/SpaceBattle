@@ -1,6 +1,6 @@
 package Control;
 
-import multijoueur.VueConnexion;
+import View.VueConnexion;
 import View.VueMenu;
 import View.VueParametre;
 

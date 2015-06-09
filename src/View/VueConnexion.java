@@ -1,4 +1,4 @@
-package multijoueur;
+package View;
 
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
@@ -18,9 +18,9 @@ import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import multijoueur.ClientTCP;
+import multijoueur.ServeurTCP;
 import Model.Model;
-import View.VueJeu;
-import View.VueMenu;
 
 public class VueConnexion extends JFrame {
 

@@ -6,7 +6,6 @@ import javax.swing.JButton;
 
 import multijoueur.ClientTCP;
 import multijoueur.ServeurTCP;
-import multijoueur.VueConnexion;
 import Bateaux.Bateaux;
 import Joueurs.Joueurs;
 import Joueurs.Humain.Humain;
@@ -14,6 +13,7 @@ import Joueurs.IA.IALevel1;
 import Joueurs.IA.IALevel2;
 import Joueurs.IA.IALevel3;
 import Joueurs.IA.IALevel4;
+import View.VueConnexion;
 import View.VueJeu;
 
 public class Model {

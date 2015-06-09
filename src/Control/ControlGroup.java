@@ -2,9 +2,9 @@ package Control;
 
 import multijoueur.ClientTCP;
 import multijoueur.ServeurTCP;
-import multijoueur.VueConnexion;
 import Model.Model;
 import Sounds.MusicPlayer;
+import View.VueConnexion;
 import View.VueJeu;
 import View.VueMenu;
 import View.VueParametre;
