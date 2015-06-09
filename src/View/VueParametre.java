@@ -18,8 +18,6 @@ public class VueParametre extends JFrame {
     private JLabel titre;
     private JLabel IA;
 
-    private JCheckBox checkBoxBonus;
-
     private JRadioButton IA1;
     private JRadioButton IA2;
     private JRadioButton IA3;
@@ -58,8 +56,6 @@ public class VueParametre extends JFrame {
         buttonGroup.add(IA3);
         buttonGroup.add(IA4);
 
-        checkBoxBonus = new JCheckBox("Activer les bonus");
-
         valider = new JButton("Valider");
         annuler = new JButton("Annuler");
 
@@ -77,7 +73,6 @@ public class VueParametre extends JFrame {
         JPanel panBut2 = new JPanel();
         JPanel panBut3 = new JPanel();
         JPanel panBut4 = new JPanel();
-        JPanel panCheck = new JPanel();
         JPanel panButton = new JPanel();
         // image de fond
         try {
@@ -103,7 +98,6 @@ public class VueParametre extends JFrame {
         panBut3.setOpaque(false);
         panBut4.setOpaque(false);
         panGButton.setOpaque(false);
-        panCheck.setOpaque(false);
         panButton.setOpaque(false);
 
         //changement de la police
@@ -115,14 +109,12 @@ public class VueParametre extends JFrame {
         tools.changerFontJRadioButton(IA2, 25, Color.white, tools.getFontTexte());
         tools.changerFontJRadioButton(IA3, 25, Color.white, tools.getFontTexte());
         tools.changerFontJRadioButton(IA4, 25, Color.white, tools.getFontTexte());
-        tools.changerFontJCheckBox(checkBoxBonus, 25, Color.white, tools.getFontTexte());
 
         valider.setBorder(BorderFactory.createLineBorder(Color.white));
         valider.setBorderPainted(true);
         annuler.setBorder(BorderFactory.createLineBorder(Color.white));
         annuler.setBorderPainted(true);
         panTitre.add(titre);
-        panCheck.add(checkBoxBonus);
         panIA.add(IA);
         panBut1.add(IA1);
         panBut2.add(IA2);
@@ -132,7 +124,6 @@ public class VueParametre extends JFrame {
         panGButton.add(panBut2);
         panGButton.add(panBut3);
         panGButton.add(panBut4);
-        panGButton.add(panCheck);
         panGButton.setLayout(new BoxLayout(panGButton, BoxLayout.Y_AXIS));
         panButton.add(valider);
         panButton.add(annuler);
@@ -154,7 +145,6 @@ public class VueParametre extends JFrame {
     }
 
     public void setControlParametre(ActionListener listener){
-        checkBoxBonus.addActionListener(listener);
         IA1.addActionListener(listener);
         IA2.addActionListener(listener);
         IA3.addActionListener(listener);
@@ -186,9 +176,5 @@ public class VueParametre extends JFrame {
 
     public JRadioButton getIA4() {
         return IA4;
-    }
-
-    public JCheckBox getCheckBoxBonus(){
-        return checkBoxBonus;
     }
 }

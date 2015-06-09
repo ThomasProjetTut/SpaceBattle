@@ -64,10 +64,6 @@ public class ControlParametre implements ActionListener{
         else if (source == vueParametre.getIA4()){
         	model.setAILevel(Joueurs.IA_LEVEL_4);
         }
-        else if (source == vueParametre.getCheckBoxBonus()){
-            model.setIsBonusActive(true);
-        }
-
     }
 
 }

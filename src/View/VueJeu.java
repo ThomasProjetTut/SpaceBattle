@@ -374,10 +374,6 @@ public class VueJeu extends JFrame {
 
         barreMenu.setVisible(true);
         initChat();
-        //La grille de placement de plateau est situé au milieu
-        //initGrille(pteGrilleJeu, 50);
-        //La grille de jeu pdt la game est placé en bas à droite
-        //initGrille(grilleJeu, 20);
 
         panValider = new JPanel();
         panPrincipal = new JPanel();

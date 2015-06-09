@@ -178,9 +178,6 @@ public class VueConnexion extends JFrame {
       paneNom.add(guestOption);
       paneNom.setOpaque(false);
       optionsPane.add(paneNom);
-      checkBoxBonus = new JCheckBox("Activer les bonus");
-      tools.changerFontJCheckBox(checkBoxBonus,30,Color.white,tools.getFontTexte());
-      paneNom.add(checkBoxBonus);
       paneNom.setOpaque(false);
 
       // Connect/disconnect buttons
