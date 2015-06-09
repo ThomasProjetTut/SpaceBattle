@@ -68,6 +68,7 @@ public class ServeurTCP extends Thread {
     		model.setTourJoueurEstFini(false);
 		
 		model.setJeuEstEnMulti(true);
+		
 		model.setAILevel(0);
 		model.initJeu();
         vueJeu.repaintFantomeBateau();

@@ -189,7 +189,7 @@ public class Model {
 		
 		Joueurs verif;
 		
-		// Vérifie si le joueur un peut jouer
+		// Vérifie si le joueur 1 peut jouer
     	if (joueur1.coupEstDisponible()) {
     		
     		joueur1.jouerCoup(joueur2, x, y);
@@ -207,6 +207,8 @@ public class Model {
     			}
     		}
     	}
+    	
+    	joueur1.reiniNombresCoups();
     	
     	if (joueur2.getTypeIdJoueurs() == Joueurs.HUMAIN) {
 			
@@ -245,7 +247,6 @@ public class Model {
     			javax.swing.JOptionPane.showMessageDialog(null,verif.getNomJoueur()+" a gagné la partie !");
     	}
     		
-    	joueur1.reiniNombresCoups();
     	joueur2.reiniNombresCoups();
 	
 	}
