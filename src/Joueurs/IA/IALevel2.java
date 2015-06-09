@@ -8,7 +8,7 @@ import Model.Model;
 import View.VueJeu;
 
 public class IALevel2 extends IA {
-	
+
 	private int[][] tabJoueurAdverse;
 	
 	private static ArrayList<int[] > listeCiblesPotentielles = new ArrayList<int[] >();
@@ -32,7 +32,7 @@ public class IALevel2 extends IA {
         int[] cible = new int[2];
 
         cible = aquisitionCoordonnees();
-        
+
         if (joueurAdverse.estTouche(cible[0], cible[1])) {
             joueurAdverse.updateTabJoueurTouche(cible[0], cible[1]);
             updateIconGrilleJoueurTouche(cible[0], cible[1], joueurAdverse, true);

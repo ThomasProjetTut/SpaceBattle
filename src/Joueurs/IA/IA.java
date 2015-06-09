@@ -1,6 +1,5 @@
 package Joueurs.IA;
 
-import java.awt.Point;
 import java.util.Random;
 
 import Bateaux.Bateaux;
@@ -9,8 +8,6 @@ import Model.Model;
 
 public abstract class IA extends Joueurs {
 
-
-    //BOOOUUUUUH !
 	@Override
 	public boolean coupEstDisponible() {
 		return nombreCoups > 0;
