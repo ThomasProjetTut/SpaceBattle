@@ -46,6 +46,7 @@ public class ClientTCP extends Thread {
 		{
 			try {
 			    socket = new Socket(vueConnexion.getHostIP(), ServeurTCP.portEcoute);
+			    break;
 			} catch(UnknownHostException e) {
 			    System.err.println("Erreur sur l'h�te : " + e);
 			} catch(IOException e) {
