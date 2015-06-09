@@ -4,8 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/View/VueMenu.java" line="36" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="58d0859a-f8e0-45a1-af2f-35b98f4c033b" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/View/VueAPropos.java" afterPath="$PROJECT_DIR$/src/View/VueAPropos.java" />
+    <list default="true" id="58d0859a-f8e0-45a1-af2f-35b98f4c033b" name="Default" comment="TEAM IHM MAGGLE !">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="BatailleNavale.iws" />
@@ -77,8 +76,8 @@
       <file leaf-file-name="VueAPropos.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/View/VueAPropos.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5470297">
-              <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+            <state vertical-scroll-proportion="-0.33663365">
+              <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -100,7 +99,7 @@
         <entry file="file://$PROJECT_DIR$/src/Control/ControlJeu.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="278" column="46" selection-start-line="278" selection-start-column="46" selection-end-line="278" selection-end-column="46" />
+              <caret line="281" column="46" selection-start-line="281" selection-start-column="46" selection-end-line="281" selection-end-column="46" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -502,9 +501,6 @@
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Control/ControlGroup.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Control/ControlJeu.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Control/ControlMenu.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/Control/ControlParametre.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/View/VueConnexion.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/multijoueur/ClientTCP.java</PATH>
           <PATH vcs="Git" revision="">$PROJECT_DIR$/src/multijoueur/ServeurTCP.java</PATH>
         </FILE-GROUP>
         <FILE-GROUP>
@@ -908,7 +904,7 @@
       <workItem from="1433863830583" duration="1387000" />
       <workItem from="1433865285780" duration="807000" />
       <workItem from="1433867076312" duration="75000" />
-      <workItem from="1433868012516" duration="484000" />
+      <workItem from="1433868012516" duration="1046000" />
     </task>
     <task id="LOCAL-00001" summary="Test sur mon portable">
       <created>1433664291883</created>
@@ -1060,11 +1056,17 @@
       <option name="project" value="LOCAL" />
       <updated>1433868039961</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="TEAM IHM MAGGLE !">
+      <created>1433868509172</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1433868509172</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="29670000" />
+    <option name="totallyTimeSpent" value="30232000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1522,7 +1524,7 @@
     <entry file="file://$PROJECT_DIR$/src/Control/ControlJeu.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="278" column="46" selection-start-line="278" selection-start-column="46" selection-end-line="278" selection-end-column="46" />
+          <caret line="281" column="46" selection-start-line="281" selection-start-column="46" selection-end-line="281" selection-end-column="46" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1549,8 +1551,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/View/VueAPropos.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5470297">
-          <caret line="46" column="5" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+        <state vertical-scroll-proportion="-0.33663365">
+          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
           <folding />
         </state>
       </provider>
