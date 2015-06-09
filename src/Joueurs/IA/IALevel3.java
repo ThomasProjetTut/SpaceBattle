@@ -155,41 +155,49 @@ public class IALevel3 extends IA {
         int x = cible[0];
         int y = cible[1];
 
-        
-        if(y+1 < Model.getTaillePlateau() && y-1 >= 0 && (tabJoueurAdverse[x][y] == tabJoueurAdverse[x][y - 1] || tabJoueurAdverse[x][y] == tabJoueurAdverse[x][y + 1])){
-            for(int i = 0; i < getTaille(idBateauCible) - 1; i++) {
-                if (y + i < 10) {
-                    if (tabJoueurAdverse[x][y + i] >= 0) {
-                        coordonneePossible = new int[2];
+        if(y < 9) {
+            if (tabJoueurAdverse[x][y] == tabJoueurAdverse[x][y + 1] || tabJoueurAdverse[x][y] == -tabJoueurAdverse[x][y + 1]) {
+                for (int i = 0; i < getTaille(idBateauCible); i++) {
+                    if (y + i < 10) {
+                        if (tabJoueurAdverse[x][y + i] >= 0) {
+                            coordonneePossible = new int[2];
 
-                        coordonneePossible[0] = x;
-                        coordonneePossible[1] = y + i;
+                            coordonneePossible[0] = x;
+                            coordonneePossible[1] = y + i;
 
-                        if(!listePositionCible.contains(coordonneePossible) && coordonneePossible[1] != cible[1]) {
-                            listePositionCible.add(coordonneePossible);
+                            if (!listePositionCible.contains(coordonneePossible) && coordonneePossible[1] != cible[1]) {
+                                listePositionCible.add(coordonneePossible);
+                            }
                         }
                     }
                 }
             }
+        }
 
-            for(int i = 0; i < getTaille(idBateauCible) - 1; i++) {
-                if (y - i >= 0) {
-                    if (tabJoueurAdverse[x][y - i] >= 0) {
-                        coordonneePossible = new int[2];
 
-                        coordonneePossible[0] = x;
-                        coordonneePossible[1] = y - i;
+        if(y >= 1) {
+            if (tabJoueurAdverse[x][y] == tabJoueurAdverse[x][y - 1] || tabJoueurAdverse[x][y] == -tabJoueurAdverse[x][y - 1] ) {
+                for (int i = 0; i < getTaille(idBateauCible); i++) {
+                    if (y - i >= 0) {
+                        if (tabJoueurAdverse[x][y - i] >= 0) {
+                            coordonneePossible = new int[2];
 
-                        if(!listePositionCible.contains(coordonneePossible) && coordonneePossible[1] != cible[1]) {
-                            listePositionCible.add(coordonneePossible);
+                            coordonneePossible[0] = x;
+                            coordonneePossible[1] = y - i;
+
+                            if (!listePositionCible.contains(coordonneePossible) && coordonneePossible[1] != cible[1]) {
+                                listePositionCible.add(coordonneePossible);
+                            }
                         }
                     }
                 }
             }
+        }
 
-        }else {
-            if (x+1 < Model.getTaillePlateau() && x-1 >= 0 && (tabJoueurAdverse[x][y] == tabJoueurAdverse[x - 1][y] || tabJoueurAdverse[x][y] == tabJoueurAdverse[x + 1][y])) {
-                for (int i = 0; i < getTaille(idBateauCible) - 1; i++) {
+
+        if(x < 9) {
+            if (tabJoueurAdverse[x][y] == tabJoueurAdverse[x + 1][y] || tabJoueurAdverse[x][y] == -tabJoueurAdverse[x + 1][y]) {
+                for (int i = 0; i < getTaille(idBateauCible); i++) {
                     if (x + i < 10) {
                         if (tabJoueurAdverse[x + i][y] >= 0) {
                             coordonneePossible = new int[2];
@@ -197,14 +205,19 @@ public class IALevel3 extends IA {
                             coordonneePossible[0] = x + i;
                             coordonneePossible[1] = y;
 
-                            if(!listePositionCible.contains(coordonneePossible) && coordonneePossible[0] != cible[0]) {
+                            if (!listePositionCible.contains(coordonneePossible) && coordonneePossible[0] != cible[0]) {
                                 listePositionCible.add(coordonneePossible);
                             }
                         }
                     }
                 }
+            }
+        }
 
-                for (int i = 0; i < getTaille(idBateauCible) - 1; i++) {
+
+        if(x >= 1) {
+            if (tabJoueurAdverse[x][y] == tabJoueurAdverse[x - 1][y] || tabJoueurAdverse[x][y] == -tabJoueurAdverse[x - 1][y]) {
+                for (int i = 0; i < getTaille(idBateauCible); i++) {
                     if (x - i >= 0) {
                         if (tabJoueurAdverse[x - i][y] >= 0) {
                             coordonneePossible = new int[2];
@@ -212,15 +225,17 @@ public class IALevel3 extends IA {
                             coordonneePossible[0] = x - i;
                             coordonneePossible[1] = y;
 
-                            if(!listePositionCible.contains(coordonneePossible) && coordonneePossible[0] != cible[0]) {
+                            if (!listePositionCible.contains(coordonneePossible) && coordonneePossible[0] != cible[0]) {
                                 listePositionCible.add(coordonneePossible);
                             }
                         }
                     }
                 }
-
             }
         }
+
+
+
 
     }
 
@@ -228,46 +243,50 @@ public class IALevel3 extends IA {
 
         idBateauCible = tabJoueurAdverse[caseCiblee[0]][caseCiblee[1]];
 
-        int[] ciblePotentielle1 = new int[2];
-        int[] ciblePotentielle2 = new int[2];
-        int[] ciblePotentielle3 = new int[2];
-        int[] ciblePotentielle4 = new int[2];
+        int[] ciblePotentielle = new int[2];
 
-        ciblePotentielle1[0] = caseCiblee[0] + 1;
-        ciblePotentielle1[1] = caseCiblee[1];
+        ciblePotentielle[0] = caseCiblee[0] + 1;
+        ciblePotentielle[1] = caseCiblee[1];
 
-        if(ciblePotentielle1[0] < 10 && ciblePotentielle1[0] >= 0){
-            if(tabJoueurAdverse[ciblePotentielle1[0]][ciblePotentielle1[1]] >= 0){
-                listeCiblesPotentielles.add(ciblePotentielle1);
+        if(ciblePotentielle[0] < 10 && ciblePotentielle[0] >= 0 && ciblePotentielle[1] < 10 && ciblePotentielle[1] >= 0){
+            if(tabJoueurAdverse[ciblePotentielle[0]][ciblePotentielle[1]] >= 0){
+                listeCiblesPotentielles.add(ciblePotentielle);
             }
         }
 
-        ciblePotentielle2[0] = caseCiblee[0] - 1;
-        ciblePotentielle2[1] = caseCiblee[1];
+        ciblePotentielle = new int[2];
 
-        if(ciblePotentielle2[0] < 10 && ciblePotentielle2[0] >= 0) {
-            if (tabJoueurAdverse[ciblePotentielle2[0]][ciblePotentielle2[1]] >= 0) {
-                listeCiblesPotentielles.add(ciblePotentielle2);
+        ciblePotentielle[0] = caseCiblee[0] - 1;
+        ciblePotentielle[1] = caseCiblee[1];
+
+        if(ciblePotentielle[0] < 10 && ciblePotentielle[0] >= 0 && ciblePotentielle[1] < 10 && ciblePotentielle[1] >= 0){
+            if(tabJoueurAdverse[ciblePotentielle[0]][ciblePotentielle[1]] >= 0){
+                listeCiblesPotentielles.add(ciblePotentielle);
             }
         }
 
-        ciblePotentielle3[0] = caseCiblee[0];
-        ciblePotentielle3[1] = caseCiblee[1] + 1;
+        ciblePotentielle = new int[2];
 
-        if(ciblePotentielle3[0] < 10 && ciblePotentielle3[0] >= 0) {
-            if (tabJoueurAdverse[ciblePotentielle3[0]][ciblePotentielle3[1]] >= 0) {
-                listeCiblesPotentielles.add(ciblePotentielle3);
+        ciblePotentielle[0] = caseCiblee[0];
+        ciblePotentielle[1] = caseCiblee[1] + 1;
+
+        if(ciblePotentielle[0] < 10 && ciblePotentielle[0] >= 0 && ciblePotentielle[1] < 10 && ciblePotentielle[1] >= 0){
+            if(tabJoueurAdverse[ciblePotentielle[0]][ciblePotentielle[1]] >= 0){
+                listeCiblesPotentielles.add(ciblePotentielle);
             }
         }
 
-        ciblePotentielle4[0] = caseCiblee[0];
-        ciblePotentielle4[1] = caseCiblee[1] - 1;
+        ciblePotentielle = new int[2];
 
-        if(ciblePotentielle4[1] < 10 && ciblePotentielle4[1] >= 0) {
-            if (tabJoueurAdverse[ciblePotentielle4[0]][ciblePotentielle4[1]] >= 0) {
-                listeCiblesPotentielles.add(ciblePotentielle4);
+        ciblePotentielle[0] = caseCiblee[0];
+        ciblePotentielle[1] = caseCiblee[1] - 1;
+
+        if(ciblePotentielle[0] < 10 && ciblePotentielle[0] >= 0 && ciblePotentielle[1] < 10 && ciblePotentielle[1] >= 0){
+            if(tabJoueurAdverse[ciblePotentielle[0]][ciblePotentielle[1]] >= 0){
+                listeCiblesPotentielles.add(ciblePotentielle);
             }
         }
+
 
     }
 
