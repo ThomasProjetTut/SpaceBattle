@@ -26,10 +26,11 @@ public class IALevel4 extends IA {
         
         if (joueurAdverse.estTouche(point.x, point.y)) {
             joueurAdverse.updateTabJoueurTouche(point.x, point.y);
-            updateIconGrilleJoueurTouche(point.x, point.y, joueurAdverse);
+            updateIconGrilleJoueurTouche(point.x, point.y, joueurAdverse, true);
             VueJeu.getChatTexte().append(nomJoueur+" : Coup réussi\n");
         } else {
             nombreCoups--;
+            updateIconGrilleJoueurTouche(point.x, point.y, joueurAdverse, false);
             VueJeu.getChatTexte().append(nomJoueur+" : Coup raté\n");
         }
 
